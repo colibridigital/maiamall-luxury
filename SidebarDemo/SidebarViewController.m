@@ -32,7 +32,7 @@ NSArray *menuItems;
 {
     [super viewDidLoad];
     
-    menuItems = @[@"title", @"news", @"map"];
+    menuItems = @[@"title", @"board", @"map"];
 }
 
 - (void)didReceiveMemoryWarning

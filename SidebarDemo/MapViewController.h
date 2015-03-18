@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @end

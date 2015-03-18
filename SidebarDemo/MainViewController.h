@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TrendCollectionView.h"
+#import "ProductCollectionView.h"
+#import "NIDropDown.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, NIDropDownDelegate> {
+    NIDropDown *dropDown;
+}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet TrendCollectionView *trendCollectionView;
+@property (weak, nonatomic) IBOutlet ProductCollectionView *productCollectionView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
+- (IBAction)filterSearchMenuClicked:(id)sender;
+@property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
