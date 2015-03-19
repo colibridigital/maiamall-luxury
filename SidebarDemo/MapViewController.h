@@ -10,5 +10,6 @@
 
 @interface MapViewController : UIViewController<UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
+@property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @end

@@ -11,7 +11,7 @@
 #import "ProductCollectionView.h"
 #import "NIDropDown.h"
 
-@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, NIDropDownDelegate> {
+@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, NIDropDownDelegate, UITabBarControllerDelegate, UITabBarDelegate> {
     NIDropDown *dropDown;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
@@ -20,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
 - (IBAction)filterSearchMenuClicked:(id)sender;
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 
 @end

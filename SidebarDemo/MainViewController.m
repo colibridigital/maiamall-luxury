@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import "TrendCollectionViewCell.h"
+#import "MapViewController.h"
 #import "ProductCollectionViewCell.h"
 #import "ProductListViewController.h"
 
@@ -49,8 +50,22 @@
     
     [self addGestureRecognizer:self.productCollectionView];
     
+    self.tabBarController.delegate = self;
+    
     [super viewDidLoad];
 
+}
+
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    if (item.tag == 1) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"mapNav"];
+        
+       // [self performSegueWithIdentifier:@"mapNav" sender:self];
+        
+        [self showViewController:map sender:self];
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -82,13 +97,13 @@
 //    lpgr.minimumPressDuration = 1.0; //seconds
 //    lpgr.delaysTouchesBegan = YES;
 //    lpgr.delegate = self;
-//    [collView addGestureRecognizer:lpgr];
+//    [collectionView addGestureRecognizer:lpgr];
     
-    NSLog(@"in here");
+   /* NSLog(@"in here");
     
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     tgr.delegate = self;
-    [collectionView addGestureRecognizer:tgr];
+    [collectionView addGestureRecognizer:tgr];*/
 }
 
 -(void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
@@ -105,7 +120,7 @@
     
     // NSLog(@"handling tap gesture");
     
-    if ([gestureRecognizer.view isEqual:self.productCollectionView]) {
+    /*if ([gestureRecognizer.view isEqual:self.productCollectionView]) {
         
          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
@@ -113,7 +128,7 @@
        // [prodListDetails setModalPresentationStyle:UIModalPresentationNone];
       
         [self presentViewController:prodListDetails animated:NO completion:nil];
-    }
+    }*/
     
 
     [self.searchBar resignFirstResponder];
@@ -129,6 +144,12 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    
+    UINavigationController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
+    
+    [self showViewController:prodListDetails sender:self];
+    
     [searchBar resignFirstResponder];
 }
 

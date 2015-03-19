@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="h44-J2-fHp">
             <objects>
-                <navigationController id="dwR-W1-uFm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mapNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dwR-W1-uFm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uso-qM-cWn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -20,44 +20,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKR-IP-Yaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057" y="-371"/>
-        </scene>
-        <!--Map View Controller-->
-        <scene sceneID="gbA-tY-N7d">
-            <objects>
-                <viewController id="CZq-aJ-KAU" customClass="MapViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hUc-96-FJQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Yv2-jJ-Ib7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9gn-kA-oDW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E9t-T4-8RV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="E9t-T4-8RV" firstAttribute="bottom" secondItem="9gn-kA-oDW" secondAttribute="bottom" id="JdY-Jk-oby"/>
-                            <constraint firstItem="E9t-T4-8RV" firstAttribute="top" secondItem="9gn-kA-oDW" secondAttribute="top" id="Sqt-cp-Zk1"/>
-                            <constraint firstItem="E9t-T4-8RV" firstAttribute="trailing" secondItem="9gn-kA-oDW" secondAttribute="trailing" id="ohd-iT-LFE"/>
-                            <constraint firstItem="E9t-T4-8RV" firstAttribute="leading" secondItem="9gn-kA-oDW" secondAttribute="leading" id="uLA-yQ-dOq"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="bxK-GB-bvd">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="6UH-BZ-60q">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="sidebarButton" destination="6UH-BZ-60q" id="8Yz-5G-HpY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R1O-sx-2nD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1556" y="-371"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="5">
@@ -78,10 +40,10 @@
                                     <tabBarItem image="User-50.png" selectedImage="Default.png" id="dSS-83-NlV">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="Location Filled-50.png" id="OJG-i9-xAH">
+                                    <tabBarItem tag="1" image="Location Filled-50.png" id="OJG-i9-xAH">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem title="" image="Home-50.png" id="FdD-Xt-VvL">
+                                    <tabBarItem tag="2" title="" image="Home-50.png" id="FdD-Xt-VvL">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
                                 </items>
@@ -165,6 +127,7 @@
                         <outlet property="filterSearchMenu" destination="dVj-hD-D4P" id="xrU-5w-t1q"/>
                         <outlet property="productCollectionView" destination="BRT-gz-CAY" id="Ebl-Qh-av4"/>
                         <outlet property="sidebarButton" destination="4DU-rm-gHC" id="gCT-AB-0W6"/>
+                        <outlet property="tabBarController" destination="WlP-nw-4Mq" id="in3-jC-LVj"/>
                         <outlet property="trendCollectionView" destination="xTE-ii-VWI" id="DhC-cP-ika"/>
                     </connections>
                 </viewController>
@@ -189,7 +152,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MaiaMall-Logo-Light.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-Xn-X2M">
-                                            <rect key="frame" x="13" y="5" width="120" height="31.5"/>
+                                            <rect key="frame" x="13" y="5" width="120" height="32"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -283,6 +246,8 @@
                     <connections>
                         <segue destination="5D7-fp-3iF" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="CVd-GS-qVu"/>
                         <segue destination="Meq-yH-YF6" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="3We-EY-vIe"/>
+                        <segue destination="dwR-W1-uFm" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="xtC-8U-Yc5"/>
+                        <segue destination="8Gk-XR-oKP" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="eGQ-Je-elh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4c-d4-88L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,7 +272,7 @@
         <!--Map View Controller-->
         <scene sceneID="9qw-Rk-Cag">
             <objects>
-                <viewController title="Map View Controller" id="cob-ti-ccp" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="map" title="Map View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cob-ti-ccp" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vsJ-bw-odw"/>
                         <viewControllerLayoutGuide type="bottom" id="ALa-rL-m2T"/>
@@ -346,6 +311,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterSearchMenu" destination="ti6-u1-e4G" id="h0f-dE-kBd"/>
                         <outlet property="sidebarButton" destination="Hd1-oD-ajo" id="Yth-n1-IKH"/>
                     </connections>
                 </viewController>
@@ -356,7 +322,7 @@
         <!--Product List View Controller-->
         <scene sceneID="hMV-z1-ILs">
             <objects>
-                <viewController storyboardIdentifier="prodList" title="Product List View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUH-f6-7eD" customClass="ProductListViewController" sceneMemberID="viewController">
+                <viewController title="Product List View Controller" id="kUH-f6-7eD" customClass="ProductListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sXU-cL-NQU"/>
                         <viewControllerLayoutGuide type="bottom" id="jpn-OE-hsw"/>
@@ -369,29 +335,19 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem image="User-50.png" selectedImage="Default.png" id="DTX-ka-29e">
+                                    <tabBarItem image="User-50.png" id="DTX-ka-29e">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
                                     <tabBarItem image="Location Filled-50.png" id="wEy-Oc-i2M">
-                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                     <tabBarItem title="" image="Home-50.png" id="Q6u-9P-Ur8">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
                                 </items>
                             </tabBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-f0-8Xm">
-                                <rect key="frame" x="0.0" y="20" width="283" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98G-kK-cP3">
-                                <rect key="frame" x="283" y="28" width="32" height="28"/>
-                                <state key="normal" image="Filled Filter-50.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-up-DOe" customClass="ProductListCollectionView">
-                                <rect key="frame" x="6" y="64" width="309" height="455"/>
+                                <rect key="frame" x="6" y="69" width="309" height="450"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="mM3-AS-AKV">
                                     <size key="itemSize" width="100" height="140"/>
@@ -420,21 +376,142 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VIQ-sn-6R4">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Gap-WI-bGT">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="YBe-1P-HNn">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="s2X-uL-Jgt">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="I6q-PL-cOL">
+                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="mlw-ti-yah">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterSearchMenuClicked:" destination="2" id="IfN-N2-8fN"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="filterSearchMenu" destination="mlw-ti-yah" id="FuP-eq-Nez"/>
                         <outlet property="prodListCollectionView" destination="UXS-up-DOe" id="rCs-QL-zRe"/>
+                        <outlet property="sidebarButton" destination="s2X-uL-Jgt" id="0Iq-rj-1Ym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0DT-It-dut" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="898" y="987"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="khm-xe-3o5">
+            <objects>
+                <viewController storyboardIdentifier="prodDetail" title="Product Detail View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YLg-Ri-753" customClass="ProductDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z9k-Yg-Bk1"/>
+                        <viewControllerLayoutGuide type="bottom" id="1o2-Ss-gHB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wWK-8G-PtR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hye-9k-iRu">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem image="User-50.png" id="jN1-Fb-AfD">
+                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                    </tabBarItem>
+                                    <tabBarItem image="Location Filled-50.png" id="Wg2-OC-0af">
+                                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="Home-50.png" id="mhM-j9-Hm4">
+                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                    </tabBarItem>
+                                </items>
+                            </tabBar>
+                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="mwh-FJ-361">
+                                <rect key="frame" x="0.0" y="20" width="283" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ud-8S-8i9">
+                                <rect key="frame" x="283" y="28" width="32" height="28"/>
+                                <state key="normal" image="Filled Filter-50.png">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Saints - Cotton Blouse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9my-bA-ZvF">
+                                <rect key="frame" x="16" y="64" width="288" height="21"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blouse.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rkc-XS-5P1">
+                                <rect key="frame" x="47" y="93" width="226" height="270"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="£118.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSS-bJ-gO8">
+                                <rect key="frame" x="47" y="93" width="60" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7s-5f-Ltp">
+                                <rect key="frame" x="47" y="292" width="226" height="71"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m7-2u-6Ny">
+                                <rect key="frame" x="47" y="371" width="101" height="25"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <state key="normal" title="More like this">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCT-DB-f3d">
+                                <rect key="frame" x="172" y="371" width="101" height="25"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <state key="normal" title="Buy this one">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wR1-Pr-1xd">
+                                <rect key="frame" x="16" y="404" width="288" height="115"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="buyThisButton" destination="OCT-DB-f3d" id="Hgc-fu-a8R"/>
+                        <outlet property="moreLikeThisButton" destination="9m7-2u-6Ny" id="EEr-D6-b0b"/>
+                        <outlet property="productDescription" destination="l7s-5f-Ltp" id="aO1-Jb-YaQ"/>
+                        <outlet property="productImage" destination="Rkc-XS-5P1" id="KnR-TQ-o7j"/>
+                        <outlet property="productPrice" destination="GSS-bJ-gO8" id="dKH-c7-L0b"/>
+                        <outlet property="productTitle" destination="9my-bA-ZvF" id="6yz-es-5SZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wmk-ct-OLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1318" y="986"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Yh-Kq-dQb">
+            <objects>
+                <navigationController storyboardIdentifier="prodNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Gk-XR-oKP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vDL-3w-mhb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kUH-f6-7eD" kind="relationship" relationship="rootViewController" id="DYp-R9-qAr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZx-1d-Oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="458" y="986"/>
         </scene>
     </scenes>
     <resources>
@@ -444,6 +521,7 @@
         <image name="Location Filled-50.png" width="29" height="29"/>
         <image name="MaiaMall-Logo-Light.jpg" width="1200" height="800"/>
         <image name="User-50.png" width="29" height="29"/>
+        <image name="blouse.png" width="418" height="492"/>
         <image name="map.png" width="1024" height="1024"/>
         <image name="menu.png" width="28" height="20"/>
         <image name="news.png" width="1024" height="1024"/>
@@ -454,7 +532,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dsV-kj-tD1"/>
+        <segue reference="xtC-8U-Yc5"/>
+        <segue reference="CVd-GS-qVu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

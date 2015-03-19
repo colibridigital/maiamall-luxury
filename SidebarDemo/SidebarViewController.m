@@ -8,7 +8,6 @@
 
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
-#import "PhotoViewController.h"
 
 @interface SidebarViewController ()
 
@@ -68,12 +67,12 @@ NSArray *menuItems;
     destViewController.title = [[menuItems objectAtIndex:indexPath.row] capitalizedString];
     
     // Set the photo if it navigates to the PhotoView
-    if ([segue.identifier isEqualToString:@"showPhoto"]) {
-        UINavigationController *navController = segue.destinationViewController;
-        PhotoViewController *photoController = [navController childViewControllers].firstObject;
-        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo", [menuItems objectAtIndex:indexPath.row]];
-        photoController.photoFilename = photoFilename;
-    }
+//    if ([segue.identifier isEqualToString:@"showPhoto"]) {
+//        UINavigationController *navController = segue.destinationViewController;
+//        PhotoViewController *photoController = [navController childViewControllers].firstObject;
+//        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo", [menuItems objectAtIndex:indexPath.row]];
+//        photoController.photoFilename = photoFilename;
+//    }
 }
 
 @end

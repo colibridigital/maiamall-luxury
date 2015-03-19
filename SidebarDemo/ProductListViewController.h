@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ProductListCollectionView.h"
 
-@interface ProductListViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
+@interface ProductListViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet ProductListCollectionView *prodListCollectionView;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
+@property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @end
