@@ -57,14 +57,27 @@
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    if (item.tag == 1) {
+    if (item.tag == 0) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"profileNav"];
+        
+        [self showViewController:map sender:self];
+
+    } else if (item.tag == 1) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
         UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"mapNav"];
         
-       // [self performSegueWithIdentifier:@"mapNav" sender:self];
+        [self showViewController:map sender:self];
+    } else if (item.tag == 2) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"homeNav"];
         
         [self showViewController:map sender:self];
+       // [item setEnabled:YES];
+        
     }
 }
 

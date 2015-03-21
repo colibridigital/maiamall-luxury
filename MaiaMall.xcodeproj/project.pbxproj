@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		157562781ABAF024001FAE38 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157562771ABAF024001FAE38 /* ProductDetailViewController.m */; };
 		1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 157562791ABAF2FD001FAE38 /* blouse.png */; };
+		1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1575627E1ABCEB1B001FAE38 /* ProfileViewController.m */; };
 		15AD00001AB9A03700B8B1D1 /* Location Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15ADFFFE1AB9A03700B8B1D1 /* Location Filled-50.png */; };
 		15AD00051AB9C33400B8B1D1 /* TrendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AD00031AB9C33400B8B1D1 /* TrendCollectionViewCell.m */; };
 		15AD00061AB9C33400B8B1D1 /* TrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15AD00041AB9C33400B8B1D1 /* TrendCollectionViewCell.xib */; };
@@ -67,6 +68,8 @@
 		157562761ABAF024001FAE38 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		157562771ABAF024001FAE38 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		157562791ABAF2FD001FAE38 /* blouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blouse.png; sourceTree = "<group>"; };
+		1575627D1ABCEB1B001FAE38 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		1575627E1ABCEB1B001FAE38 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		15AD00021AB9C33400B8B1D1 /* TrendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendCollectionViewCell.h; sourceTree = "<group>"; };
 		15AD00031AB9C33400B8B1D1 /* TrendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendCollectionViewCell.m; sourceTree = "<group>"; };
 		15AD00041AB9C33400B8B1D1 /* TrendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrendCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -161,6 +164,24 @@
 				157562771ABAF024001FAE38 /* ProductDetailViewController.m */,
 			);
 			name = ProductDetailViewController;
+			sourceTree = "<group>";
+		};
+		1575627B1ABCE1EB001FAE38 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F4EECF6C177FD51300778578 /* MapViewController.h */,
+				F4EECF6D177FD51300778578 /* MapViewController.m */,
+			);
+			name = MapViewController;
+			sourceTree = "<group>";
+		};
+		1575627C1ABCEB07001FAE38 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1575627D1ABCEB1B001FAE38 /* ProfileViewController.h */,
+				1575627E1ABCEB1B001FAE38 /* ProfileViewController.m */,
+			);
+			name = ProfileViewController;
 			sourceTree = "<group>";
 		};
 		15AD00011AB9C2DC00B8B1D1 /* TrendCollectionViewCell */ = {
@@ -279,6 +300,8 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1575627C1ABCEB07001FAE38 /* ProfileViewController */,
+				1575627B1ABCE1EB001FAE38 /* MapViewController */,
 				157562751ABAEFFC001FAE38 /* ProductDetailViewController */,
 				15AD00341AB9E64F00B8B1D1 /* ProductListViewController */,
 				15AD00291AB9E19500B8B1D1 /* ProductListCollectionViewCell */,
@@ -296,8 +319,6 @@
 				F4EECF2D177C99F400778578 /* MainViewController.m */,
 				F4EECF48177DF87700778578 /* SidebarViewController.h */,
 				F4EECF49177DF87700778578 /* SidebarViewController.m */,
-				F4EECF6C177FD51300778578 /* MapViewController.h */,
-				F4EECF6D177FD51300778578 /* MapViewController.m */,
 				F4EECF34177C9A1E00778578 /* Library */,
 				F4EECF18177C99F400778578 /* Supporting Files */,
 			);
@@ -457,6 +478,7 @@
 			files = (
 				15AD00371AB9E6AB00B8B1D1 /* ProductListViewController.m in Sources */,
 				15AD00051AB9C33400B8B1D1 /* TrendCollectionViewCell.m in Sources */,
+				1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */,
 				1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,

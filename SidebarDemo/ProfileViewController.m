@@ -1,23 +1,41 @@
 //
-//  ProductListViewController.m
+//  ProfileViewController.m
 //  MaiaMall
 //
-//  Created by Ingrid Funie on 18/03/2015.
+//  Created by Ingrid Funie on 20/03/2015.
 //  Copyright (c) 2015 Appcoda. All rights reserved.
 //
 
-#import "ProductListViewController.h"
-#import "ProductListCollectionViewCell.h"
+#import "ProfileViewController.h"
 #import "SWRevealViewController.h"
 
-
-@interface ProductListViewController ()
+@interface ProfileViewController ()
 
 @end
 
-@implementation ProductListViewController
+@implementation ProfileViewController
 
-- (void)initialiseMenuItems {
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self initialiseMenuItems];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:NO];
+    
+    [self initialiseMenuItems];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initialiseMenuItems
+{
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -41,41 +59,18 @@
     self.tabBarController.delegate = self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self initialiseMenuItems];
-
-    // Do any additional setup after loading the view.
-    
-    [self.prodListCollectionView registerNibAndCell];
-    [self.prodListCollectionView reloadData];
-    
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-        [super viewDidAppear:NO];
-        // Do any additional setup after loading the view.
-    
-    [self initialiseMenuItems];
-        
-        [self.prodListCollectionView registerNibAndCell];
-        [self.prodListCollectionView reloadData];
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    if (item.tag == 1) {
+    if (item.tag == 0) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"profileNav"];
+        
+        [self showViewController:map sender:self];
+        
+    } else if (item.tag == 1) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
         UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"mapNav"];
-        
-        // [self performSegueWithIdentifier:@"mapNav" sender:self];
         
         [self showViewController:map sender:self];
     } else if (item.tag == 2) {
@@ -83,35 +78,21 @@
         
         UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"homeNav"];
         
-        // [self performSegueWithIdentifier:@"mapNav" sender:self];
-        
         [self showViewController:map sender:self];
+        // [item setEnabled:YES];
+        
     }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 40;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    ProductListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DETAIL_CELL" forIndexPath:indexPath];
+    if (collectionView.tag == 0) {
+        return 5;
+    } else if (collectionView.tag == 1) {
+        return 20;
+    }
     
-   // UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"product2" ofType: @"png"]];
-    
-    //cell.detailImage = [[UIImageView alloc] initWithImage:img];
-    
-    return cell;
-}
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    
-    UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
-        
-    [self showViewController:map sender:self];
-
+    else return 0;
 }
 
 

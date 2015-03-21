@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapViewController : UIViewController<UISearchBarDelegate>
+@interface MapViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate>
+@property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
