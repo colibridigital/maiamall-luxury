@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollectionsCollectionView.h"
+#import "FavouritesListCollectionView.h"
 
 @interface ProfileViewController : UIViewController<UISearchBarDelegate, UITabBarControllerDelegate, UITabBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (strong, nonatomic) IBOutlet UITabBar *tabBarController;
+@property (strong, nonatomic) IBOutlet CollectionsCollectionView *collsCollectionView;
+@property (strong, nonatomic) IBOutlet FavouritesListCollectionView *favsCollectionView;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImage;
+@property (strong, nonatomic) IBOutlet UIButton *folllowButton;
 
 @end

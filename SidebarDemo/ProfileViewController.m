@@ -8,6 +8,9 @@
 
 #import "ProfileViewController.h"
 #import "SWRevealViewController.h"
+#import "ProductCollectionViewCell.h"
+#import "CollectionsCollectionViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ProfileViewController ()
 
@@ -56,6 +59,17 @@
     [searchBarView addSubview:self.searchBar];
     self.navigationItem.titleView = searchBarView;
     
+    self.folllowButton.layer.cornerRadius = 2;
+    self.folllowButton.layer.borderWidth = 1;
+    self.folllowButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+    
+    [self.favsCollectionView registerNibAndCell];
+    [self.collsCollectionView registerNibAndCell];
+    
+    [self.favsCollectionView reloadData];
+    [self.collsCollectionView reloadData];
+    
     self.tabBarController.delegate = self;
 }
 
@@ -86,13 +100,29 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (collectionView.tag == 0) {
+    if (collectionView == self.collsCollectionView) {
         return 5;
-    } else if (collectionView.tag == 1) {
+    } else if (collectionView == self.favsCollectionView) {
         return 20;
     }
     
     else return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (collectionView == self.collsCollectionView) {
+        CollectionsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"COLL_CELL" forIndexPath:indexPath];
+        
+        return cell;
+    } else {
+        ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PROD_CELL" forIndexPath:indexPath];
+        
+        return cell;
+
+    }
+    
 }
 
 
