@@ -10,7 +10,6 @@
 #import "QuartzCore/QuartzCore.h"
 
 @interface NIDropDown ()
-@property(nonatomic, strong) UITableView *table;
 @property(nonatomic, strong) UIButton *btnSender;
 @property(nonatomic, retain) NSArray *list;
 @property(nonatomic, retain) NSArray *imageList;
@@ -58,6 +57,9 @@
                                                    bundle:[NSBundle mainBundle]]
              forCellReuseIdentifier:@"FILT_CELL"];
         
+        [table setUserInteractionEnabled:YES];
+        [table setMultipleTouchEnabled:YES];
+        
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:0.5];
         if ([direction isEqualToString:@"up"]) {
@@ -70,6 +72,7 @@
         [b.superview addSubview:self];
         [self addSubview:table];
     }
+    
     return self;
 }
 
@@ -113,6 +116,8 @@
         //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
        // cell.textLabel.font = [UIFont systemFontOfSize:15];
       //  cell.textLabel.textAlignment = UITextAlignmentCenter;
+
+    
     if ([self.imageList count] == [self.list count]) {
        // cell.textLabel.text =[list objectAtIndex:indexPath.row];
         cell.detailImage.image = [imageList objectAtIndex:indexPath.row];
@@ -137,13 +142,23 @@
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self hideDropDown:btnSender];
     
-  /*  UITableViewCell *c = [tableView cellForRowAtIndexPath:indexPath];
+    FilterMenuCell *c = (FilterMenuCell*)[tableView cellForRowAtIndexPath:indexPath];
+    
+    if (indexPath.row == 0) {
+        NSLog(@"show cell 0");
+    } else if (indexPath.row == 1) {
+        NSLog(@"show cell 1");
+    } else {
+        NSLog(@"show other");
+    }
+    
    // [btnSender setTitle:c.textLabel.text forState:UIControlStateNormal];
     
-    for (UIView *subview in btnSender.subviews) {
+   /* for (UIView *subview in btnSender.subviews) {
         if ([subview isKindOfClass:[UIImageView class]]) {
             [subview removeFromSuperview];
         }

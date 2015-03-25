@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,10 +15,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blouse.png" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-TD-oeM">
-                        <rect key="frame" x="0.0" y="0.0" width="35" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alphabetical Sorting Az-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-TD-oeM">
+                        <rect key="frame" x="5" y="2" width="25" height="35"/>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="vfY-TD-oeM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XVz-TZ-ltK"/>
+                    <constraint firstItem="vfY-TD-oeM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="dlU-hp-5qo"/>
+                    <constraint firstItem="vfY-TD-oeM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-3" id="nS6-HK-xBQ"/>
+                    <constraint firstItem="vfY-TD-oeM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wgq-r8-bey"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailImage" destination="vfY-TD-oeM" id="iWS-e9-puk"/>
@@ -25,6 +32,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="blouse.png" width="418" height="492"/>
+        <image name="Alphabetical Sorting Az-50.png" width="50" height="50"/>
     </resources>
 </document>

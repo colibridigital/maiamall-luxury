@@ -49,14 +49,33 @@
     [self.trendCollectionView reloadData];
     [self.productCollectionView reloadData];
     
-    [self addGestureRecognizer:self.productCollectionView];
+    
+   // [self addGestureRecognizer2:self.trendCollectionView];
+    
+   /* UITapGestureRecognizer* gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    [dropDown addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.delegate = self;*/
     
     self.tabBarController.delegate = self;
+    
+    dropDown.delegate = self;
+   // dropDown.table.delegate = self;
     
     [super viewDidLoad];
 
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+    [self.searchBar resignFirstResponder];
+    
+}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    // return
+    return true;
+}
 
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
@@ -120,6 +139,21 @@
     
 }
 
+- (void)addGestureRecognizer2:(TrendCollectionView *)collectionView{
+    //    UILongPressGestureRecognizer *lpgr
+    //    = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    //    lpgr.minimumPressDuration = 1.0; //seconds
+    //    lpgr.delaysTouchesBegan = YES;
+    //    lpgr.delegate = self;
+    //    [collectionView addGestureRecognizer:lpgr];
+    
+     NSLog(@"in here");
+     
+     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+     tgr.delegate = self;
+     [collectionView addGestureRecognizer:tgr];
+}
+
 
 - (void)addGestureRecognizer:(ProductCollectionView *)collectionView{
 //    UILongPressGestureRecognizer *lpgr
@@ -141,9 +175,9 @@
         return;
     }
     
-    NSLog(@"in here");
+ //   CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
     
-    //CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
+  //  NSIndexPath *index = [self.trendCollectionView indexPathForItemAtPoint:p];
     
    // ProductListViewController *prodListDetails = [[ProductListViewController alloc] initWithNibName:@"ProductListViewController" bundle:nil];
     
@@ -166,10 +200,9 @@
 
 
 
-
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
-    [searchBar resignFirstResponder];
+    [self.searchBar resignFirstResponder];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -180,7 +213,7 @@
     
     [self showViewController:prodListDetails sender:self];
     
-    [searchBar resignFirstResponder];
+    [self.searchBar resignFirstResponder];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -195,15 +228,14 @@
 }
 
 
-
 - (IBAction)filterSearchMenuClicked:(id)sender {
     
     NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"", @"",@"", @"",nil];
+    arr = [NSArray arrayWithObjects:@"", @"",@"", nil];
     NSArray * arrImage = [[NSArray alloc] init];
-    arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"blouse.png"], [UIImage imageNamed:@"product.png"], [UIImage imageNamed:@"product2.png"], [UIImage imageNamed:@"dress.png"], nil];
+    arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"Alphabetical Sorting Az-50.png"], [UIImage imageNamed:@"Location Filled-50.png"], [UIImage imageNamed:@"Price Tag Pound Filled-50.png"], nil];
     if(dropDown == nil) {
-        CGFloat f = 160;
+        CGFloat f = 120;
         dropDown = [[NIDropDown alloc]showDropDown:sender :&f :arr :arrImage :@"down"];
         dropDown.delegate = self;
     }

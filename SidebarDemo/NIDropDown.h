@@ -14,14 +14,14 @@
 - (void) niDropDownDelegateMethod: (NIDropDown *) sender;
 @end
 
-@interface NIDropDown : UIView <UITableViewDelegate, UITableViewDataSource>
+@interface NIDropDown : UIView <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 {
     NSString *animationDirection;
     UIImageView *imgView;
 }
 @property (nonatomic, retain) id <NIDropDownDelegate> delegate;
 @property (nonatomic, retain) NSString *animationDirection;
-@property(nonatomic,retain) IBOutlet FilterMenuCell *filtCell;
+@property(nonatomic, strong) UITableView *table;
 -(void)hideDropDown:(UIButton *)b;
 - (id)showDropDown:(UIButton *)b:(CGFloat *)height:(NSArray *)arr:(NSArray *)imgArr:(NSString *)direction;
 @end

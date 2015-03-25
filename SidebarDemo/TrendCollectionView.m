@@ -35,4 +35,17 @@
     [self registerNib:cellNib forCellWithReuseIdentifier:@"TREND_CELL"];
 }
 
+//-(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    if([super hitTest:point withEvent:event] == self) {
+//        for (id gesture in self.gestureRecognizers) {
+//            [gesture setEnabled:YES];
+//        }
+//        return self;
+//    }
+//    /*for (id gesture in self.gestureRecognizers) {
+//        [gesture setEnabled:NO];
+//    }*/
+//    return [self.subviews lastObject];
+//}
+
 @end
