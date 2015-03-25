@@ -36,6 +36,10 @@
 		15ADFFFA1AB99EBB00B8B1D1 /* Filled Filter-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15ADFFF91AB99EBB00B8B1D1 /* Filled Filter-50.png */; };
 		15ADFFFC1AB99F1700B8B1D1 /* User-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15ADFFFB1AB99F1700B8B1D1 /* User-50.png */; };
 		15ADFFFF1AB9A03700B8B1D1 /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15ADFFFD1AB9A03700B8B1D1 /* Home-50.png */; };
+		15E7531A1AC2C47500F2D39D /* ItemsSimilarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753191AC2C47500F2D39D /* ItemsSimilarCollectionView.m */; };
+		15E7531F1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7531D1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m */; };
+		15E753201AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E7531E1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib */; };
+		15E753221AC2C82900F2D39D /* harrods.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E753211AC2C82900F2D39D /* harrods.png */; };
 		1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0F2F1AB4B00D00F85C01 /* SWRevealViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
@@ -113,6 +117,12 @@
 		15ADFFFB1AB99F1700B8B1D1 /* User-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User-50.png"; sourceTree = "<group>"; };
 		15ADFFFD1AB9A03700B8B1D1 /* Home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50.png"; sourceTree = "<group>"; };
 		15ADFFFE1AB9A03700B8B1D1 /* Location Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location Filled-50.png"; sourceTree = "<group>"; };
+		15E753181AC2C47500F2D39D /* ItemsSimilarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsSimilarCollectionView.h; sourceTree = "<group>"; };
+		15E753191AC2C47500F2D39D /* ItemsSimilarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsSimilarCollectionView.m; sourceTree = "<group>"; };
+		15E7531C1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsSimilarCollectionViewCell.h; sourceTree = "<group>"; };
+		15E7531D1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsSimilarCollectionViewCell.m; sourceTree = "<group>"; };
+		15E7531E1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsSimilarCollectionViewCell.xib; sourceTree = "<group>"; };
+		15E753211AC2C82900F2D39D /* harrods.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harrods.png; sourceTree = "<group>"; };
 		1A3F0F2E1AB4B00D00F85C01 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1A3F0F2F1AB4B00D00F85C01 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1A3F0F311AB4B6D800F85C01 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
@@ -302,6 +312,25 @@
 			name = ProductListViewController;
 			sourceTree = "<group>";
 		};
+		15E753171AC2C44900F2D39D /* ItemsSimilarCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				15E753181AC2C47500F2D39D /* ItemsSimilarCollectionView.h */,
+				15E753191AC2C47500F2D39D /* ItemsSimilarCollectionView.m */,
+			);
+			name = ItemsSimilarCollectionView;
+			sourceTree = "<group>";
+		};
+		15E7531B1AC2C4CE00F2D39D /* ItemsSimilarCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				15E7531C1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.h */,
+				15E7531D1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m */,
+				15E7531E1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib */,
+			);
+			name = ItemsSimilarCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		1A3F0F2D1AB4AFF800F85C01 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +372,8 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15E7531B1AC2C4CE00F2D39D /* ItemsSimilarCollectionViewCell */,
+				15E753171AC2C44900F2D39D /* ItemsSimilarCollectionView */,
 				1575628A1AC0833D001FAE38 /* CollectionsCollectionView */,
 				157562861AC082B9001FAE38 /* FavouritesListCollectionView */,
 				157562801AC080ED001FAE38 /* CollectionsCollectionViewCell */,
@@ -389,6 +420,7 @@
 		F4EECF34177C9A1E00778578 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				15E753211AC2C82900F2D39D /* harrods.png */,
 				157562901AC087D3001FAE38 /* msImage.png */,
 				1575628E1AC086BF001FAE38 /* LVWall.png */,
 				157562791ABAF2FD001FAE38 /* blouse.png */,
@@ -491,6 +523,7 @@
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
 				F4EECF5B177F384900778578 /* bookmark.png in Resources */,
 				F4EECF5C177F384900778578 /* calendar.png in Resources */,
+				15E753201AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib in Resources */,
 				F4EECF5D177F384900778578 /* comments.png in Resources */,
 				15AD00061AB9C33400B8B1D1 /* TrendCollectionViewCell.xib in Resources */,
 				F4EECF5E177F384900778578 /* map.png in Resources */,
@@ -510,6 +543,7 @@
 				15AD00391AB9EF6E00B8B1D1 /* product2.png in Resources */,
 				F4EECF6A177F4C0200778578 /* menu.png in Resources */,
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
+				15E753221AC2C82900F2D39D /* harrods.png in Resources */,
 				15AD00001AB9A03700B8B1D1 /* Location Filled-50.png in Resources */,
 				F4FE87FB1780081300CB3DA8 /* comments_photo.jpg in Resources */,
 				F4FE87FC1780081300CB3DA8 /* wishlist_photo.jpg in Resources */,
@@ -532,10 +566,12 @@
 				1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */,
 				1575628D1AC0835D001FAE38 /* CollectionsCollectionView.m in Sources */,
 				1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */,
+				15E7531A1AC2C47500F2D39D /* ItemsSimilarCollectionView.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				157562891AC082DF001FAE38 /* FavouritesListCollectionView.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
+				15E7531F1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				15AD00191AB9CEFB00B8B1D1 /* ProductCollectionViewCell.m in Sources */,
 				15AD00281AB9E16D00B8B1D1 /* ProductListCollectionView.m in Sources */,

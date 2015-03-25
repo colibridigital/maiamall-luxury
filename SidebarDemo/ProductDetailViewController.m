@@ -8,6 +8,7 @@
 
 #import "ProductDetailViewController.h"
 #import "SWRevealViewController.h"
+#import "ItemsSimilarCollectionViewCell.h"
 
 @interface ProductDetailViewController ()
 
@@ -45,6 +46,9 @@
     self.navigationItem.titleView = searchBarView;
     
     self.tabBarController.delegate =self;
+    
+    [self.similarItemsList registerNibAndCell];
+    [self.similarItemsList reloadData];
 }
 
 - (void)viewDidLoad
@@ -62,7 +66,14 @@
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    if (item.tag == 1) {
+    if (item.tag == 0) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"profileNav"];
+        
+        [self showViewController:map sender:self];
+        
+    } else if (item.tag == 1) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
         UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"mapNav"];
@@ -80,6 +91,19 @@
         [self showViewController:map sender:self];
     }
 }
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ItemsSimilarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ISIM_CELL" forIndexPath:indexPath];
+        return cell;
+    
+}
+
 
 /*
 #pragma mark - Navigation

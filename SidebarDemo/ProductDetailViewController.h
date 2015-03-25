@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ItemsSimilarCollectionView.h"
 
-@interface ProductDetailViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate>
+@interface ProductDetailViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (strong, nonatomic) IBOutlet ItemsSimilarCollectionView *similarItemsList;
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 @property (weak, nonatomic) IBOutlet UILabel *productTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UILabel *productPrice;
 @property (weak, nonatomic) IBOutlet UITextView *productDescription;
-@property (weak, nonatomic) IBOutlet UIButton *moreLikeThisButton;
+@property (weak, nonatomic) IBOutlet UIButton *retailPageButton;
 @property (weak, nonatomic) IBOutlet UIButton *buyThisButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
