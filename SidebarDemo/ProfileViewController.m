@@ -125,6 +125,27 @@
     
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (collectionView == self.favsCollectionView) {
+    
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    
+        UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
+    
+        [self showViewController:det sender:self];
+    } else {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        UINavigationController *prod = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
+        
+        [self showViewController:prod sender:self];
+
+    }
+    
+}
+
+
 
 /*
 #pragma mark - Navigation

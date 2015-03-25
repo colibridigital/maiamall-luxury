@@ -26,7 +26,6 @@
 		15AD00191AB9CEFB00B8B1D1 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AD00171AB9CEFB00B8B1D1 /* ProductCollectionViewCell.m */; };
 		15AD001A1AB9CEFB00B8B1D1 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15AD00181AB9CEFB00B8B1D1 /* ProductCollectionViewCell.xib */; };
 		15AD001E1AB9D0C000B8B1D1 /* ProductCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AD001D1AB9D0C000B8B1D1 /* ProductCollectionView.m */; };
-		15AD00221AB9D9FD00B8B1D1 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AD00211AB9D9FD00B8B1D1 /* NIDropDown.m */; };
 		15AD00241AB9DBF000B8B1D1 /* Price Tag Pound Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15AD00231AB9DBF000B8B1D1 /* Price Tag Pound Filled-50.png */; };
 		15AD00281AB9E16D00B8B1D1 /* ProductListCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AD00271AB9E16D00B8B1D1 /* ProductListCollectionView.m */; };
 		15AD00321AB9E20A00B8B1D1 /* ProductListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AD00301AB9E20A00B8B1D1 /* ProductListCollectionViewCell.m */; };
@@ -40,6 +39,9 @@
 		15E7531F1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7531D1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m */; };
 		15E753201AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E7531E1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib */; };
 		15E753221AC2C82900F2D39D /* harrods.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E753211AC2C82900F2D39D /* harrods.png */; };
+		15E7532A1AC318D500F2D39D /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753291AC318D500F2D39D /* NIDropDown.m */; };
+		15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7532D1AC3209300F2D39D /* FilterMenuCell.m */; };
+		15E753301AC3209300F2D39D /* FilterMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E7532E1AC3209300F2D39D /* FilterMenuCell.xib */; };
 		1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0F2F1AB4B00D00F85C01 /* SWRevealViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
@@ -102,8 +104,6 @@
 		15AD00181AB9CEFB00B8B1D1 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		15AD001C1AB9D0C000B8B1D1 /* ProductCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionView.h; sourceTree = "<group>"; };
 		15AD001D1AB9D0C000B8B1D1 /* ProductCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionView.m; sourceTree = "<group>"; };
-		15AD00201AB9D9FD00B8B1D1 /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
-		15AD00211AB9D9FD00B8B1D1 /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
 		15AD00231AB9DBF000B8B1D1 /* Price Tag Pound Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Price Tag Pound Filled-50.png"; sourceTree = "<group>"; };
 		15AD00261AB9E16D00B8B1D1 /* ProductListCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListCollectionView.h; sourceTree = "<group>"; };
 		15AD00271AB9E16D00B8B1D1 /* ProductListCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListCollectionView.m; sourceTree = "<group>"; };
@@ -123,6 +123,11 @@
 		15E7531D1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsSimilarCollectionViewCell.m; sourceTree = "<group>"; };
 		15E7531E1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsSimilarCollectionViewCell.xib; sourceTree = "<group>"; };
 		15E753211AC2C82900F2D39D /* harrods.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harrods.png; sourceTree = "<group>"; };
+		15E753281AC318D500F2D39D /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
+		15E753291AC318D500F2D39D /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
+		15E7532C1AC3209300F2D39D /* FilterMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterMenuCell.h; sourceTree = "<group>"; };
+		15E7532D1AC3209300F2D39D /* FilterMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterMenuCell.m; sourceTree = "<group>"; };
+		15E7532E1AC3209300F2D39D /* FilterMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterMenuCell.xib; sourceTree = "<group>"; };
 		1A3F0F2E1AB4B00D00F85C01 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1A3F0F2F1AB4B00D00F85C01 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1A3F0F311AB4B6D800F85C01 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
@@ -275,15 +280,6 @@
 			name = ProductCollectionView;
 			sourceTree = "<group>";
 		};
-		15AD001F1AB9D9EC00B8B1D1 /* NIDropDownMenu */ = {
-			isa = PBXGroup;
-			children = (
-				15AD00201AB9D9FD00B8B1D1 /* NIDropDown.h */,
-				15AD00211AB9D9FD00B8B1D1 /* NIDropDown.m */,
-			);
-			name = NIDropDownMenu;
-			sourceTree = "<group>";
-		};
 		15AD00251AB9E15300B8B1D1 /* ProductListCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +327,25 @@
 			name = ItemsSimilarCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		15E753271AC318C600F2D39D /* NIDropDown */ = {
+			isa = PBXGroup;
+			children = (
+				15E753281AC318D500F2D39D /* NIDropDown.h */,
+				15E753291AC318D500F2D39D /* NIDropDown.m */,
+			);
+			name = NIDropDown;
+			sourceTree = "<group>";
+		};
+		15E7532B1AC3206F00F2D39D /* FilterMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				15E7532C1AC3209300F2D39D /* FilterMenuCell.h */,
+				15E7532D1AC3209300F2D39D /* FilterMenuCell.m */,
+				15E7532E1AC3209300F2D39D /* FilterMenuCell.xib */,
+			);
+			name = FilterMenuCell;
+			sourceTree = "<group>";
+		};
 		1A3F0F2D1AB4AFF800F85C01 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +387,8 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15E7532B1AC3206F00F2D39D /* FilterMenuCell */,
+				15E753271AC318C600F2D39D /* NIDropDown */,
 				15E7531B1AC2C4CE00F2D39D /* ItemsSimilarCollectionViewCell */,
 				15E753171AC2C44900F2D39D /* ItemsSimilarCollectionView */,
 				1575628A1AC0833D001FAE38 /* CollectionsCollectionView */,
@@ -383,7 +400,6 @@
 				15AD00341AB9E64F00B8B1D1 /* ProductListViewController */,
 				15AD00291AB9E19500B8B1D1 /* ProductListCollectionViewCell */,
 				15AD00251AB9E15300B8B1D1 /* ProductListCollectionView */,
-				15AD001F1AB9D9EC00B8B1D1 /* NIDropDownMenu */,
 				15AD001B1AB9D0AB00B8B1D1 /* ProductCollectionView */,
 				15AD00131AB9CECC00B8B1D1 /* ProductCollectionViewCell */,
 				15AD00091AB9C4E600B8B1D1 /* TrendCollectionView */,
@@ -534,6 +550,7 @@
 				15AD001A1AB9CEFB00B8B1D1 /* ProductCollectionViewCell.xib in Resources */,
 				F4EECF61177F384900778578 /* wishlist.png in Resources */,
 				1575628F1AC086BF001FAE38 /* LVWall.png in Resources */,
+				15E753301AC3209300F2D39D /* FilterMenuCell.xib in Resources */,
 				F4EECF63177F3CAB00778578 /* tag.png in Resources */,
 				15ADFFFA1AB99EBB00B8B1D1 /* Filled Filter-50.png in Resources */,
 				15AD00081AB9C46800B8B1D1 /* dress.png in Resources */,
@@ -574,9 +591,10 @@
 				15E7531F1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				15AD00191AB9CEFB00B8B1D1 /* ProductCollectionViewCell.m in Sources */,
+				15E7532A1AC318D500F2D39D /* NIDropDown.m in Sources */,
+				15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */,
 				15AD00281AB9E16D00B8B1D1 /* ProductListCollectionView.m in Sources */,
 				15AD00321AB9E20A00B8B1D1 /* ProductListCollectionViewCell.m in Sources */,
-				15AD00221AB9D9FD00B8B1D1 /* NIDropDown.m in Sources */,
 				157562781ABAF024001FAE38 /* ProductDetailViewController.m in Sources */,
 				157562841AC08121001FAE38 /* CollectionsCollectionViewCell.m in Sources */,
 				15AD001E1AB9D0C000B8B1D1 /* ProductCollectionView.m in Sources */,

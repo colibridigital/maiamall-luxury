@@ -18,6 +18,7 @@
 @end
 
 @implementation MainViewController
+@synthesize filterSearchMenuButton;
 
 - (void)viewDidLoad
 {
@@ -55,6 +56,8 @@
     [super viewDidLoad];
 
 }
+
+
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     if (item.tag == 0) {
@@ -103,6 +106,20 @@
     }
     
 }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (collectionView == self.productCollectionView) {
+    
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    
+        UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
+        
+        [self showViewController:det sender:self];
+    }
+    
+}
+
 
 - (void)addGestureRecognizer:(ProductCollectionView *)collectionView{
 //    UILongPressGestureRecognizer *lpgr
@@ -181,30 +198,30 @@
 
 - (IBAction)filterSearchMenuClicked:(id)sender {
     
-    
-  /*  NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"Hello 0", @"Hello 1", @"Hello 2", @"Hello 3", nil];
+    NSArray * arr = [[NSArray alloc] init];
+    arr = [NSArray arrayWithObjects:@"", @"",@"", @"",nil];
     NSArray * arrImage = [[NSArray alloc] init];
-    arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"Price Tag Pound Filled-50.png"], [UIImage imageNamed:@"Price Tag Pound Filled-50.png"], [UIImage imageNamed:@"Price Tag Pound Filled-50.png"], [UIImage imageNamed:@"Price Tag Pound Filled-50.png"], nil];
+    arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"blouse.png"], [UIImage imageNamed:@"product.png"], [UIImage imageNamed:@"product2.png"], [UIImage imageNamed:@"dress.png"], nil];
     if(dropDown == nil) {
-        CGFloat f = 200;
+        CGFloat f = 160;
         dropDown = [[NIDropDown alloc]showDropDown:sender :&f :arr :arrImage :@"down"];
         dropDown.delegate = self;
     }
     else {
         [dropDown hideDropDown:sender];
         [self rel];
-    }*/
+    }
     
 }
 
-
-/*- (void) niDropDownDelegateMethod: (NIDropDown *) sender {
+- (void) niDropDownDelegateMethod: (NIDropDown *) sender {
     [self rel];
 }
 
 -(void)rel{
     //    [dropDown release];
     dropDown = nil;
-}*/
+}
+
+
 @end

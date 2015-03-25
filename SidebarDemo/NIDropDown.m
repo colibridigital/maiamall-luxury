@@ -50,9 +50,13 @@
         table.delegate = self;
         table.dataSource = self;
         table.layer.cornerRadius = 5;
-        table.backgroundColor = [UIColor colorWithRed:0.239 green:0.239 blue:0.239 alpha:1];
-        table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        table.separatorColor = [UIColor grayColor];
+        table.backgroundColor = [UIColor whiteColor];
+        table.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [table setScrollEnabled:NO];
+        
+        [table registerNib:[UINib nibWithNibName:@"FilterMenuCell"
+                                                   bundle:[NSBundle mainBundle]]
+             forCellReuseIdentifier:@"FILT_CELL"];
         
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:0.5];
@@ -97,33 +101,37 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.textLabel.font = [UIFont systemFontOfSize:15];
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
-    }
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
+    
+  //  FilterMenuCell* cell;
+    
+    FilterMenuCell *cell = (FilterMenuCell*)[tableView dequeueReusableCellWithIdentifier:@"FILT_CELL"];
+    
+    
+    
+        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+       // cell.textLabel.font = [UIFont systemFontOfSize:15];
+      //  cell.textLabel.textAlignment = UITextAlignmentCenter;
     if ([self.imageList count] == [self.list count]) {
-        cell.textLabel.text =[list objectAtIndex:indexPath.row];
-        cell.imageView.image = [imageList objectAtIndex:indexPath.row];
+       // cell.textLabel.text =[list objectAtIndex:indexPath.row];
+        cell.detailImage.image = [imageList objectAtIndex:indexPath.row];
     } else if ([self.imageList count] > [self.list count]) {
-        cell.textLabel.text =[list objectAtIndex:indexPath.row];
+       // cell.textLabel.text =[list objectAtIndex:indexPath.row];
         if (indexPath.row < [imageList count]) {
-            cell.imageView.image = [imageList objectAtIndex:indexPath.row];
+            cell.detailImage.image = [imageList objectAtIndex:indexPath.row];
         }
     } else if ([self.imageList count] < [self.list count]) {
-        cell.textLabel.text =[list objectAtIndex:indexPath.row];
+       // cell.textLabel.text =[list objectAtIndex:indexPath.row];
         if (indexPath.row < [imageList count]) {
-            cell.imageView.image = [imageList objectAtIndex:indexPath.row];
+            cell.detailImage.image = [imageList objectAtIndex:indexPath.row];
         }
     }
     
-    cell.textLabel.textColor = [UIColor whiteColor];
+  //  cell.textLabel.textColor = [UIColor whiteColor];
     
     UIView * v = [[UIView alloc] init];
-    v.backgroundColor = [UIColor grayColor];
+    v.backgroundColor = [UIColor whiteColor];
     cell.selectedBackgroundView = v;
     
     return cell;
@@ -132,8 +140,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self hideDropDown:btnSender];
     
-    UITableViewCell *c = [tableView cellForRowAtIndexPath:indexPath];
-    [btnSender setTitle:c.textLabel.text forState:UIControlStateNormal];
+  /*  UITableViewCell *c = [tableView cellForRowAtIndexPath:indexPath];
+   // [btnSender setTitle:c.textLabel.text forState:UIControlStateNormal];
     
     for (UIView *subview in btnSender.subviews) {
         if ([subview isKindOfClass:[UIImageView class]]) {
@@ -143,7 +151,7 @@
     imgView.image = c.imageView.image;
     imgView = [[UIImageView alloc] initWithImage:c.imageView.image];
     imgView.frame = CGRectMake(5, 5, 25, 25);
-    [btnSender addSubview:imgView];
+    [btnSender addSubview:imgView];*/
     [self myDelegate];
 }
 
