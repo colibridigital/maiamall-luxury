@@ -12,6 +12,7 @@
 @interface ProductDetailViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) IBOutlet ItemsSimilarCollectionView *similarItemsList;
+- (IBAction)retailPageButtonClicked:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 @property (weak, nonatomic) IBOutlet UILabel *productTitle;

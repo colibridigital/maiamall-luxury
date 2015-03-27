@@ -43,6 +43,10 @@
 		15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7532D1AC3209300F2D39D /* FilterMenuCell.m */; };
 		15E753301AC3209300F2D39D /* FilterMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E7532E1AC3209300F2D39D /* FilterMenuCell.xib */; };
 		15E753321AC3299600F2D39D /* Alphabetical Sorting Az-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E753311AC3299600F2D39D /* Alphabetical Sorting Az-50.png */; };
+		15E753451AC570AC00F2D39D /* News Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E753441AC570AC00F2D39D /* News Filled-50.png */; };
+		15E753491AC573AA00F2D39D /* RetailDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753481AC573AA00F2D39D /* RetailDetailViewController.m */; };
+		15E7534D1AC5934300F2D39D /* BlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7534C1AC5934300F2D39D /* BlogViewController.m */; };
+		15E7534F1AC59F5D00F2D39D /* donVersace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15E7534E1AC59F5D00F2D39D /* donVersace.jpg */; };
 		1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0F2F1AB4B00D00F85C01 /* SWRevealViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
@@ -130,6 +134,12 @@
 		15E7532D1AC3209300F2D39D /* FilterMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterMenuCell.m; sourceTree = "<group>"; };
 		15E7532E1AC3209300F2D39D /* FilterMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterMenuCell.xib; sourceTree = "<group>"; };
 		15E753311AC3299600F2D39D /* Alphabetical Sorting Az-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alphabetical Sorting Az-50.png"; sourceTree = "<group>"; };
+		15E753441AC570AC00F2D39D /* News Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "News Filled-50.png"; sourceTree = "<group>"; };
+		15E753471AC573AA00F2D39D /* RetailDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetailDetailViewController.h; sourceTree = "<group>"; };
+		15E753481AC573AA00F2D39D /* RetailDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetailDetailViewController.m; sourceTree = "<group>"; };
+		15E7534B1AC5934300F2D39D /* BlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogViewController.h; sourceTree = "<group>"; };
+		15E7534C1AC5934300F2D39D /* BlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogViewController.m; sourceTree = "<group>"; };
+		15E7534E1AC59F5D00F2D39D /* donVersace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = donVersace.jpg; sourceTree = "<group>"; };
 		1A3F0F2E1AB4B00D00F85C01 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1A3F0F2F1AB4B00D00F85C01 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1A3F0F311AB4B6D800F85C01 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
@@ -348,6 +358,24 @@
 			name = FilterMenuCell;
 			sourceTree = "<group>";
 		};
+		15E753461AC5738B00F2D39D /* RetailDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15E753471AC573AA00F2D39D /* RetailDetailViewController.h */,
+				15E753481AC573AA00F2D39D /* RetailDetailViewController.m */,
+			);
+			name = RetailDetailViewController;
+			sourceTree = "<group>";
+		};
+		15E7534A1AC5933200F2D39D /* BlogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15E7534B1AC5934300F2D39D /* BlogViewController.h */,
+				15E7534C1AC5934300F2D39D /* BlogViewController.m */,
+			);
+			name = BlogViewController;
+			sourceTree = "<group>";
+		};
 		1A3F0F2D1AB4AFF800F85C01 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +417,8 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15E7534A1AC5933200F2D39D /* BlogViewController */,
+				15E753461AC5738B00F2D39D /* RetailDetailViewController */,
 				15E7532B1AC3206F00F2D39D /* FilterMenuCell */,
 				15E753271AC318C600F2D39D /* NIDropDown */,
 				15E7531B1AC2C4CE00F2D39D /* ItemsSimilarCollectionViewCell */,
@@ -438,6 +468,8 @@
 		F4EECF34177C9A1E00778578 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				15E7534E1AC59F5D00F2D39D /* donVersace.jpg */,
+				15E753441AC570AC00F2D39D /* News Filled-50.png */,
 				15E753311AC3299600F2D39D /* Alphabetical Sorting Az-50.png */,
 				15E753211AC2C82900F2D39D /* harrods.png */,
 				157562901AC087D3001FAE38 /* msImage.png */,
@@ -543,6 +575,8 @@
 				F4EECF5B177F384900778578 /* bookmark.png in Resources */,
 				F4EECF5C177F384900778578 /* calendar.png in Resources */,
 				15E753201AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib in Resources */,
+				15E7534F1AC59F5D00F2D39D /* donVersace.jpg in Resources */,
+				15E753451AC570AC00F2D39D /* News Filled-50.png in Resources */,
 				F4EECF5D177F384900778578 /* comments.png in Resources */,
 				15AD00061AB9C33400B8B1D1 /* TrendCollectionViewCell.xib in Resources */,
 				F4EECF5E177F384900778578 /* map.png in Resources */,
@@ -584,11 +618,13 @@
 			files = (
 				15AD00371AB9E6AB00B8B1D1 /* ProductListViewController.m in Sources */,
 				15AD00051AB9C33400B8B1D1 /* TrendCollectionViewCell.m in Sources */,
+				15E7534D1AC5934300F2D39D /* BlogViewController.m in Sources */,
 				1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */,
 				1575628D1AC0835D001FAE38 /* CollectionsCollectionView.m in Sources */,
 				1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */,
 				15E7531A1AC2C47500F2D39D /* ItemsSimilarCollectionView.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
+				15E753491AC573AA00F2D39D /* RetailDetailViewController.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				157562891AC082DF001FAE38 /* FavouritesListCollectionView.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,

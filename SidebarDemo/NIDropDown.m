@@ -60,6 +60,7 @@
         [table setUserInteractionEnabled:YES];
         [table setMultipleTouchEnabled:YES];
         
+        
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:0.5];
         if ([direction isEqualToString:@"up"]) {
@@ -71,6 +72,8 @@
         [UIView commitAnimations];
         [b.superview addSubview:self];
         [self addSubview:table];
+        
+
     }
     
     return self;
@@ -146,7 +149,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self hideDropDown:btnSender];
     
-    FilterMenuCell *c = (FilterMenuCell*)[tableView cellForRowAtIndexPath:indexPath];
+   // FilterMenuCell *c = (FilterMenuCell*)[tableView cellForRowAtIndexPath:indexPath];
     
     if (indexPath.row == 0) {
         NSLog(@"show cell 0");

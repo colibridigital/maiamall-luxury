@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad
 {
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -49,28 +50,57 @@
     [self.trendCollectionView reloadData];
     [self.productCollectionView reloadData];
     
+    [self.dropDown setDelegate:self];
     
-   // [self addGestureRecognizer2:self.trendCollectionView];
+    [self.view addSubview:self.dropDown];
     
-   /* UITapGestureRecognizer* gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    gestureRecognizer.cancelsTouchesInView = NO;
-    [dropDown addGestureRecognizer:gestureRecognizer];
-    gestureRecognizer.delegate = self;*/
+    
+    //[self addGestureRecognizer:self.productCollectionView];
+    
+     // gestureRecognizer.delegate = self;
     
     self.tabBarController.delegate = self;
     
-    dropDown.delegate = self;
+    
    // dropDown.table.delegate = self;
     
     [super viewDidLoad];
 
 }
 
+
+//-(void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
+//      if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+//            return;
+//        }
+//    CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
+//    
+//    NSIndexPath *index = [self.dropDown.table indexPathForRowAtPoint:p];
+//    
+//    if (index.row == 1) {
+//    
+//        NSLog(@"index : %li", (long)index.row);
+//    }else {
+//         NSLog(@"indexxxx : %li", (long)index.row);
+//    }
+//}
+
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+   // NSLog(@"Touch detected");
+    
     [self.view endEditing:YES];
     [self.searchBar resignFirstResponder];
     
 }
+
+/*- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    return CGRectContainsPoint([[self dropDown] frame], [touch locationInView:[self view]]) && !(CGRectContainsPoint([[self trendCollectionView] frame], [touch locationInView:[self view]]));
+}*/
+
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     // return
@@ -100,7 +130,16 @@
         [self showViewController:map sender:self];
        // [item setEnabled:YES];
         
+    } else if (item.tag == 3) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"blogNav"];
+        
+        // [self performSegueWithIdentifier:@"mapNav" sender:self];
+        
+        [self showViewController:map sender:self];
     }
+
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -139,7 +178,7 @@
     
 }
 
-- (void)addGestureRecognizer2:(TrendCollectionView *)collectionView{
+- (void)addGestureRecognizer:(UICollectionView *)collectionView{
     //    UILongPressGestureRecognizer *lpgr
     //    = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     //    lpgr.minimumPressDuration = 1.0; //seconds
@@ -155,48 +194,28 @@
 }
 
 
-- (void)addGestureRecognizer:(ProductCollectionView *)collectionView{
-//    UILongPressGestureRecognizer *lpgr
-//    = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-//    lpgr.minimumPressDuration = 1.0; //seconds
-//    lpgr.delaysTouchesBegan = YES;
-//    lpgr.delegate = self;
-//    [collectionView addGestureRecognizer:lpgr];
-    
-   /* NSLog(@"in here");
-    
-    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    tgr.delegate = self;
-    [collectionView addGestureRecognizer:tgr];*/
-}
-
--(void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
-        return;
-    }
-    
- //   CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
-    
-  //  NSIndexPath *index = [self.trendCollectionView indexPathForItemAtPoint:p];
-    
-   // ProductListViewController *prodListDetails = [[ProductListViewController alloc] initWithNibName:@"ProductListViewController" bundle:nil];
-    
-    
-    // NSLog(@"handling tap gesture");
-    
-    /*if ([gestureRecognizer.view isEqual:self.productCollectionView]) {
-        
-         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        
-        ProductListViewController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodList"];
-       // [prodListDetails setModalPresentationStyle:UIModalPresentationNone];
-      
-        [self presentViewController:prodListDetails animated:NO completion:nil];
-    }*/
-    
-
-    [self.searchBar resignFirstResponder];
-}
+//-(void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
+//    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+//        return;
+//    }
+//    
+//    CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
+//    
+//   // NSIndexPath *index = [self.productCollectionView indexPathForItemAtPoint:p];
+//    
+//    if ([gestureRecognizer.view isEqual:self.productCollectionView]) {
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+//        
+//        UINavigationController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodList"];
+//        
+//        // [prodListDetails setModalPresentationStyle:UIModalPresentationNone];
+//        
+//        [self presentViewController:prodListDetails animated:NO completion:nil];
+//
+//    }
+//
+//    [self.searchBar resignFirstResponder];
+//}
 
 
 
@@ -230,21 +249,29 @@
 
 - (IBAction)filterSearchMenuClicked:(id)sender {
     
+    [self.view bringSubviewToFront:self.dropDown];
+    
+    self.dropDown.userInteractionEnabled = TRUE;
+    self.dropDown.table.userInteractionEnabled = TRUE;
+    
+    
     NSArray * arr = [[NSArray alloc] init];
     arr = [NSArray arrayWithObjects:@"", @"",@"", nil];
     NSArray * arrImage = [[NSArray alloc] init];
     arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"Alphabetical Sorting Az-50.png"], [UIImage imageNamed:@"Location Filled-50.png"], [UIImage imageNamed:@"Price Tag Pound Filled-50.png"], nil];
-    if(dropDown == nil) {
+    if(self.dropDown == nil) {
         CGFloat f = 120;
-        dropDown = [[NIDropDown alloc]showDropDown:sender :&f :arr :arrImage :@"down"];
-        dropDown.delegate = self;
+        self.dropDown = [[NIDropDown alloc]showDropDown:sender :&f :arr :arrImage :@"down"];
+        self.dropDown.delegate = self;
     }
     else {
-        [dropDown hideDropDown:sender];
+        [self.dropDown hideDropDown:sender];
         [self rel];
     }
     
 }
+
+
 
 - (void) niDropDownDelegateMethod: (NIDropDown *) sender {
     [self rel];
@@ -252,7 +279,7 @@
 
 -(void)rel{
     //    [dropDown release];
-    dropDown = nil;
+    self.dropDown = nil;
 }
 
 

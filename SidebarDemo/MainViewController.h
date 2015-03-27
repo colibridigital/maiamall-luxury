@@ -14,7 +14,7 @@
 @interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, NIDropDownDelegate> {
     
     IBOutlet UIButton *filterSearchMenuButton;
-    NIDropDown *dropDown;
+    
     
 }
 
@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet ProductCollectionView *productCollectionView;
 
 - (IBAction)filterSearchMenuClicked:(id)sender;
+
+@property(strong, nonatomic) IBOutlet NIDropDown *dropDown;
 
 @property (strong, nonatomic) IBOutlet UIButton *filterSearchMenuButton;
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -8,27 +8,27 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PROD_CELL" id="gTV-IL-0wX" customClass="ProductCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="85" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="93" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="85" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="93" height="120"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-mM-r3k">
-                        <rect key="frame" x="0.0" y="0.0" width="85" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="93" height="120"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="Tgi-mM-r3k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="RGs-4e-MWc"/>
-                <constraint firstItem="Tgi-mM-r3k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZXV-a5-gq3"/>
-                <constraint firstAttribute="trailing" secondItem="Tgi-mM-r3k" secondAttribute="trailing" id="kJk-WO-mf6"/>
-                <constraint firstAttribute="bottom" secondItem="Tgi-mM-r3k" secondAttribute="bottom" id="uWz-RF-JAa"/>
+                <constraint firstItem="Tgi-mM-r3k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="49M-gA-rKj"/>
+                <constraint firstItem="Tgi-mM-r3k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9rC-uO-PFl"/>
+                <constraint firstAttribute="bottom" secondItem="Tgi-mM-r3k" secondAttribute="bottom" id="InX-Nc-YnT"/>
+                <constraint firstAttribute="trailing" secondItem="Tgi-mM-r3k" secondAttribute="trailing" id="Qp1-FQ-B1s"/>
             </constraints>
             <connections>
                 <outlet property="productImage" destination="Tgi-mM-r3k" id="g1Z-2C-PXF"/>
             </connections>
-            <point key="canvasLocation" x="477.5" y="410"/>
+            <point key="canvasLocation" x="476.5" y="410"/>
         </collectionViewCell>
     </objects>
     <resources>

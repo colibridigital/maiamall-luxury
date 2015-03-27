@@ -1,21 +1,19 @@
 //
-//  ProductDetailViewController.m
+//  BlogViewController.m
 //  MaiaMall
 //
-//  Created by Ingrid Funie on 19/03/2015.
+//  Created by Ingrid Funie on 27/03/2015.
 //  Copyright (c) 2015 Appcoda. All rights reserved.
 //
 
-#import "ProductDetailViewController.h"
+#import "BlogViewController.h"
 #import "SWRevealViewController.h"
-#import "ItemsSimilarCollectionViewCell.h"
 
-@interface ProductDetailViewController ()
+@interface BlogViewController ()
 
 @end
 
-@implementation ProductDetailViewController
-
+@implementation BlogViewController
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -45,10 +43,52 @@
     [searchBarView addSubview:self.searchBar];
     self.navigationItem.titleView = searchBarView;
     
+    self.folllowButton.layer.cornerRadius = 2;
+    self.folllowButton.layer.borderWidth = 1;
+    self.folllowButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    self.firstBlogPage.layer.cornerRadius = 1;
+    self.firstBlogPage.layer.borderWidth = 2;
+    self.firstBlogPage.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    
+    self.firstBlogPage.text = @"Culottes and jumpsuits can be intimidating pieces to pull off—put the two together and you’ve got quite the challenge. But before you wave the white flag in sartorial surrender, consider this advice from Rebecca Taylor: As the talented designer recently told InStyle, ''It’s all about proportions—make sure the length hits midcalf and pair it with a wedge to elongate your legs.'' So, are you ready to test out the season’s coolest look?";
+    
+    self.secondBlogPage.layer.cornerRadius = 1;
+    self.secondBlogPage.layer.borderWidth = 2;
+    self.secondBlogPage.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    
+    self.secondBlogPage.text = @"Parisians have had a love affair with Los Angeles for a while now, but in recent years fashion types have seemed particularly drawn to the city. The casual California aesthetic can be found at the core of many Parisian-designed collections, while French fashion bloggers are regularly spotted posing amongst L.A.’s palm trees in those very wares. When Hedi Slimane boldly decided to move the Saint Laurent studio from Paris to the West Coast city, it was clear the infatuation had reached its peak. Though the area does have a robust garment industry, it’s of no use to designers like Slimane, whose collections are currently executed in France. ''Los Angeles has a vibrant mythology that I find rather inspiring,'' Slimane has explained to The New York Times.";
+
+    self.thirdBlogPage.layer.cornerRadius = 1;
+    self.thirdBlogPage.layer.borderWidth = 2;
+    self.thirdBlogPage.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    
+    self.thirdBlogPage.text = @"Ultra-flattering flared jeans are back, and we couldn’t be happier about it. Wear them as you would any other pair of pants. If you’re on the petite side, we highly recommend opting for a longer style paired with heels.";
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sndTextViewTapped:)];
+    [self.secondBlogPage addGestureRecognizer:gestureRecognizer];
+    
+    UITapGestureRecognizer *gestureRecognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(thirdTextViewTapped:)];
+    [self.thirdBlogPage addGestureRecognizer:gestureRecognizer2];
+    
     self.tabBarController.delegate =self;
     
-    [self.similarItemsList registerNibAndCell];
-    [self.similarItemsList reloadData];
+}
+
+-(void)sndTextViewTapped:(UITapGestureRecognizer *)gestureRecognizer {
+    NSString* textToKeep = self.firstBlogPage.text;
+    
+    self.firstBlogPage.text = self.secondBlogPage.text;
+    self.secondBlogPage.text = textToKeep;
+    
+}
+
+-(void)thirdTextViewTapped:(UITapGestureRecognizer *)gestureRecognizer {
+    NSString* textToKeep = self.firstBlogPage.text;
+    
+    self.firstBlogPage.text = self.thirdBlogPage.text;
+    self.thirdBlogPage.text = textToKeep;
+    
 }
 
 - (void)viewDidLoad
@@ -56,7 +96,7 @@
     [super viewDidLoad];
     
     [self initialiseMenuItems];
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -100,18 +140,6 @@
     }
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return 10;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    ItemsSimilarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ISIM_CELL" forIndexPath:indexPath];
-        return cell;
-    
-}
-
 
 /*
 #pragma mark - Navigation
@@ -123,11 +151,4 @@
 }
 */
 
-- (IBAction)retailPageButtonClicked:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    
-    UINavigationController *ret = [storyboard instantiateViewControllerWithIdentifier:@"retNav"];
-    
-    [self showViewController:ret sender:self];
-}
 @end

@@ -1,36 +1,20 @@
 //
-//  ProfileViewController.m
+//  RetailDetailViewController.m
 //  MaiaMall
 //
-//  Created by Ingrid Funie on 20/03/2015.
+//  Created by Ingrid Funie on 27/03/2015.
 //  Copyright (c) 2015 Appcoda. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "RetailDetailViewController.h"
 #import "SWRevealViewController.h"
-#import "ProductCollectionViewCell.h"
-#import "CollectionsCollectionViewCell.h"
-#import <QuartzCore/QuartzCore.h>
 
-@interface ProfileViewController ()
+@interface RetailDetailViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation RetailDetailViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [self initialiseMenuItems];
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:NO];
-    
-    [self initialiseMenuItems];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -59,18 +43,22 @@
     [searchBarView addSubview:self.searchBar];
     self.navigationItem.titleView = searchBarView;
     
-    self.folllowButton.layer.cornerRadius = 2;
-    self.folllowButton.layer.borderWidth = 1;
-    self.folllowButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.tabBarController.delegate =self;
     
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
     
-    [self.favsCollectionView registerNibAndCell];
-    [self.collsCollectionView registerNibAndCell];
+    [self initialiseMenuItems];
     
-    [self.favsCollectionView reloadData];
-    [self.collsCollectionView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:NO];
     
-    self.tabBarController.delegate = self;
+    [self initialiseMenuItems];
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
@@ -86,15 +74,17 @@
         
         UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"mapNav"];
         
+        // [self performSegueWithIdentifier:@"mapNav" sender:self];
+        
         [self showViewController:map sender:self];
     } else if (item.tag == 2) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
         UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"homeNav"];
         
-        [self showViewController:map sender:self];
-        // [item setEnabled:YES];
+        // [self performSegueWithIdentifier:@"mapNav" sender:self];
         
+        [self showViewController:map sender:self];
     } else if (item.tag == 3) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
@@ -105,54 +95,6 @@
         [self showViewController:map sender:self];
     }
 }
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    if (collectionView == self.collsCollectionView) {
-        return 5;
-    } else if (collectionView == self.favsCollectionView) {
-        return 20;
-    }
-    
-    else return 0;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if (collectionView == self.collsCollectionView) {
-        CollectionsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"COLL_CELL" forIndexPath:indexPath];
-        
-        return cell;
-    } else {
-        ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PROD_CELL" forIndexPath:indexPath];
-        
-        return cell;
-
-    }
-    
-}
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (collectionView == self.favsCollectionView) {
-    
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    
-        UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
-    
-        [self showViewController:det sender:self];
-    } else {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        
-        UINavigationController *prod = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
-        
-        [self showViewController:prod sender:self];
-
-    } 
-    
-}
-
 
 
 /*
