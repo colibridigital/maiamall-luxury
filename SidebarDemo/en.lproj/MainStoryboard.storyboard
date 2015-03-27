@@ -280,6 +280,7 @@
                         <segue destination="pNL-cj-eqT" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="idQ-MF-3kb"/>
                         <segue destination="GGM-vs-oWP" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="MqN-dR-mlC"/>
                         <segue destination="c3M-xw-OHS" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="qkZ-hm-BSr"/>
+                        <segue destination="qC6-wg-trU" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="Uef-IB-1ZF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4c-d4-88L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1153,6 +1154,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MvS-HC-zr1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="969" y="2300"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BUx-Yx-KCL">
+            <objects>
+                <navigationController storyboardIdentifier="collectionNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qC6-wg-trU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RNH-D8-itc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yE4-j4-fYN" kind="relationship" relationship="rootViewController" id="oR7-44-Vh1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOs-mI-4Ay" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305" y="1646"/>
+        </scene>
+        <!--Collection List Collection View Controller-->
+        <scene sceneID="HKR-lx-y0k">
+            <objects>
+                <viewController title="Collection List Collection View Controller" id="yE4-j4-fYN" customClass="CollectionListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nTD-ZS-ruf"/>
+                        <viewControllerLayoutGuide type="bottom" id="rhL-f4-riu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8P9-XG-t6t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s74-sH-1o5">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem image="User-50.png" id="Nmt-jY-0ok">
+                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="wbb-9r-wWa">
+                                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="1" image="Location Filled-50.png" id="2An-Av-mhk">
+                                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="2" title="" image="Home-50.png" id="xHt-aG-c2X">
+                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                    </tabBarItem>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summer Collection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1A-D7-joi">
+                                <rect key="frame" x="16" y="72" width="288" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BqR-aJ-ADx" customClass="CollectionDetailCollectionView">
+                                <rect key="frame" x="16" y="101" width="288" height="415"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="10" id="B41-bM-7KO">
+                                    <size key="itemSize" width="200" height="275"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="COLLDET_CELL" id="SuA-ls-vOH" customClass="CollectionDetailCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="275"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="200" height="275"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="yE4-j4-fYN" id="ZMd-Q9-k7H"/>
+                                    <outlet property="delegate" destination="yE4-j4-fYN" id="lb2-fK-gdt"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="794-ro-h24">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="ExV-Ly-Xpk">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="MXP-i5-a0e">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionDetailView" destination="BqR-aJ-ADx" id="PvO-dT-BSW"/>
+                        <outlet property="filterSearchMenu" destination="MXP-i5-a0e" id="iWx-Nz-KUh"/>
+                        <outlet property="sidebarButton" destination="ExV-Ly-Xpk" id="J8J-gn-4J4"/>
+                        <outlet property="tabBarController" destination="s74-sH-1o5" id="blg-fK-FJP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MbJ-22-Owr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1733" y="1640"/>
         </scene>
     </scenes>
     <resources>

@@ -145,7 +145,7 @@
     } else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
-        UINavigationController *prod = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
+        UINavigationController *prod = [storyboard instantiateViewControllerWithIdentifier:@"collectionNav"];
         
         [self showViewController:prod sender:self];
 
