@@ -10,10 +10,15 @@
 #import "TrendCollectionView.h"
 #import "ProductCollectionView.h"
 #import "NIDropDown.h"
+#import "AppDelegate.h"
+#import "WYPopoverController.h"
+#import "WYStoryboardPopoverSegue.h"
 
-@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, NIDropDownDelegate> {
+@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, NIDropDownDelegate, WYPopoverControllerDelegate>
+ {
     
-    IBOutlet UIButton *filterSearchMenuButton;
+    WYPopoverController *anotherPopoverController;
+
     
     
 }
@@ -21,12 +26,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet TrendCollectionView *trendCollectionView;
 @property (weak, nonatomic) IBOutlet ProductCollectionView *productCollectionView;
-
-- (IBAction)filterSearchMenuClicked:(id)sender;
+@property (strong, nonatomic) IBOutlet AppDelegate *appDelegate;
 
 @property(strong, nonatomic) IBOutlet NIDropDown *dropDown;
-
-@property (strong, nonatomic) IBOutlet UIButton *filterSearchMenuButton;
 
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 

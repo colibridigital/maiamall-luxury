@@ -18,7 +18,6 @@
 @end
 
 @implementation MainViewController
-@synthesize filterSearchMenuButton;
 
 - (void)viewDidLoad
 {
@@ -39,6 +38,8 @@
     //searchBar.backgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"MaiaMall-Logo-Light" ofType: @"jpg"]];
     self.searchBar.backgroundImage = [[UIImage alloc] init];
 
+    
+    self.appDelegate = [[AppDelegate alloc] init];
     
     [searchBarView addSubview:self.searchBar];
     self.navigationItem.titleView = searchBarView;
@@ -160,6 +161,7 @@
         return cell;
     } else {
         ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PROD_CELL" forIndexPath:indexPath];
+        
         return cell;
     }
     
@@ -247,9 +249,13 @@
 }
 
 
+
+
+
+/*
 - (IBAction)filterSearchMenuClicked:(id)sender {
     
-    [self.view bringSubviewToFront:self.dropDown];
+   /* [self.view bringSubviewToFront:self.dropDown];
     
     self.dropDown.userInteractionEnabled = TRUE;
     self.dropDown.table.userInteractionEnabled = TRUE;
@@ -267,11 +273,65 @@
     else {
         [self.dropDown hideDropDown:sender];
         [self rel];
-    }
+    }*/
     
+//}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"FilterMenuSegue"])
+    {
+        NSLog(@"in here");
+        
+        WYStoryboardPopoverSegue *popoverSegue = (WYStoryboardPopoverSegue *)segue;
+        anotherPopoverController = [popoverSegue popoverControllerWithSender:sender
+                                                    permittedArrowDirections:WYPopoverArrowDirectionDown
+                                                                    animated:YES
+                                                                     options:WYPopoverAnimationOptionFadeWithScale];
+        
+        anotherPopoverController.popoverContentSize = CGSizeMake(220, 360);
+        
+        anotherPopoverController.delegate = self;
+    }
+}
+
+#pragma mark - WYPopoverControllerDelegate
+
+- (void)popoverControllerDidPresentPopover:(WYPopoverController *)controller
+{
+    NSLog(@"popoverControllerDidPresentPopover");
+}
+
+- (BOOL)popoverControllerShouldDismissPopover:(WYPopoverController *)controller
+{
+    return YES;
+}
+
+- (void)popoverControllerDidDismissPopover:(WYPopoverController *)controller
+{
+    if (controller == anotherPopoverController)
+    {
+        anotherPopoverController.delegate = nil;
+        anotherPopoverController = nil;
+    }
+   
+}
+
+- (BOOL)popoverControllerShouldIgnoreKeyboardBounds:(WYPopoverController *)popoverController
+{
+    return YES;
+}
+
+- (void)popoverController:(WYPopoverController *)popoverController willTranslatePopoverWithYOffset:(float *)value
+{
+    // keyboard is shown and the popover will be moved up by 163 pixels for example ( *value = 163 )
+    *value = 0; // set value to 0 if you want to avoid the popover to be moved
 }
 
 
+//uncomment this if using the old menu (the nice one)
+/*
 
 - (void) niDropDownDelegateMethod: (NIDropDown *) sender {
     [self rel];
@@ -280,7 +340,7 @@
 -(void)rel{
     //    [dropDown release];
     self.dropDown = nil;
-}
+}*/
 
 
 @end

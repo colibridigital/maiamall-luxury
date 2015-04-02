@@ -26,7 +26,7 @@
                 <constraint firstAttribute="trailing" secondItem="Tgi-mM-r3k" secondAttribute="trailing" id="Qp1-FQ-B1s"/>
             </constraints>
             <connections>
-                <outlet property="productImage" destination="Tgi-mM-r3k" id="g1Z-2C-PXF"/>
+                <outlet property="productImage" destination="Tgi-mM-r3k" id="VCB-We-URX"/>
             </connections>
             <point key="canvasLocation" x="476.5" y="410"/>
         </collectionViewCell>

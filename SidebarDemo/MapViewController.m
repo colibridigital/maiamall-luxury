@@ -88,6 +88,14 @@
         
         [self showViewController:map sender:self];
 
+    } else if (item.tag == 3) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        UINavigationController *map = [storyboard instantiateViewControllerWithIdentifier:@"blogNav"];
+        
+        // [self performSegueWithIdentifier:@"mapNav" sender:self];
+        
+        [self showViewController:map sender:self];
     }
 }
 
