@@ -11,10 +11,16 @@
 
 @interface RetailDetailViewController ()
 
+@property (strong, nonatomic) MMDStore * currentStore;
+
 @end
 
 @implementation RetailDetailViewController
 
+
+- (void)initWithStore:(MMDStore*)store {
+    self.currentStore = store;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -53,13 +59,18 @@
     
     [self initialiseMenuItems];
     
+    self.brandTitle.text = self.currentStore.storeTitle;
+    self.brandDescription.text = self.currentStore.storeDescription;
+    self.brandImage.image = self.currentStore.storeLogo;
+
+    
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+/*- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:NO];
     
     [self initialiseMenuItems];
-}
+}*/
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     if (item.tag == 0) {

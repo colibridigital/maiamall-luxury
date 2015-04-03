@@ -952,7 +952,7 @@
         <!--Retail Detail View Controller-->
         <scene sceneID="A0D-U0-hWF">
             <objects>
-                <viewController title="Retail Detail View Controller" id="IlW-x3-Xd7" customClass="RetailDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="retailPage" title="Retail Detail View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IlW-x3-Xd7" customClass="RetailDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s8b-1H-22g"/>
                         <viewControllerLayoutGuide type="bottom" id="NA6-VD-lUN"/>
@@ -1080,6 +1080,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="brandDescription" destination="LY4-br-vVX" id="cDE-bR-io9"/>
+                        <outlet property="brandImage" destination="kko-9z-SV7" id="YlO-e2-Ydi"/>
+                        <outlet property="brandTitle" destination="coZ-Hz-P4Q" id="8H4-ax-Ib0"/>
                         <outlet property="filterSearchMenu" destination="bBX-8H-4d7" id="rhj-vf-wmo"/>
                         <outlet property="sidebarButton" destination="x8M-Jj-P15" id="F5X-JG-Kvj"/>
                         <outlet property="tabBarController" destination="3u9-wh-6nN" id="RPH-u3-vhX"/>

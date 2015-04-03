@@ -9,6 +9,7 @@
 #import "ProductDetailViewController.h"
 #import "SWRevealViewController.h"
 #import "ItemsSimilarCollectionViewCell.h"
+#import "RetailDetailViewController.h"
 
 @interface ProductDetailViewController ()
 @property (strong, nonatomic) MMDItem * currentItemToShow;
@@ -193,8 +194,13 @@
 - (IBAction)retailPageButtonClicked:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
-    UINavigationController *ret = [storyboard instantiateViewControllerWithIdentifier:@"retNav"];
+   // UINavigationController *ret = [storyboard instantiateViewControllerWithIdentifier:@"retNav"];
     
-    [self showViewController:ret sender:self];
+    RetailDetailViewController * brandPage = [storyboard instantiateViewControllerWithIdentifier:@"retailPage"];
+    [brandPage initWithStore:self.currentItemToShow.itemStore];
+    [self.navigationController pushViewController:brandPage animated:YES];
+
+    
+   // [self showViewController:ret sender:self];
 }
 @end
