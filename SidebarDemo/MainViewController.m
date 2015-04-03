@@ -252,13 +252,36 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
-    UINavigationController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
+    //UINavigationController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
     
-    [self showViewController:prodListDetails sender:self];
+   // [self showViewController:prodListDetails sender:self];
     
     [self.searchBar resignFirstResponder];
+    
+    
+    dispatch_async(dispatch_queue_create("Search", nil), ^{
+        
+        NSMutableArray * arrayWithSearchResults = [[NSMutableArray alloc] init];
+        
+        for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
+            if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound && item.itemGender == female) {
+                [arrayWithSearchResults addObject:item];
+            }
+        }
+        
+        if (arrayWithSearchResults.count > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                ProductListViewController * searchPage = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+                [searchPage initWithArrayWithSearchResults:arrayWithSearchResults andTextForSearch:self.searchBar.text];
+                [self.navigationController pushViewController:searchPage animated:YES];
+            });
+        }
+    });
+
+    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField

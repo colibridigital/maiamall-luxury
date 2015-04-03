@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProductListCollectionView.h"
+#import "MMDItem.h"
 
 @interface ProductListViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITabBarControllerDelegate, UITabBarDelegate>
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
@@ -15,4 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
+- (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText;
+
+
 @end

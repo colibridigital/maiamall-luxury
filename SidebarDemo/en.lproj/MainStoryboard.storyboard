@@ -428,7 +428,7 @@
         <!--Product List View Controller-->
         <scene sceneID="hMV-z1-ILs">
             <objects>
-                <viewController title="Product List View Controller" id="kUH-f6-7eD" customClass="ProductListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="prodListSearchDetails" title="Product List View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUH-f6-7eD" customClass="ProductListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sXU-cL-NQU"/>
                         <viewControllerLayoutGuide type="bottom" id="jpn-OE-hsw"/>

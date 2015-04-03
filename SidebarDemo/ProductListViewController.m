@@ -9,10 +9,12 @@
 #import "ProductListViewController.h"
 #import "ProductListCollectionViewCell.h"
 #import "SWRevealViewController.h"
+#import "ProductDetailViewController.h"
 
 
 @interface ProductListViewController ()
-
+@property (strong, nonatomic) NSMutableArray * arrayWithSearchResults; //array of MMDItems
+@property (strong, nonatomic) NSString * searchText;
 @end
 
 @implementation ProductListViewController
@@ -34,11 +36,18 @@
     //searchBar.backgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"MaiaMall-Logo-Light" ofType: @"jpg"]];
     self.searchBar.backgroundImage = [[UIImage alloc] init];
     
+    [self.searchBar setText:self.searchText];
+
     
     [searchBarView addSubview:self.searchBar];
     self.navigationItem.titleView = searchBarView;
     
     self.tabBarController.delegate = self;
+}
+
+- (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText {
+    self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:[array copy]];
+    self.searchText = searchText;
 }
 
 - (void)viewDidLoad {
@@ -107,12 +116,14 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 40;
+    return self.arrayWithSearchResults.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DETAIL_CELL" forIndexPath:indexPath];
+    
+    cell.detailImage.image = ((MMDItem*)[self.arrayWithSearchResults objectAtIndex:indexPath.row]).itemImage;
     
    // UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"product2" ofType: @"png"]];
     
@@ -124,9 +135,17 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
-    UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
+    ProductDetailViewController *prodDetail = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
+    
+    MMDItem* item = [self.arrayWithSearchResults objectAtIndex:indexPath.row];
+    
+    [prodDetail initWithItem:item];
+    
+    [self.navigationController pushViewController:prodDetail animated:YES];
+    
+    //UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
         
-    [self showViewController:det sender:self];
+    //[self showViewController:det sender:self];
 
 }
 
