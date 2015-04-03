@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMDDataBase.h"
+#import "DefineKeys.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-- (NSMutableArray*)getSomeDataForRecommendations;
 
 @end

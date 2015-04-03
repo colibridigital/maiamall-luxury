@@ -58,7 +58,6 @@
 		15E7535A1AC5AB0400F2D39D /* CollectionDetailCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753591AC5AB0400F2D39D /* CollectionDetailCollectionView.m */; };
 		15E753631AC5AB9C00F2D39D /* CollectionDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753611AC5AB9C00F2D39D /* CollectionDetailCollectionViewCell.m */; };
 		15E753641AC5AB9C00F2D39D /* CollectionDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E753621AC5AB9C00F2D39D /* CollectionDetailCollectionViewCell.xib */; };
-		15E753661AC5C3BE00F2D39D /* maiamall.s3db in Resources */ = {isa = PBXBuildFile; fileRef = 15E753651AC5C3BE00F2D39D /* maiamall.s3db */; };
 		15E753731AC5C63000F2D39D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753691AC5C63000F2D39D /* FMDatabase.m */; };
 		15E753741AC5C63000F2D39D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7536B1AC5C63000F2D39D /* FMDatabaseAdditions.m */; };
 		15E753751AC5C63000F2D39D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7536D1AC5C63000F2D39D /* FMDatabasePool.m */; };
@@ -66,6 +65,14 @@
 		15E753771AC5C63000F2D39D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753721AC5C63000F2D39D /* FMResultSet.m */; };
 		15E753791AC5C67800F2D39D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E753781AC5C67800F2D39D /* libsqlite3.0.dylib */; };
 		15E7537B1AC5E8DC00F2D39D /* LVWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E7537A1AC5E8DC00F2D39D /* LVWall.png */; };
+		15ED18371ACED7EB0091E84A /* MMDBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED182A1ACED7EB0091E84A /* MMDBrand.m */; };
+		15ED18381ACED7EB0091E84A /* MMDCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED182C1ACED7EB0091E84A /* MMDCart.m */; };
+		15ED18391ACED7EB0091E84A /* MMDDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED182E1ACED7EB0091E84A /* MMDDataBase.m */; };
+		15ED183A1ACED7EB0091E84A /* MMDItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED18301ACED7EB0091E84A /* MMDItem.m */; };
+		15ED183B1ACED7EB0091E84A /* MMDOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED18321ACED7EB0091E84A /* MMDOffer.m */; };
+		15ED183C1ACED7EB0091E84A /* MMDStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED18341ACED7EB0091E84A /* MMDStore.m */; };
+		15ED183D1ACED7EB0091E84A /* MMDWishList.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED18361ACED7EB0091E84A /* MMDWishList.m */; };
+		15ED18411ACEE15E0091E84A /* maiamall.s3db in Resources */ = {isa = PBXBuildFile; fileRef = 15ED18401ACEE15E0091E84A /* maiamall.s3db */; };
 		1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0F2F1AB4B00D00F85C01 /* SWRevealViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
@@ -176,7 +183,6 @@
 		15E753601AC5AB9C00F2D39D /* CollectionDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionDetailCollectionViewCell.h; sourceTree = "<group>"; };
 		15E753611AC5AB9C00F2D39D /* CollectionDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionDetailCollectionViewCell.m; sourceTree = "<group>"; };
 		15E753621AC5AB9C00F2D39D /* CollectionDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionDetailCollectionViewCell.xib; sourceTree = "<group>"; };
-		15E753651AC5C3BE00F2D39D /* maiamall.s3db */ = {isa = PBXFileReference; lastKnownFileType = file; path = maiamall.s3db; sourceTree = "<group>"; };
 		15E753681AC5C63000F2D39D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = fmdb/FMDatabase.h; sourceTree = "<group>"; };
 		15E753691AC5C63000F2D39D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = fmdb/FMDatabase.m; sourceTree = "<group>"; };
 		15E7536A1AC5C63000F2D39D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -190,6 +196,22 @@
 		15E753721AC5C63000F2D39D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = fmdb/FMResultSet.m; sourceTree = "<group>"; };
 		15E753781AC5C67800F2D39D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		15E7537A1AC5E8DC00F2D39D /* LVWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LVWall.png; sourceTree = "<group>"; };
+		15ED18271ACED7EB0091E84A /* DefineKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineKeys.h; sourceTree = "<group>"; };
+		15ED18291ACED7EB0091E84A /* MMDBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDBrand.h; sourceTree = "<group>"; };
+		15ED182A1ACED7EB0091E84A /* MMDBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDBrand.m; sourceTree = "<group>"; };
+		15ED182B1ACED7EB0091E84A /* MMDCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDCart.h; sourceTree = "<group>"; };
+		15ED182C1ACED7EB0091E84A /* MMDCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDCart.m; sourceTree = "<group>"; };
+		15ED182D1ACED7EB0091E84A /* MMDDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDDataBase.h; sourceTree = "<group>"; };
+		15ED182E1ACED7EB0091E84A /* MMDDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDDataBase.m; sourceTree = "<group>"; };
+		15ED182F1ACED7EB0091E84A /* MMDItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDItem.h; sourceTree = "<group>"; };
+		15ED18301ACED7EB0091E84A /* MMDItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDItem.m; sourceTree = "<group>"; };
+		15ED18311ACED7EB0091E84A /* MMDOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDOffer.h; sourceTree = "<group>"; };
+		15ED18321ACED7EB0091E84A /* MMDOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDOffer.m; sourceTree = "<group>"; };
+		15ED18331ACED7EB0091E84A /* MMDStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDStore.h; sourceTree = "<group>"; };
+		15ED18341ACED7EB0091E84A /* MMDStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDStore.m; sourceTree = "<group>"; };
+		15ED18351ACED7EB0091E84A /* MMDWishList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDWishList.h; sourceTree = "<group>"; };
+		15ED18361ACED7EB0091E84A /* MMDWishList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDWishList.m; sourceTree = "<group>"; };
+		15ED18401ACEE15E0091E84A /* maiamall.s3db */ = {isa = PBXFileReference; lastKnownFileType = file; path = maiamall.s3db; sourceTree = "<group>"; };
 		1A3F0F2E1AB4B00D00F85C01 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1A3F0F2F1AB4B00D00F85C01 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1A3F0F311AB4B6D800F85C01 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
@@ -494,6 +516,27 @@
 			name = fmdb;
 			sourceTree = "<group>";
 		};
+		15ED18281ACED7EB0091E84A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15ED18291ACED7EB0091E84A /* MMDBrand.h */,
+				15ED182A1ACED7EB0091E84A /* MMDBrand.m */,
+				15ED182B1ACED7EB0091E84A /* MMDCart.h */,
+				15ED182C1ACED7EB0091E84A /* MMDCart.m */,
+				15ED182D1ACED7EB0091E84A /* MMDDataBase.h */,
+				15ED182E1ACED7EB0091E84A /* MMDDataBase.m */,
+				15ED182F1ACED7EB0091E84A /* MMDItem.h */,
+				15ED18301ACED7EB0091E84A /* MMDItem.m */,
+				15ED18311ACED7EB0091E84A /* MMDOffer.h */,
+				15ED18321ACED7EB0091E84A /* MMDOffer.m */,
+				15ED18331ACED7EB0091E84A /* MMDStore.h */,
+				15ED18341ACED7EB0091E84A /* MMDStore.m */,
+				15ED18351ACED7EB0091E84A /* MMDWishList.h */,
+				15ED18361ACED7EB0091E84A /* MMDWishList.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1A3F0F2D1AB4AFF800F85C01 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,10 +580,12 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15ED18401ACEE15E0091E84A /* maiamall.s3db */,
+				15ED18271ACED7EB0091E84A /* DefineKeys.h */,
+				15ED18281ACED7EB0091E84A /* Model */,
 				15B60B741ACC5D2600DC8749 /* FilterMenuController */,
 				15B60B6B1ACC59EB00DC8749 /* WYPopoverController */,
 				15E753671AC5C61F00F2D39D /* fmdb */,
-				15E753651AC5C3BE00F2D39D /* maiamall.s3db */,
 				15E7535C1AC5AB5D00F2D39D /* CollectionDetailCollectionViewCell */,
 				15E753571AC5A75000F2D39D /* CollectionDetailCollectionView */,
 				15E753501AC5A44C00F2D39D /* CollectionListViewController */,
@@ -707,7 +752,6 @@
 				F4EECF24177C99F400778578 /* Default.png in Resources */,
 				15AD00331AB9E20A00B8B1D1 /* ProductListCollectionViewCell.xib in Resources */,
 				F4EECF26177C99F400778578 /* Default@2x.png in Resources */,
-				15E753661AC5C3BE00F2D39D /* maiamall.s3db in Resources */,
 				F4EECF28177C99F400778578 /* Default-568h@2x.png in Resources */,
 				1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */,
 				15AD00111AB9CDD400B8B1D1 /* MaiaMall-Logo-Light.jpg in Resources */,
@@ -724,6 +768,7 @@
 				15ADFFFF1AB9A03700B8B1D1 /* Home-50.png in Resources */,
 				F4EECF5F177F384900778578 /* news.png in Resources */,
 				15AD00151AB9CEDD00B8B1D1 /* product.png in Resources */,
+				15ED18411ACEE15E0091E84A /* maiamall.s3db in Resources */,
 				F4EECF60177F384900778578 /* photo.png in Resources */,
 				15E753321AC3299600F2D39D /* Alphabetical Sorting Az-50.png in Resources */,
 				15AD001A1AB9CEFB00B8B1D1 /* ProductCollectionViewCell.xib in Resources */,
@@ -759,12 +804,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				15AD00371AB9E6AB00B8B1D1 /* ProductListViewController.m in Sources */,
+				15ED18391ACED7EB0091E84A /* MMDDataBase.m in Sources */,
 				15AD00051AB9C33400B8B1D1 /* TrendCollectionViewCell.m in Sources */,
 				15E7534D1AC5934300F2D39D /* BlogViewController.m in Sources */,
+				15ED183A1ACED7EB0091E84A /* MMDItem.m in Sources */,
 				15E753731AC5C63000F2D39D /* FMDatabase.m in Sources */,
 				1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */,
 				1575628D1AC0835D001FAE38 /* CollectionsCollectionView.m in Sources */,
 				15B60B701ACC59EB00DC8749 /* WYPopoverController.m in Sources */,
+				15ED18381ACED7EB0091E84A /* MMDCart.m in Sources */,
 				15E753771AC5C63000F2D39D /* FMResultSet.m in Sources */,
 				1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */,
 				15E753751AC5C63000F2D39D /* FMDatabasePool.m in Sources */,
@@ -772,10 +820,12 @@
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				15E753491AC573AA00F2D39D /* RetailDetailViewController.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
+				15ED18371ACED7EB0091E84A /* MMDBrand.m in Sources */,
 				157562891AC082DF001FAE38 /* FavouritesListCollectionView.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				15E7531F1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
+				15ED183C1ACED7EB0091E84A /* MMDStore.m in Sources */,
 				15E753561AC5A50200F2D39D /* CollectionListViewController.m in Sources */,
 				15AD00191AB9CEFB00B8B1D1 /* ProductCollectionViewCell.m in Sources */,
 				15B60B771ACC5D4400DC8749 /* FilterMenuController.m in Sources */,
@@ -783,6 +833,7 @@
 				15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */,
 				15B60B711ACC59EB00DC8749 /* WYStoryboardPopoverSegue.m in Sources */,
 				15AD00281AB9E16D00B8B1D1 /* ProductListCollectionView.m in Sources */,
+				15ED183B1ACED7EB0091E84A /* MMDOffer.m in Sources */,
 				15AD00321AB9E20A00B8B1D1 /* ProductListCollectionViewCell.m in Sources */,
 				15E753741AC5C63000F2D39D /* FMDatabaseAdditions.m in Sources */,
 				157562781ABAF024001FAE38 /* ProductDetailViewController.m in Sources */,
@@ -793,6 +844,7 @@
 				F4EECF6E177FD51400778578 /* MapViewController.m in Sources */,
 				15E7535A1AC5AB0400F2D39D /* CollectionDetailCollectionView.m in Sources */,
 				15AD000F1AB9C57600B8B1D1 /* TrendCollectionView.m in Sources */,
+				15ED183D1ACED7EB0091E84A /* MMDWishList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

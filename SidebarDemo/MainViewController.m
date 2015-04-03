@@ -41,6 +41,9 @@
     
     self.appDelegate = [[AppDelegate alloc] init];
     
+    self.arrayWithRecommendedItems = [[NSMutableArray alloc] init];
+    
+    
     [searchBarView addSubview:self.searchBar];
     self.navigationItem.titleView = searchBarView;
 
@@ -69,22 +72,66 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kDataBaseWasInitiated]) {
+        [self getTrendingItems];
+    }
+    
+}
 
-//-(void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
-//      if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
-//            return;
-//        }
-//    CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
-//    
-//    NSIndexPath *index = [self.dropDown.table indexPathForRowAtPoint:p];
-//    
-//    if (index.row == 1) {
-//    
-//        NSLog(@"index : %li", (long)index.row);
-//    }else {
-//         NSLog(@"indexxxx : %li", (long)index.row);
-//    }
-//}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kDataBaseWasInitiated]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSLog(@"in here");
+
+            [MMDDataBase database];
+            
+            [self getTrendingItems];
+        });
+        
+    }
+}
+
+- (void)getTrendingItems {
+    
+    //totally dummy. that is why it is done in such dummy way. Should be rewritten when possible.
+    
+    if (self.arrayWithRecommendedItems.count == 0) {
+       
+            NSMutableArray * tempArray = [[NSMutableArray alloc] init];
+        
+                for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
+                    
+                    if (item.itemGender == female) {
+                        
+                                int category = arc4random() % 3;
+                        if ([item.itemCategory isEqualToString:(category == 0 ? @"Shirts" : (category == 1 ? @"Dresses" : (category == 2 ? @"Bags" : @"Shoes")))]) {
+                                    [tempArray addObject:item];
+                                }
+                        }
+                }
+            
+            
+            if (tempArray.count > 0) {
+                [self.arrayWithRecommendedItems removeAllObjects];
+                for (int i = 0; i < (tempArray.count > 15 ? 15 : tempArray.count); i++) {
+                    int index = arc4random() % tempArray.count;
+                    [self.arrayWithRecommendedItems addObject:[tempArray objectAtIndex:index]];
+                    [tempArray removeObjectAtIndex:index];
+                }
+            }
+                
+        [self.productCollectionView reloadData];
+    }
+    
+}
+
+
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

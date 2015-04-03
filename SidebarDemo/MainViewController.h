@@ -13,12 +13,13 @@
 #import "AppDelegate.h"
 #import "WYPopoverController.h"
 #import "WYStoryboardPopoverSegue.h"
+#import "MMDDataBase.h"
+#import "MMDItem.h"
 
 @interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, NIDropDownDelegate, WYPopoverControllerDelegate>
  {
     
     WYPopoverController *anotherPopoverController;
-
     
     
 }
@@ -34,6 +35,6 @@
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 
--(void)rel;
+@property (strong, nonatomic) NSMutableArray * arrayWithRecommendedItems;
 
 @end
