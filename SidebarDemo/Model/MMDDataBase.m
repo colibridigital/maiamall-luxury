@@ -56,7 +56,7 @@ static MMDDataBase *dataBase;
     if ((self = [super init])) {
         NSLog(@"Initialising database");
         
-        NSString *sqLiteDb = [[NSBundle mainBundle] pathForResource:@"maiamall"                                                      ofType:@"s3db"];
+        NSString *sqLiteDb = [[NSBundle mainBundle] pathForResource:@"maiamall" ofType:@"s3db"];
         
         if (sqlite3_open([sqLiteDb UTF8String], &dataBase) != SQLITE_OK) {
             NSLog(@"Failed to open database!");

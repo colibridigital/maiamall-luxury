@@ -54,14 +54,6 @@
     [self.trendCollectionView reloadData];
     [self.productCollectionView reloadData];
     
-    [self.dropDown setDelegate:self];
-    
-    [self.view addSubview:self.dropDown];
-    
-    
-    //[self addGestureRecognizer:self.productCollectionView];
-    
-     // gestureRecognizer.delegate = self;
     
     self.tabBarController.delegate = self;
     
@@ -77,7 +69,7 @@
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:kDataBaseWasInitiated]) {
         [self getTrendingItems];
-    }
+    } 
     
 }
 
@@ -87,9 +79,10 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kDataBaseWasInitiated]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        NSLog(@"in here");
+        NSLog(@"view did appear before database init");
 
             [MMDDataBase database];
+            //[NSThread sleepForTimeInterval:300.0];
             
             [self getTrendingItems];
         });
@@ -103,6 +96,7 @@
     
     if (self.arrayWithRecommendedItems.count == 0) {
        
+        dispatch_async(dispatch_queue_create("Trend loading", nil), ^{
             NSMutableArray * tempArray = [[NSMutableArray alloc] init];
         
                 for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
@@ -125,8 +119,11 @@
                     [tempArray removeObjectAtIndex:index];
                 }
             }
+         dispatch_async(dispatch_get_main_queue(), ^{
                 
-        [self.productCollectionView reloadData];
+             [self.productCollectionView reloadData];
+         });
+        });
     }
     
 }
@@ -195,7 +192,10 @@
     if (collectionView == self.trendCollectionView) {
         return 5;
     } else if (collectionView == self.productCollectionView) {
-        return 20;
+        
+        NSLog(@"count of items: %lu", self.arrayWithRecommendedItems.count);
+        
+        return self.arrayWithRecommendedItems.count;
     }
     
     else return 0;
@@ -208,6 +208,10 @@
         return cell;
     } else {
         ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PROD_CELL" forIndexPath:indexPath];
+        
+        NSLog(@"in showing the cell");
+        
+        cell.productImage.image = ((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.item]).itemImage;
         
         return cell;
     }
@@ -227,44 +231,6 @@
     
 }
 
-- (void)addGestureRecognizer:(UICollectionView *)collectionView{
-    //    UILongPressGestureRecognizer *lpgr
-    //    = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-    //    lpgr.minimumPressDuration = 1.0; //seconds
-    //    lpgr.delaysTouchesBegan = YES;
-    //    lpgr.delegate = self;
-    //    [collectionView addGestureRecognizer:lpgr];
-    
-     NSLog(@"in here");
-     
-     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-     tgr.delegate = self;
-     [collectionView addGestureRecognizer:tgr];
-}
-
-
-//-(void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
-//    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
-//        return;
-//    }
-//    
-//    CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
-//    
-//   // NSIndexPath *index = [self.productCollectionView indexPathForItemAtPoint:p];
-//    
-//    if ([gestureRecognizer.view isEqual:self.productCollectionView]) {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-//        
-//        UINavigationController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodList"];
-//        
-//        // [prodListDetails setModalPresentationStyle:UIModalPresentationNone];
-//        
-//        [self presentViewController:prodListDetails animated:NO completion:nil];
-//
-//    }
-//
-//    [self.searchBar resignFirstResponder];
-//}
 
 
 
@@ -377,17 +343,7 @@
 }
 
 
-//uncomment this if using the old menu (the nice one)
-/*
 
-- (void) niDropDownDelegateMethod: (NIDropDown *) sender {
-    [self rel];
-}
-
--(void)rel{
-    //    [dropDown release];
-    self.dropDown = nil;
-}*/
 
 
 @end

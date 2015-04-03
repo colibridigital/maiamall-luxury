@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "TrendCollectionView.h"
 #import "ProductCollectionView.h"
-#import "NIDropDown.h"
 #import "AppDelegate.h"
 #import "WYPopoverController.h"
 #import "WYStoryboardPopoverSegue.h"
 #import "MMDDataBase.h"
 #import "MMDItem.h"
 
-@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, NIDropDownDelegate, WYPopoverControllerDelegate>
+@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, WYPopoverControllerDelegate>
  {
     
     WYPopoverController *anotherPopoverController;
@@ -28,8 +27,6 @@
 @property (weak, nonatomic) IBOutlet TrendCollectionView *trendCollectionView;
 @property (weak, nonatomic) IBOutlet ProductCollectionView *productCollectionView;
 @property (strong, nonatomic) IBOutlet AppDelegate *appDelegate;
-
-@property(strong, nonatomic) IBOutlet NIDropDown *dropDown;
 
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
