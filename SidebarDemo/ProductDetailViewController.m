@@ -180,6 +180,24 @@
     
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        //  UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
+        
+        ProductDetailViewController *prodDetail = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
+        
+        MMDItem* item = [self.arrayWithRecommendedItems objectAtIndex:indexPath.row];
+        
+        [prodDetail initWithItem:item];
+        
+        [self.navigationController pushViewController:prodDetail animated:YES];
+        
+        // [self showViewController:det sender:self];
+    
+}
+
 
 /*
 #pragma mark - Navigation
