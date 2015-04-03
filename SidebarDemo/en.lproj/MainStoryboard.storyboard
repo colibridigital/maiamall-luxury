@@ -518,7 +518,7 @@
         <!--Product Detail View Controller-->
         <scene sceneID="khm-xe-3o5">
             <objects>
-                <viewController title="Product Detail View Controller" id="YLg-Ri-753" customClass="ProductDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="prodDetailView" title="Product Detail View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YLg-Ri-753" customClass="ProductDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z9k-Yg-Bk1"/>
                         <viewControllerLayoutGuide type="bottom" id="1o2-Ss-gHB"/>

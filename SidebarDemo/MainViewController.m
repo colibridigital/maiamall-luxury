@@ -12,6 +12,7 @@
 #import "MapViewController.h"
 #import "ProductCollectionViewCell.h"
 #import "ProductListViewController.h"
+#import "ProductDetailViewController.h"
 
 @interface MainViewController ()
 
@@ -193,7 +194,7 @@
         return 5;
     } else if (collectionView == self.productCollectionView) {
         
-        NSLog(@"count of items: %lu", self.arrayWithRecommendedItems.count);
+        NSLog(@"count of items: %lu", (unsigned long)self.arrayWithRecommendedItems.count);
         
         return self.arrayWithRecommendedItems.count;
     }
@@ -224,9 +225,19 @@
     
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
-        UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
+      //  UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
         
-        [self showViewController:det sender:self];
+        ProductDetailViewController *prodDetail = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
+        
+        MMDItem* item = [self.arrayWithRecommendedItems objectAtIndex:indexPath.row];
+        
+        NSLog(@"product info before setting %@", item.itemTitle);
+        
+        [prodDetail initWithItem:item];
+        
+        [self.navigationController pushViewController:prodDetail animated:YES];
+        
+       // [self showViewController:det sender:self];
     }
     
 }

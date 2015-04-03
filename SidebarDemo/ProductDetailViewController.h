@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "ItemsSimilarCollectionView.h"
+#import "MMDItem.h"
 
 @interface ProductDetailViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) IBOutlet ItemsSimilarCollectionView *similarItemsList;
 - (IBAction)retailPageButtonClicked:(id)sender;
+
+- (void)initWithItem:(MMDItem*)item;
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 @property (weak, nonatomic) IBOutlet UILabel *productTitle;

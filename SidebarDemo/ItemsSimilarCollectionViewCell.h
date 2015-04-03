@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DefineKeys.h"
 
 @interface ItemsSimilarCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *shopName;
 @property (strong, nonatomic) IBOutlet UILabel *distanceToUser;
 @property (strong, nonatomic) IBOutlet UIImageView *detailImage;
+
+- (void)initWithDictionary:(NSDictionary*)dictionary;
+
 
 @end
