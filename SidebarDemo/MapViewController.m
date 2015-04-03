@@ -2,8 +2,8 @@
 //  MapViewController.m
 //  SidebarDemo
 //
-//  Created by Simon on 30/6/13.
-//  Copyright (c) 2013 Appcoda. All rights reserved.
+//  Created by James Cross on 30/6/13.
+//  Copyright (c) 2015 Colibri. All rights reserved.
 //
 
 #import "MapViewController.h"
