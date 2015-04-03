@@ -31,6 +31,7 @@
     WYPopoverBackgroundView *popoverAppearance = [WYPopoverBackgroundView appearance];
     [popoverAppearance setArrowHeight:40];
     [popoverAppearance setArrowBase:60];
+    [GMSServices provideAPIKey:@"AIzaSyBINMA94AsHPPbLsrrYm2s-BBOhkdihD6c"];
     
     return YES;
 }

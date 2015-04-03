@@ -65,7 +65,6 @@
 		15E753771AC5C63000F2D39D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753721AC5C63000F2D39D /* FMResultSet.m */; };
 		15E753791AC5C67800F2D39D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E753781AC5C67800F2D39D /* libsqlite3.0.dylib */; };
 		15E7537B1AC5E8DC00F2D39D /* LVWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E7537A1AC5E8DC00F2D39D /* LVWall.png */; };
-		15ECDE471ACF2AFA00F6107F /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE461ACF2AFA00F6107F /* GoogleMaps.framework */; };
 		15ECDE491ACF2B3A00F6107F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */; };
 		15ECDE4B1ACF2B4400F6107F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE4A1ACF2B4400F6107F /* CoreData.framework */; };
 		15ECDE4D1ACF2B4A00F6107F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */; };
@@ -76,6 +75,8 @@
 		15ECDE571ACF2B7B00F6107F /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE561ACF2B7B00F6107F /* libicucore.dylib */; };
 		15ECDE591ACF2B8100F6107F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE581ACF2B8100F6107F /* OpenGLES.framework */; };
 		15ECDE5B1ACF2B8A00F6107F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE5A1ACF2B8A00F6107F /* SystemConfiguration.framework */; };
+		15ECDE5F1ACF36C600F6107F /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE5E1ACF36C600F6107F /* GoogleMaps.framework */; };
+		15ECDE611ACF36EA00F6107F /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 15ECDE601ACF36EA00F6107F /* GoogleMaps.bundle */; };
 		15ED18371ACED7EB0091E84A /* MMDBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED182A1ACED7EB0091E84A /* MMDBrand.m */; };
 		15ED18381ACED7EB0091E84A /* MMDCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED182C1ACED7EB0091E84A /* MMDCart.m */; };
 		15ED18391ACED7EB0091E84A /* MMDDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ED182E1ACED7EB0091E84A /* MMDDataBase.m */; };
@@ -207,7 +208,6 @@
 		15E753721AC5C63000F2D39D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = fmdb/FMResultSet.m; sourceTree = "<group>"; };
 		15E753781AC5C67800F2D39D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		15E7537A1AC5E8DC00F2D39D /* LVWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LVWall.png; sourceTree = "<group>"; };
-		15ECDE461ACF2AFA00F6107F /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = SidebarDemo/GoogleMaps.framework; sourceTree = "<group>"; };
 		15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		15ECDE4A1ACF2B4400F6107F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -218,6 +218,8 @@
 		15ECDE561ACF2B7B00F6107F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		15ECDE581ACF2B8100F6107F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		15ECDE5A1ACF2B8A00F6107F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		15ECDE5E1ACF36C600F6107F /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		15ECDE601ACF36EA00F6107F /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		15ED18271ACED7EB0091E84A /* DefineKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineKeys.h; sourceTree = "<group>"; };
 		15ED18291ACED7EB0091E84A /* MMDBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDBrand.h; sourceTree = "<group>"; };
 		15ED182A1ACED7EB0091E84A /* MMDBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDBrand.m; sourceTree = "<group>"; };
@@ -288,11 +290,11 @@
 				15ECDE551ACF2B7000F6107F /* libz.dylib in Frameworks */,
 				15ECDE531ACF2B6500F6107F /* libc++.dylib in Frameworks */,
 				15ECDE511ACF2B5600F6107F /* ImageIO.framework in Frameworks */,
+				15ECDE5F1ACF36C600F6107F /* GoogleMaps.framework in Frameworks */,
 				15ECDE4F1ACF2B5000F6107F /* GLKit.framework in Frameworks */,
 				15ECDE4D1ACF2B4A00F6107F /* CoreText.framework in Frameworks */,
 				15ECDE4B1ACF2B4400F6107F /* CoreData.framework in Frameworks */,
 				15ECDE491ACF2B3A00F6107F /* AVFoundation.framework in Frameworks */,
-				15ECDE471ACF2AFA00F6107F /* GoogleMaps.framework in Frameworks */,
 				15B60B731ACC5A1400DC8749 /* QuartzCore.framework in Frameworks */,
 				15E753791AC5C67800F2D39D /* libsqlite3.0.dylib in Frameworks */,
 				F4EECF72177FE9BA00778578 /* MapKit.framework in Frameworks */,
@@ -599,6 +601,8 @@
 		F4EECF10177C99F400778578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15ECDE601ACF36EA00F6107F /* GoogleMaps.bundle */,
+				15ECDE5E1ACF36C600F6107F /* GoogleMaps.framework */,
 				15ECDE5A1ACF2B8A00F6107F /* SystemConfiguration.framework */,
 				15ECDE581ACF2B8100F6107F /* OpenGLES.framework */,
 				15ECDE561ACF2B7B00F6107F /* libicucore.dylib */,
@@ -609,7 +613,6 @@
 				15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */,
 				15ECDE4A1ACF2B4400F6107F /* CoreData.framework */,
 				15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */,
-				15ECDE461ACF2AFA00F6107F /* GoogleMaps.framework */,
 				15B60B721ACC5A1400DC8749 /* QuartzCore.framework */,
 				15E753781AC5C67800F2D39D /* libsqlite3.0.dylib */,
 				F4EECF6F177FE9B400778578 /* CoreLocation.framework */,
@@ -797,6 +800,7 @@
 				15AD00331AB9E20A00B8B1D1 /* ProductListCollectionViewCell.xib in Resources */,
 				F4EECF26177C99F400778578 /* Default@2x.png in Resources */,
 				F4EECF28177C99F400778578 /* Default-568h@2x.png in Resources */,
+				15ECDE611ACF36EA00F6107F /* GoogleMaps.bundle in Resources */,
 				1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */,
 				15AD00111AB9CDD400B8B1D1 /* MaiaMall-Logo-Light.jpg in Resources */,
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
@@ -941,6 +945,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -978,6 +983,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SidebarDemo",
+					"/Users/aif/Downloads/GoogleMaps-iOS-1.9.2",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SidebarDemo/MaiaMall-Prefix.pch";
@@ -998,6 +1005,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SidebarDemo",
+					"/Users/aif/Downloads/GoogleMaps-iOS-1.9.2",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SidebarDemo/MaiaMall-Prefix.pch";
