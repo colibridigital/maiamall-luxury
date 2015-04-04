@@ -63,6 +63,7 @@
     mapView_.myLocationEnabled = YES;
     [self.view addSubview:mapView_];
     
+    locationManager = [[CLLocationManager alloc] init];
     [locationManager requestAlwaysAuthorization];
     
     mapView_.settings.compassButton = YES;
