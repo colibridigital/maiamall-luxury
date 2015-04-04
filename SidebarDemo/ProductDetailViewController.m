@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "ItemsSimilarCollectionViewCell.h"
 #import "RetailDetailViewController.h"
+#import "MMDWishList.h"
 
 @interface ProductDetailViewController ()
 @property (strong, nonatomic) MMDItem * currentItemToShow;
@@ -208,6 +209,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)addItemToWishList:(id)sender {
+    [[MMDWishList sharedInstance] addItemToWishList:self.currentItemToShow];
+    
+}
 
 - (IBAction)retailPageButtonClicked:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];

@@ -14,12 +14,13 @@
 #import "WYStoryboardPopoverSegue.h"
 #import "MMDDataBase.h"
 #import "MMDItem.h"
+#import "SettingsViewController.h"
 
-@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, WYPopoverControllerDelegate>
+@interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, WYPopoverControllerDelegate, GenderWasChanged>
  {
     
     WYPopoverController *anotherPopoverController;
-    
+    SettingsViewController *settingsViewController;
     
 }
 

@@ -31,7 +31,7 @@ NSArray *menuItems;
 {
     [super viewDidLoad];
     
-    menuItems = @[@"title", @"board", @"map"]; // @"profile settings", @"wishlist"];
+    menuItems = @[@"title", @"board", @"map", @"settings", @"wishlist"]; // @"profile settings", @"wishlist"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +51,8 @@ NSArray *menuItems;
     // Return the number of rows in the section.
     return menuItems.count;
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];

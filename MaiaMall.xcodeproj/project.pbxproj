@@ -65,6 +65,10 @@
 		15E753771AC5C63000F2D39D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753721AC5C63000F2D39D /* FMResultSet.m */; };
 		15E753791AC5C67800F2D39D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E753781AC5C67800F2D39D /* libsqlite3.0.dylib */; };
 		15E7537B1AC5E8DC00F2D39D /* LVWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E7537A1AC5E8DC00F2D39D /* LVWall.png */; };
+		15E9685C1ACFDB5C003D20B8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9685B1ACFDB5C003D20B8 /* SettingsViewController.m */; };
+		15E968601ACFE8C1003D20B8 /* WishlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9685F1ACFE8C1003D20B8 /* WishlistViewController.m */; };
+		15E968651ACFEB20003D20B8 /* WishlistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E968641ACFEB20003D20B8 /* WishlistTableViewCell.m */; };
+		15E968671ACFEF2F003D20B8 /* Buy-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968661ACFEF2F003D20B8 /* Buy-50.png */; };
 		15ECDE491ACF2B3A00F6107F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */; };
 		15ECDE4B1ACF2B4400F6107F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE4A1ACF2B4400F6107F /* CoreData.framework */; };
 		15ECDE4D1ACF2B4A00F6107F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */; };
@@ -208,6 +212,13 @@
 		15E753721AC5C63000F2D39D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = fmdb/FMResultSet.m; sourceTree = "<group>"; };
 		15E753781AC5C67800F2D39D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		15E7537A1AC5E8DC00F2D39D /* LVWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LVWall.png; sourceTree = "<group>"; };
+		15E9685A1ACFDB5C003D20B8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		15E9685B1ACFDB5C003D20B8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		15E9685E1ACFE8C1003D20B8 /* WishlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishlistViewController.h; sourceTree = "<group>"; };
+		15E9685F1ACFE8C1003D20B8 /* WishlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishlistViewController.m; sourceTree = "<group>"; };
+		15E968631ACFEB20003D20B8 /* WishlistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishlistTableViewCell.h; sourceTree = "<group>"; };
+		15E968641ACFEB20003D20B8 /* WishlistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishlistTableViewCell.m; sourceTree = "<group>"; };
+		15E968661ACFEF2F003D20B8 /* Buy-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Buy-50.png"; sourceTree = "<group>"; };
 		15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		15ECDE4A1ACF2B4400F6107F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -551,6 +562,33 @@
 			name = fmdb;
 			sourceTree = "<group>";
 		};
+		15E968591ACFDB48003D20B8 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15E9685A1ACFDB5C003D20B8 /* SettingsViewController.h */,
+				15E9685B1ACFDB5C003D20B8 /* SettingsViewController.m */,
+			);
+			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		15E9685D1ACFE8AD003D20B8 /* WishlistViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15E9685F1ACFE8C1003D20B8 /* WishlistViewController.m */,
+				15E9685E1ACFE8C1003D20B8 /* WishlistViewController.h */,
+			);
+			name = WishlistViewController;
+			sourceTree = "<group>";
+		};
+		15E968621ACFEAE1003D20B8 /* WishlistTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				15E968631ACFEB20003D20B8 /* WishlistTableViewCell.h */,
+				15E968641ACFEB20003D20B8 /* WishlistTableViewCell.m */,
+			);
+			name = WishlistTableViewCell;
+			sourceTree = "<group>";
+		};
 		15ED18281ACED7EB0091E84A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +665,9 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15E968621ACFEAE1003D20B8 /* WishlistTableViewCell */,
+				15E9685D1ACFE8AD003D20B8 /* WishlistViewController */,
+				15E968591ACFDB48003D20B8 /* SettingsViewController */,
 				15ED18401ACEE15E0091E84A /* maiamall.s3db */,
 				15ED18271ACED7EB0091E84A /* DefineKeys.h */,
 				15ED18281ACED7EB0091E84A /* Model */,
@@ -687,6 +728,7 @@
 		F4EECF34177C9A1E00778578 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				15E968661ACFEF2F003D20B8 /* Buy-50.png */,
 				15B60B7E1ACC858200DC8749 /* Map Marker-50.png */,
 				15B60B7C1ACC835100DC8749 /* Alphabetical Sorting Za-50.png */,
 				15B60B781ACC825600DC8749 /* Paint Bucket-50.png */,
@@ -832,6 +874,7 @@
 				15AD00391AB9EF6E00B8B1D1 /* product2.png in Resources */,
 				F4EECF6A177F4C0200778578 /* menu.png in Resources */,
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
+				15E968671ACFEF2F003D20B8 /* Buy-50.png in Resources */,
 				15E753221AC2C82900F2D39D /* harrods.png in Resources */,
 				15AD00001AB9A03700B8B1D1 /* Location Filled-50.png in Resources */,
 				F4FE87FB1780081300CB3DA8 /* comments_photo.jpg in Resources */,
@@ -868,7 +911,10 @@
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				15E753491AC573AA00F2D39D /* RetailDetailViewController.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
+				15E968601ACFE8C1003D20B8 /* WishlistViewController.m in Sources */,
 				15ED18371ACED7EB0091E84A /* MMDBrand.m in Sources */,
+				15E9685C1ACFDB5C003D20B8 /* SettingsViewController.m in Sources */,
+				15E968651ACFEB20003D20B8 /* WishlistTableViewCell.m in Sources */,
 				157562891AC082DF001FAE38 /* FavouritesListCollectionView.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				15E7531F1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m in Sources */,

@@ -68,6 +68,8 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    settingsViewController.delegate = self;
+    
     if ([[NSUserDefaults standardUserDefaults] boolForKey:kDataBaseWasInitiated]) {
         [self getTrendingItems];
     } 
@@ -102,13 +104,23 @@
         
                 for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
                     
-                    if (item.itemGender == female) {
+                    if (item.itemGender == female && ![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
                         
                                 int category = arc4random() % 3;
                         if ([item.itemCategory isEqualToString:(category == 0 ? @"Shirts" : (category == 1 ? @"Dresses" : (category == 2 ? @"Bags" : @"Shoes")))]) {
                                     [tempArray addObject:item];
                                 }
                         }
+                    
+                    if (item.itemGender == male && [[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+                        // here is male
+                        
+                        int category = arc4random() % 3;
+                        if ([item.itemCategory isEqualToString:(category == 0 ? @"Shirts" : (category == 1 ? @"Jackets" : (category == 2 ? @"Trousers" : @"Shoes")))]) {
+                            [tempArray addObject:item];
+                        }
+                    }
+
                 }
             
             
@@ -265,9 +277,16 @@
         NSMutableArray * arrayWithSearchResults = [[NSMutableArray alloc] init];
         
         for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
-            if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound && item.itemGender == female) {
+           // if (item.itemGender == female && ![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+                if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
                 [arrayWithSearchResults addObject:item];
-            }
+                }
+           /* if (item.itemGender == male && settingsViewController.femaleMaleSwitch.isOn){
+                    if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
+                        [arrayWithSearchResults addObject:item];
+                    }
+                }
+            }*/
         }
         
         if (arrayWithSearchResults.count > 0) {

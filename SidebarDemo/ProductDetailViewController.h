@@ -16,7 +16,9 @@
 - (IBAction)retailPageButtonClicked:(id)sender;
 
 - (void)initWithItem:(MMDItem*)item;
+- (IBAction)addItemToWishList:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *addToWishlistButton;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 @property (weak, nonatomic) IBOutlet UILabel *productTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
