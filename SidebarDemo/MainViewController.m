@@ -15,7 +15,7 @@
 #import "ProductDetailViewController.h"
 
 @interface MainViewController ()
-
+@property (nonatomic) BOOL genderWasChanged;
 @end
 
 @implementation MainViewController
@@ -91,6 +91,11 @@
         });
         
     }
+}
+
+- (void)genderWasChangedFrom:(kGender)fromGender to:(kGender)toGender {
+    self.genderWasChanged = YES;
+    [self getTrendingItems];
 }
 
 - (void)getTrendingItems {

@@ -11,6 +11,7 @@
 #import "MMDWishList.h"
 #import "WishlistTableViewCell.h"
 #import "ProductDetailViewController.h"
+#import "ProductListViewController.h"
 
 @interface WishlistViewController ()
 @property (strong, nonatomic) UILabel * messageLabel;
@@ -37,8 +38,10 @@
     self.searchBar.backgroundImage = [[UIImage alloc] init];
     
     
-    [searchBarView addSubview:self.searchBar];
-    self.navigationItem.titleView = searchBarView;
+    if ([[MMDWishList sharedInstance] wishList].count == 0) {
+        [searchBarView addSubview:self.searchBar];
+        self.navigationItem.titleView = searchBarView;
+    }
     
     
     [self.wishlistItems reloadData];
@@ -52,6 +55,22 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(-5.0, 0.0, 320.0, 44.0)];
+    self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    UIView *searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 310.0, 44.0)];
+    searchBarView.autoresizingMask = 0;
+    self.searchBar.delegate = self;
+    //searchBar.backgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"MaiaMall-Logo-Light" ofType: @"jpg"]];
+    self.searchBar.backgroundImage = [[UIImage alloc] init];
+    
+    if ([[MMDWishList sharedInstance] wishList].count == 0) {
+        [searchBarView addSubview:self.searchBar];
+        self.navigationItem.titleView = searchBarView;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -162,6 +181,52 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return NO;
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    
+    //UINavigationController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
+    
+    // [self showViewController:prodListDetails sender:self];
+    
+    [self.searchBar resignFirstResponder];
+    
+    
+    dispatch_async(dispatch_queue_create("Search", nil), ^{
+        
+        NSMutableArray * arrayWithSearchResults = [[NSMutableArray alloc] init];
+        
+        for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
+            // if (item.itemGender == female && ![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+            if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
+                [arrayWithSearchResults addObject:item];
+            }
+            /* if (item.itemGender == male && settingsViewController.femaleMaleSwitch.isOn){
+             if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
+             [arrayWithSearchResults addObject:item];
+             }
+             }
+             }*/
+        }
+        
+        if (arrayWithSearchResults.count > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                ProductListViewController * searchPage = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+                [searchPage initWithArrayWithSearchResults:arrayWithSearchResults andTextForSearch:self.searchBar.text];
+                [self.navigationController pushViewController:searchPage animated:YES];
+            });
+        }
+    });
+    
+    
 }
 
 /*
