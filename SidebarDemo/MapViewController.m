@@ -17,6 +17,7 @@
 @implementation MapViewController {
     GMSMapView *mapView_;
     BOOL firstLocationUpdate_;
+    CLLocationManager *locationManager;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -61,6 +62,8 @@
     mapView_ = [GMSMapView mapWithFrame:CGRectMake(-5, 63, 331, 457) camera:camera];
     mapView_.myLocationEnabled = YES;
     [self.view addSubview:mapView_];
+    
+    [locationManager requestAlwaysAuthorization];
     
     mapView_.settings.compassButton = YES;
     mapView_.settings.myLocationButton = YES;
