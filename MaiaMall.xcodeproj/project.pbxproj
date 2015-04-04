@@ -69,6 +69,17 @@
 		15E968601ACFE8C1003D20B8 /* WishlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9685F1ACFE8C1003D20B8 /* WishlistViewController.m */; };
 		15E968651ACFEB20003D20B8 /* WishlistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E968641ACFEB20003D20B8 /* WishlistTableViewCell.m */; };
 		15E968671ACFEF2F003D20B8 /* Buy-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968661ACFEF2F003D20B8 /* Buy-50.png */; };
+		15E968771ACFF3D1003D20B8 /* ALAlertBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9686B1ACFF3D1003D20B8 /* ALAlertBanner.m */; };
+		15E968781ACFF3D1003D20B8 /* ALAlertBannerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9686D1ACFF3D1003D20B8 /* ALAlertBannerManager.m */; };
+		15E968791ACFF3D1003D20B8 /* bannerAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E9686F1ACFF3D1003D20B8 /* bannerAlert.png */; };
+		15E9687A1ACFF3D1003D20B8 /* bannerAlert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968701ACFF3D1003D20B8 /* bannerAlert@2x.png */; };
+		15E9687B1ACFF3D1003D20B8 /* bannerFailure.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968711ACFF3D1003D20B8 /* bannerFailure.png */; };
+		15E9687C1ACFF3D1003D20B8 /* bannerFailure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968721ACFF3D1003D20B8 /* bannerFailure@2x.png */; };
+		15E9687D1ACFF3D1003D20B8 /* bannerNotify.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968731ACFF3D1003D20B8 /* bannerNotify.png */; };
+		15E9687E1ACFF3D1003D20B8 /* bannerNotify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968741ACFF3D1003D20B8 /* bannerNotify@2x.png */; };
+		15E9687F1ACFF3D1003D20B8 /* bannerSuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968751ACFF3D1003D20B8 /* bannerSuccess.png */; };
+		15E968801ACFF3D1003D20B8 /* bannerSuccess@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968761ACFF3D1003D20B8 /* bannerSuccess@2x.png */; };
+		15E968831ACFF981003D20B8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E968821ACFF981003D20B8 /* MBProgressHUD.m */; };
 		15ECDE491ACF2B3A00F6107F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */; };
 		15ECDE4B1ACF2B4400F6107F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE4A1ACF2B4400F6107F /* CoreData.framework */; };
 		15ECDE4D1ACF2B4A00F6107F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */; };
@@ -219,6 +230,21 @@
 		15E968631ACFEB20003D20B8 /* WishlistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishlistTableViewCell.h; sourceTree = "<group>"; };
 		15E968641ACFEB20003D20B8 /* WishlistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishlistTableViewCell.m; sourceTree = "<group>"; };
 		15E968661ACFEF2F003D20B8 /* Buy-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Buy-50.png"; sourceTree = "<group>"; };
+		15E968691ACFF3D1003D20B8 /* ALAlertBanner+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAlertBanner+Private.h"; sourceTree = "<group>"; };
+		15E9686A1ACFF3D1003D20B8 /* ALAlertBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAlertBanner.h; sourceTree = "<group>"; };
+		15E9686B1ACFF3D1003D20B8 /* ALAlertBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALAlertBanner.m; sourceTree = "<group>"; };
+		15E9686C1ACFF3D1003D20B8 /* ALAlertBannerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAlertBannerManager.h; sourceTree = "<group>"; };
+		15E9686D1ACFF3D1003D20B8 /* ALAlertBannerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALAlertBannerManager.m; sourceTree = "<group>"; };
+		15E9686F1ACFF3D1003D20B8 /* bannerAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerAlert.png; sourceTree = "<group>"; };
+		15E968701ACFF3D1003D20B8 /* bannerAlert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerAlert@2x.png"; sourceTree = "<group>"; };
+		15E968711ACFF3D1003D20B8 /* bannerFailure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerFailure.png; sourceTree = "<group>"; };
+		15E968721ACFF3D1003D20B8 /* bannerFailure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerFailure@2x.png"; sourceTree = "<group>"; };
+		15E968731ACFF3D1003D20B8 /* bannerNotify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerNotify.png; sourceTree = "<group>"; };
+		15E968741ACFF3D1003D20B8 /* bannerNotify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerNotify@2x.png"; sourceTree = "<group>"; };
+		15E968751ACFF3D1003D20B8 /* bannerSuccess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerSuccess.png; sourceTree = "<group>"; };
+		15E968761ACFF3D1003D20B8 /* bannerSuccess@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerSuccess@2x.png"; sourceTree = "<group>"; };
+		15E968811ACFF981003D20B8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		15E968821ACFF981003D20B8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		15ECDE4A1ACF2B4400F6107F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -589,6 +615,34 @@
 			name = WishlistTableViewCell;
 			sourceTree = "<group>";
 		};
+		15E968681ACFF3D1003D20B8 /* ALAlertBanner */ = {
+			isa = PBXGroup;
+			children = (
+				15E968691ACFF3D1003D20B8 /* ALAlertBanner+Private.h */,
+				15E9686A1ACFF3D1003D20B8 /* ALAlertBanner.h */,
+				15E9686B1ACFF3D1003D20B8 /* ALAlertBanner.m */,
+				15E9686C1ACFF3D1003D20B8 /* ALAlertBannerManager.h */,
+				15E9686D1ACFF3D1003D20B8 /* ALAlertBannerManager.m */,
+				15E9686E1ACFF3D1003D20B8 /* Images */,
+			);
+			path = ALAlertBanner;
+			sourceTree = "<group>";
+		};
+		15E9686E1ACFF3D1003D20B8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				15E9686F1ACFF3D1003D20B8 /* bannerAlert.png */,
+				15E968701ACFF3D1003D20B8 /* bannerAlert@2x.png */,
+				15E968711ACFF3D1003D20B8 /* bannerFailure.png */,
+				15E968721ACFF3D1003D20B8 /* bannerFailure@2x.png */,
+				15E968731ACFF3D1003D20B8 /* bannerNotify.png */,
+				15E968741ACFF3D1003D20B8 /* bannerNotify@2x.png */,
+				15E968751ACFF3D1003D20B8 /* bannerSuccess.png */,
+				15E968761ACFF3D1003D20B8 /* bannerSuccess@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		15ED18281ACED7EB0091E84A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +719,9 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15E968811ACFF981003D20B8 /* MBProgressHUD.h */,
+				15E968821ACFF981003D20B8 /* MBProgressHUD.m */,
+				15E968681ACFF3D1003D20B8 /* ALAlertBanner */,
 				15E968621ACFEAE1003D20B8 /* WishlistTableViewCell */,
 				15E9685D1ACFE8AD003D20B8 /* WishlistViewController */,
 				15E968591ACFDB48003D20B8 /* SettingsViewController */,
@@ -843,12 +900,14 @@
 				F4EECF26177C99F400778578 /* Default@2x.png in Resources */,
 				F4EECF28177C99F400778578 /* Default-568h@2x.png in Resources */,
 				15ECDE611ACF36EA00F6107F /* GoogleMaps.bundle in Resources */,
+				15E9687D1ACFF3D1003D20B8 /* bannerNotify.png in Resources */,
 				1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */,
 				15AD00111AB9CDD400B8B1D1 /* MaiaMall-Logo-Light.jpg in Resources */,
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
 				F4EECF5B177F384900778578 /* bookmark.png in Resources */,
 				F4EECF5C177F384900778578 /* calendar.png in Resources */,
 				15B60B7D1ACC835100DC8749 /* Alphabetical Sorting Za-50.png in Resources */,
+				15E9687A1ACFF3D1003D20B8 /* bannerAlert@2x.png in Resources */,
 				15E753201AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib in Resources */,
 				15E7534F1AC59F5D00F2D39D /* donVersace.jpg in Resources */,
 				15E753451AC570AC00F2D39D /* News Filled-50.png in Resources */,
@@ -856,15 +915,19 @@
 				15AD00061AB9C33400B8B1D1 /* TrendCollectionViewCell.xib in Resources */,
 				F4EECF5E177F384900778578 /* map.png in Resources */,
 				15ADFFFF1AB9A03700B8B1D1 /* Home-50.png in Resources */,
+				15E9687E1ACFF3D1003D20B8 /* bannerNotify@2x.png in Resources */,
 				F4EECF5F177F384900778578 /* news.png in Resources */,
 				15AD00151AB9CEDD00B8B1D1 /* product.png in Resources */,
+				15E9687B1ACFF3D1003D20B8 /* bannerFailure.png in Resources */,
 				15ED18411ACEE15E0091E84A /* maiamall.s3db in Resources */,
 				F4EECF60177F384900778578 /* photo.png in Resources */,
 				15E753321AC3299600F2D39D /* Alphabetical Sorting Az-50.png in Resources */,
 				15AD001A1AB9CEFB00B8B1D1 /* ProductCollectionViewCell.xib in Resources */,
 				F4EECF61177F384900778578 /* wishlist.png in Resources */,
+				15E968801ACFF3D1003D20B8 /* bannerSuccess@2x.png in Resources */,
 				15B60B7B1ACC825600DC8749 /* Tape Measure2-50.png in Resources */,
 				15E753301AC3209300F2D39D /* FilterMenuCell.xib in Resources */,
+				15E9687C1ACFF3D1003D20B8 /* bannerFailure@2x.png in Resources */,
 				F4EECF63177F3CAB00778578 /* tag.png in Resources */,
 				15ADFFFA1AB99EBB00B8B1D1 /* Filled Filter-50.png in Resources */,
 				15AD00081AB9C46800B8B1D1 /* dress.png in Resources */,
@@ -873,6 +936,8 @@
 				157562851AC08121001FAE38 /* CollectionsCollectionViewCell.xib in Resources */,
 				15AD00391AB9EF6E00B8B1D1 /* product2.png in Resources */,
 				F4EECF6A177F4C0200778578 /* menu.png in Resources */,
+				15E9687F1ACFF3D1003D20B8 /* bannerSuccess.png in Resources */,
+				15E968791ACFF3D1003D20B8 /* bannerAlert.png in Resources */,
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
 				15E968671ACFEF2F003D20B8 /* Buy-50.png in Resources */,
 				15E753221AC2C82900F2D39D /* harrods.png in Resources */,
@@ -920,9 +985,12 @@
 				15E7531F1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				15ED183C1ACED7EB0091E84A /* MMDStore.m in Sources */,
+				15E968781ACFF3D1003D20B8 /* ALAlertBannerManager.m in Sources */,
 				15E753561AC5A50200F2D39D /* CollectionListViewController.m in Sources */,
 				15AD00191AB9CEFB00B8B1D1 /* ProductCollectionViewCell.m in Sources */,
 				15B60B771ACC5D4400DC8749 /* FilterMenuController.m in Sources */,
+				15E968771ACFF3D1003D20B8 /* ALAlertBanner.m in Sources */,
+				15E968831ACFF981003D20B8 /* MBProgressHUD.m in Sources */,
 				15E7532A1AC318D500F2D39D /* NIDropDown.m in Sources */,
 				15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */,
 				15B60B711ACC59EB00DC8749 /* WYStoryboardPopoverSegue.m in Sources */,

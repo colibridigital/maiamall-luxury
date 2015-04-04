@@ -11,6 +11,7 @@
 #import "ItemsSimilarCollectionViewCell.h"
 #import "RetailDetailViewController.h"
 #import "MMDWishList.h"
+#import "AppDelegate.h"
 
 @interface ProductDetailViewController ()
 @property (strong, nonatomic) MMDItem * currentItemToShow;
@@ -212,6 +213,41 @@
 
 - (IBAction)addItemToWishList:(id)sender {
     [[MMDWishList sharedInstance] addItemToWishList:self.currentItemToShow];
+    
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"Succesfully Added"];
+    [hud setMode:MBProgressHUDModeText];
+    [self.navigationItem setRightBarButtonItem:nil];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        
+        
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:appDelegate.window
+                                                            style:ALAlertBannerStyleNotify
+                                                         position:ALAlertBannerPositionTop
+                                                            title:@"Offer!"
+                                                         subtitle:[NSString stringWithFormat:@"There is an offer for you based on your %@.", self.currentItemToShow.itemTitle]
+                                                      tappedBlock:^(ALAlertBanner *alertBanner) {
+                                                          [ALAlertBanner hideAllAlertBanners];
+                                                          UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                                                          ProductDetailViewController * itemPage = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
+#warning change for offer page
+                                                          [itemPage initWithItem:self.currentItemToShow];
+                                                          
+                                                          [self.navigationController pushViewController:itemPage animated:YES];
+                                                      }];
+        [banner setSecondsToShow:0];
+        [banner show];
+        
+        
+        //        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Offer" message:@"There is an offer for you based on your wish list." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        //        [alertView show];
+    });
     
 }
 

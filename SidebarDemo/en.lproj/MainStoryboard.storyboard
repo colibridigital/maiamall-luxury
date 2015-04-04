@@ -1553,7 +1553,7 @@
                                 </items>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3cN-FU-y9V">
-                                <rect key="frame" x="0.0" y="64" width="320" height="452"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="90" id="eDw-yl-Iuz" customClass="WishlistTableViewCell">
@@ -1623,13 +1623,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Wm1-fB-rOI" firstAttribute="leading" secondItem="3cN-FU-y9V" secondAttribute="leading" id="9Dg-1w-1Xl"/>
-                            <constraint firstItem="Wm1-fB-rOI" firstAttribute="trailing" secondItem="3cN-FU-y9V" secondAttribute="trailing" id="9Ee-q5-LtG"/>
-                            <constraint firstItem="cfu-ty-uPr" firstAttribute="top" secondItem="3cN-FU-y9V" secondAttribute="bottom" constant="8" symbolic="YES" id="IUI-Sm-fqG"/>
-                            <constraint firstAttribute="bottom" secondItem="Wm1-fB-rOI" secondAttribute="bottom" id="hlf-Tz-d3T"/>
-                            <constraint firstItem="3cN-FU-y9V" firstAttribute="top" secondItem="Ptg-a8-VOi" secondAttribute="bottom" id="jS3-Xp-AJV"/>
-                            <constraint firstItem="3cN-FU-y9V" firstAttribute="leading" secondItem="Ub3-bp-Bkf" secondAttribute="leading" id="sAY-9i-56E"/>
-                            <constraint firstAttribute="trailing" secondItem="Wm1-fB-rOI" secondAttribute="trailing" id="yJA-3Q-QKY"/>
+                            <constraint firstAttribute="bottom" secondItem="Wm1-fB-rOI" secondAttribute="bottom" id="1su-bW-edo"/>
+                            <constraint firstItem="3cN-FU-y9V" firstAttribute="leading" secondItem="Ub3-bp-Bkf" secondAttribute="leading" id="7sx-R0-mFq"/>
+                            <constraint firstItem="Wm1-fB-rOI" firstAttribute="top" secondItem="3cN-FU-y9V" secondAttribute="bottom" constant="8" id="LJR-O4-Sso"/>
+                            <constraint firstItem="3cN-FU-y9V" firstAttribute="top" secondItem="Ptg-a8-VOi" secondAttribute="bottom" id="Mqo-V0-WrY"/>
+                            <constraint firstItem="Wm1-fB-rOI" firstAttribute="trailing" secondItem="3cN-FU-y9V" secondAttribute="trailing" id="RSl-RN-kTs"/>
+                            <constraint firstAttribute="trailing" secondItem="Wm1-fB-rOI" secondAttribute="trailing" id="csN-Zq-fdy"/>
+                            <constraint firstItem="3cN-FU-y9V" firstAttribute="leading" secondItem="Wm1-fB-rOI" secondAttribute="leading" id="xX2-jA-TSE"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

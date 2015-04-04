@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ItemsSimilarCollectionView.h"
 #import "MMDItem.h"
+#import "ALAlertBanner.h"
+#import "MBProgressHUD.h"
 
 @interface ProductDetailViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
