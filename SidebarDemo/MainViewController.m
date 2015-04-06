@@ -23,6 +23,8 @@
 - (void)viewDidLoad
 {
     
+    [super viewDidLoad];
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -61,7 +63,7 @@
     
    // dropDown.table.delegate = self;
     
-    [super viewDidLoad];
+    self.genderWasChanged = NO;
 
 }
 
@@ -75,23 +77,29 @@
     } 
     
 }
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.searchBar resignFirstResponder];
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kDataBaseWasInitiated]) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.labelText = @"Wait. Initialiazing Database";
         
-        NSLog(@"view did appear before database init");
-
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MMDDataBase database];
-            //[NSThread sleepForTimeInterval:300.0];
+            
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             
             [self getTrendingItems];
         });
         
     }
 }
+
 
 - (void)genderWasChangedFrom:(kGender)fromGender to:(kGender)toGender {
     self.genderWasChanged = YES;
@@ -282,16 +290,10 @@
         NSMutableArray * arrayWithSearchResults = [[NSMutableArray alloc] init];
         
         for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
-           // if (item.itemGender == female && ![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
                 if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
                 [arrayWithSearchResults addObject:item];
                 }
-           /* if (item.itemGender == male && settingsViewController.femaleMaleSwitch.isOn){
-                    if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
-                        [arrayWithSearchResults addObject:item];
-                    }
-                }
-            }*/
+          
         }
         
         if (arrayWithSearchResults.count > 0) {

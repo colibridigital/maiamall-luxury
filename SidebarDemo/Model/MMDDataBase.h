@@ -21,7 +21,4 @@
 - (void)initDatabase;
 - (void)closeDataBase;
 
-- (NSMutableArray*)storesWithTitle:(NSString*)storeTitle;
-
-
 @end
