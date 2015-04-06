@@ -15,6 +15,12 @@
 
 @implementation SettingsViewController
 
+- (void)setSwitchColourToFemale {
+    self.femaleMaleSwitch.tintColor = femaleColor;
+    self.femaleMaleSwitch.backgroundColor = femaleColor;
+    self.femaleMaleSwitch.layer.cornerRadius = 16.0;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,18 +34,12 @@
     
     self.tabBarController.delegate = self;
 
-    // Do any additional setup after loading the view.
+    [self setSwitchColourToFemale];
 }
-
-#define femaleColor [UIColor colorWithRed:247/255.0 green:155/255.0 blue:117/255.0 alpha:1.0]
-#define maleColor [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1.0]
-
 
 - (void)setSwitchTo:(BOOL)on {
     if (on) {
-        self.femaleMaleSwitch.tintColor = maleColor;
-        self.femaleMaleSwitch.backgroundColor = maleColor;
-        self.femaleMaleSwitch.layer.cornerRadius = 16.0;
+        [self setSwitchColourToFemale];
     } else {
         self.femaleMaleSwitch.tintColor = femaleColor;
         self.femaleMaleSwitch.backgroundColor = femaleColor;
