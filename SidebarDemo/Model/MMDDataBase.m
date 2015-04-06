@@ -92,6 +92,82 @@ static MMDDataBase *dataBase;
     [self closeDataBase];
 }
 
+- (void)loadProductImage:(int)itemId itemImage_p:(UIImage **)itemImage_p {
+    
+    NSString *queryForItemImage = [NSString stringWithFormat:@"SELECT url FROM ProductImage WHERE product_id=%i", itemId];
+    sqlite3_stmt *statementForItemImage;
+    if (sqlite3_prepare_v2(dataBase, [queryForItemImage UTF8String], -1, &statementForItemImage, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForItemImage) == SQLITE_ROW) {
+            char * itemImageURL = (char *)sqlite3_column_text(statementForItemImage, 0);
+            *itemImage_p = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithUTF8String:itemImageURL]]]];
+        }
+    }
+}
+
+- (MMDStore *)getStoreDetails:(int)itemStoreId {
+    MMDStore *itemStore;
+    NSString *queryForStoreName = [NSString stringWithFormat:@"SELECT longName, logourl FROM Store WHERE id=%i", itemStoreId];
+    sqlite3_stmt *statementForStoreName;
+    if (sqlite3_prepare_v2(dataBase, [queryForStoreName UTF8String], -1, &statementForStoreName, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForStoreName) == SQLITE_ROW) {
+            char * storeTitleChar = (char *)sqlite3_column_text(statementForStoreName, 0);
+            char * storeLogoURL = (char *)sqlite3_column_text(statementForStoreName, 1);
+            
+            UIImage * storeLogo = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithUTF8String:storeLogoURL]]]];
+            
+            NSString * storeTitle = [[NSString alloc] initWithUTF8String:storeTitleChar];
+            
+            double latitude = 0;
+            double longitude = 0;
+            NSString *queryForStoreCoordinates = [NSString stringWithFormat:@"SELECT latitude, longitude FROM StoreCoordinate WHERE store_id=%i", itemStoreId];
+            sqlite3_stmt *statementForStoreCoordinates;
+            if (sqlite3_prepare_v2(dataBase, [queryForStoreCoordinates UTF8String], -1, &statementForStoreCoordinates, nil)
+                == SQLITE_OK) {
+                while (sqlite3_step(statementForStoreCoordinates) == SQLITE_ROW) {
+                    latitude = (double) sqlite3_column_double(statementForStoreCoordinates, 0);
+                    longitude = (double) sqlite3_column_double(statementForStoreCoordinates, 1);
+                }
+            }
+            
+            if (latitude != 0 & longitude != 0) {
+                itemStore = [[MMDStore alloc] initWithId:[NSString stringWithFormat:@"%i", itemStoreId] title:storeTitle description:@"" logo:storeLogo latitude:latitude longitude:longitude];
+            }
+        }
+        
+    }
+    sqlite3_finalize(statementForStoreName);
+    return itemStore;
+}
+
+- (void)getColourDetails:(int)itemId itemColors:(NSMutableArray *)itemColors {
+    NSString *queryForColorName = [NSString stringWithFormat:@"SELECT color_id FROM ProductColor WHERE product_id=%i", itemId];
+    sqlite3_stmt *statementForColorName;
+    if (sqlite3_prepare_v2(dataBase, [queryForColorName UTF8String], -1, &statementForColorName, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForColorName) == SQLITE_ROW) {
+            
+            int colorId = (int) sqlite3_column_int(statementForColorName, 0);
+            NSString * itemColor = @"";
+            
+            NSString *queryForSpecificColorName = [NSString stringWithFormat:@"SELECT name FROM Color WHERE id=%i", colorId];
+            sqlite3_stmt *statementForSpecificColorName;
+            if (sqlite3_prepare_v2(dataBase, [queryForSpecificColorName UTF8String], -1, &statementForSpecificColorName, nil)
+                == SQLITE_OK) {
+                while (sqlite3_step(statementForSpecificColorName) == SQLITE_ROW) {
+                    char * itemColorChar = (char *)sqlite3_column_text(statementForSpecificColorName, 0);
+                    itemColor = [[NSString alloc] initWithUTF8String:itemColorChar];
+                }
+            }
+            sqlite3_finalize(statementForSpecificColorName);
+            
+            [itemColors addObject:itemColor];
+        }
+    }
+    sqlite3_finalize(statementForColorName);
+}
+
 - (NSMutableArray *)getItems {
     NSMutableArray * retval = [[NSMutableArray alloc] init];
     NSString *queryForItems = @"SELECT * FROM Product";
@@ -160,62 +236,9 @@ static MMDDataBase *dataBase;
                 }
                 sqlite3_finalize(statementForCategoryName);
                 
-                NSString *queryForStoreName = [NSString stringWithFormat:@"SELECT longName, logourl FROM Store WHERE id=%i", itemStoreId];
-                sqlite3_stmt *statementForStoreName;
-                if (sqlite3_prepare_v2(dataBase, [queryForStoreName UTF8String], -1, &statementForStoreName, nil)
-                    == SQLITE_OK) {
-                    while (sqlite3_step(statementForStoreName) == SQLITE_ROW) {
-                        char * storeTitleChar = (char *)sqlite3_column_text(statementForStoreName, 0);
-                        char * storeLogoURL = (char *)sqlite3_column_text(statementForStoreName, 1);
-                        
-                        UIImage * storeLogo = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithUTF8String:storeLogoURL]]]];
-                        
-                        NSString * storeTitle = [[NSString alloc] initWithUTF8String:storeTitleChar];
-                        
-                        double latitude = 0;
-                        double longitude = 0;
-                        NSString *queryForStoreCoordinates = [NSString stringWithFormat:@"SELECT latitude, longitude FROM StoreCoordinate WHERE store_id=%i", itemStoreId];
-                        sqlite3_stmt *statementForStoreCoordinates;
-                        if (sqlite3_prepare_v2(dataBase, [queryForStoreCoordinates UTF8String], -1, &statementForStoreCoordinates, nil)
-                            == SQLITE_OK) {
-                            while (sqlite3_step(statementForStoreCoordinates) == SQLITE_ROW) {
-                                latitude = (double) sqlite3_column_double(statementForStoreCoordinates, 0);
-                                longitude = (double) sqlite3_column_double(statementForStoreCoordinates, 1);
-                            }
-                        }
-                        
-                        if (latitude != 0 & longitude != 0) {
-                            itemStore = [[MMDStore alloc] initWithId:[NSString stringWithFormat:@"%i", itemStoreId] title:storeTitle description:@"" logo:storeLogo latitude:latitude longitude:longitude];
-                        }
-                    }
-                    
-                }
-                sqlite3_finalize(statementForStoreName);
+                itemStore = [self getStoreDetails:itemStoreId];
                 
-                NSString *queryForColorName = [NSString stringWithFormat:@"SELECT color_id FROM ProductColor WHERE product_id=%i", itemId];
-                sqlite3_stmt *statementForColorName;
-                if (sqlite3_prepare_v2(dataBase, [queryForColorName UTF8String], -1, &statementForColorName, nil)
-                    == SQLITE_OK) {
-                    while (sqlite3_step(statementForColorName) == SQLITE_ROW) {
-                        
-                        int colorId = (int) sqlite3_column_int(statementForColorName, 0);
-                        NSString * itemColor = @"";
-                        
-                        NSString *queryForSpecificColorName = [NSString stringWithFormat:@"SELECT name FROM Color WHERE id=%i", colorId];
-                        sqlite3_stmt *statementForSpecificColorName;
-                        if (sqlite3_prepare_v2(dataBase, [queryForSpecificColorName UTF8String], -1, &statementForSpecificColorName, nil)
-                            == SQLITE_OK) {
-                            while (sqlite3_step(statementForSpecificColorName) == SQLITE_ROW) {
-                                char * itemColorChar = (char *)sqlite3_column_text(statementForSpecificColorName, 0);
-                                itemColor = [[NSString alloc] initWithUTF8String:itemColorChar];
-                            }
-                        }
-                        sqlite3_finalize(statementForSpecificColorName);
-                        
-                        [itemColors addObject:itemColor];
-                    }
-                }
-                sqlite3_finalize(statementForColorName);
+                [self getColourDetails:itemId itemColors:itemColors];
                 
                 NSString *queryForSizeName = [NSString stringWithFormat:@"SELECT size_id FROM ProductSize WHERE product_id=%i", itemId];
                 sqlite3_stmt *statementForSizeName;
@@ -242,16 +265,8 @@ static MMDDataBase *dataBase;
                 }
                 sqlite3_finalize(statementForSizeName);
                 
-                UIImage * itemImage;
-                NSString *queryForItemImage = [NSString stringWithFormat:@"SELECT url FROM ProductImage WHERE product_id=%i", itemId];
-                sqlite3_stmt *statementForItemImage;
-                if (sqlite3_prepare_v2(dataBase, [queryForItemImage UTF8String], -1, &statementForItemImage, nil)
-                    == SQLITE_OK) {
-                    while (sqlite3_step(statementForItemImage) == SQLITE_ROW) {
-                        char * itemImageURL = (char *)sqlite3_column_text(statementForItemImage, 0);
-                        itemImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithUTF8String:itemImageURL]]]];
-                    }
-                }
+                UIImage *itemImage;
+                [self loadProductImage:itemId itemImage_p:&itemImage];
                 
 #warning add offers
                 
