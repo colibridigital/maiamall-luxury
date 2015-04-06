@@ -296,6 +296,7 @@
                         <segue destination="dsd-AF-pqU" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="M2T-Zk-W86"/>
                         <segue destination="nLf-ge-9Ic" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="sKb-PN-fgW"/>
                         <segue destination="fVy-bs-hv8" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="vLb-f8-Ejo"/>
+                        <segue destination="uXS-3s-QTU" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="KTd-JP-GU6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4c-d4-88L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1899,6 +1900,117 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCq-uC-ZoT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2505" y="985"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zrk-oG-IUP">
+            <objects>
+                <navigationController storyboardIdentifier="storeItemsListNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uXS-3s-QTU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9KZ-um-lMi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YI1-aa-U9U" kind="relationship" relationship="rootViewController" id="y0e-tQ-Vfz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQN-qR-PL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2105" y="1640"/>
+        </scene>
+        <!--List of Items in the Store View Controller-->
+        <scene sceneID="0k4-OW-Yhp">
+            <objects>
+                <viewController storyboardIdentifier="listOfItemsInTheStore" title="List of Items in the Store View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YI1-aa-U9U" customClass="ListOfItemsInTheStoreViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pwo-17-nha"/>
+                        <viewControllerLayoutGuide type="bottom" id="WRe-n9-YTc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2EI-Pb-d63">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMP-c9-OjO">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem image="User-50.png" id="1ym-0L-veE">
+                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="xbP-sY-Wn4">
+                                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="1" image="Location Filled-50.png" id="G2U-tk-04A">
+                                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="2" title="" image="Home-50.png" id="BNQ-yf-KEn">
+                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                    </tabBarItem>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEa-Kb-iSS">
+                                <rect key="frame" x="16" y="72" width="288" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YUf-rb-Ydr">
+                                <rect key="frame" x="16" y="101" width="288" height="415"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="80" id="Mou-V6-8cC" customClass="ItemsInTheStoreTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mou-V6-8cC" id="Vns-5B-Yev">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-wy-v8v">
+                                                    <rect key="frame" x="8" y="8" width="54" height="64"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="VKr-8E-emZ">
+                                                    <rect key="frame" x="70" y="29" width="177" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="image" destination="9ra-wy-v8v" id="Hhl-5M-bZr"/>
+                                            <outlet property="itemTitle" destination="VKr-8E-emZ" id="pyV-OU-Oqn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YI1-aa-U9U" id="MIF-FC-dYW"/>
+                                    <outlet property="delegate" destination="YI1-aa-U9U" id="5HD-bD-0zz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="1kO-OT-8zx">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="zWq-fn-sKl">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="x87-N7-oSC">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="filterSearchMenu" destination="x87-N7-oSC" id="0Zb-Fk-u1i"/>
+                        <outlet property="itemsList" destination="YUf-rb-Ydr" id="0Cy-03-3C2"/>
+                        <outlet property="sidebarButton" destination="zWq-fn-sKl" id="N6q-cw-arS"/>
+                        <outlet property="storeTitle" destination="uEa-Kb-iSS" id="u23-GV-ijd"/>
+                        <outlet property="tabBarController" destination="IMP-c9-OjO" id="STh-WP-9N9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5VY-hZ-MzO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2505" y="1640"/>
         </scene>
     </scenes>
     <resources>

@@ -36,6 +36,8 @@
 		15ADFFFF1AB9A03700B8B1D1 /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15ADFFFD1AB9A03700B8B1D1 /* Home-50.png */; };
 		15B21DF51AD2CDC100611559 /* filterMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B21DF31AD2CDC000611559 /* filterMenuIcon.png */; };
 		15B21DF61AD2CDC100611559 /* giftMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B21DF41AD2CDC000611559 /* giftMenuIcon.png */; };
+		15B21DFA1AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B21DF91AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.m */; };
+		15B21DFE1AD2DF9700611559 /* ItemsInTheStoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B21DFD1AD2DF9700611559 /* ItemsInTheStoreTableViewCell.m */; };
 		15B60B701ACC59EB00DC8749 /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B60B6D1ACC59EB00DC8749 /* WYPopoverController.m */; };
 		15B60B711ACC59EB00DC8749 /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B60B6F1ACC59EB00DC8749 /* WYStoryboardPopoverSegue.m */; };
 		15B60B731ACC5A1400DC8749 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B60B721ACC5A1400DC8749 /* QuartzCore.framework */; };
@@ -180,6 +182,10 @@
 		15ADFFFE1AB9A03700B8B1D1 /* Location Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location Filled-50.png"; sourceTree = "<group>"; };
 		15B21DF31AD2CDC000611559 /* filterMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filterMenuIcon.png; sourceTree = "<group>"; };
 		15B21DF41AD2CDC000611559 /* giftMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giftMenuIcon.png; sourceTree = "<group>"; };
+		15B21DF81AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfItemsInTheStoreViewController.h; sourceTree = "<group>"; };
+		15B21DF91AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfItemsInTheStoreViewController.m; sourceTree = "<group>"; };
+		15B21DFC1AD2DF9700611559 /* ItemsInTheStoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsInTheStoreTableViewCell.h; sourceTree = "<group>"; };
+		15B21DFD1AD2DF9700611559 /* ItemsInTheStoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsInTheStoreTableViewCell.m; sourceTree = "<group>"; };
 		15B60B6C1ACC59EB00DC8749 /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPopoverController.h; sourceTree = "<group>"; };
 		15B60B6D1ACC59EB00DC8749 /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPopoverController.m; sourceTree = "<group>"; };
 		15B60B6E1ACC59EB00DC8749 /* WYStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYStoryboardPopoverSegue.h; sourceTree = "<group>"; };
@@ -476,6 +482,24 @@
 			name = ProductListViewController;
 			sourceTree = "<group>";
 		};
+		15B21DF71AD2DB5400611559 /* ListOfItemsInTheStoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15B21DF81AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.h */,
+				15B21DF91AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.m */,
+			);
+			name = ListOfItemsInTheStoreViewController;
+			sourceTree = "<group>";
+		};
+		15B21DFB1AD2DF6800611559 /* ItemsInTheStoreTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				15B21DFC1AD2DF9700611559 /* ItemsInTheStoreTableViewCell.h */,
+				15B21DFD1AD2DF9700611559 /* ItemsInTheStoreTableViewCell.m */,
+			);
+			name = ItemsInTheStoreTableViewCell;
+			sourceTree = "<group>";
+		};
 		15B60B6B1ACC59EB00DC8749 /* WYPopoverController */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +771,8 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15B21DFB1AD2DF6800611559 /* ItemsInTheStoreTableViewCell */,
+				15B21DF71AD2DB5400611559 /* ListOfItemsInTheStoreViewController */,
 				15E968881AD2BA9F003D20B8 /* PurchaseItemViewController */,
 				15E968841AD2B7C3003D20B8 /* PurchaseItemTableViewCell */,
 				15E968811ACFF981003D20B8 /* MBProgressHUD.h */,
@@ -1006,6 +1032,7 @@
 				15E753771AC5C63000F2D39D /* FMResultSet.m in Sources */,
 				1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */,
 				15E753751AC5C63000F2D39D /* FMDatabasePool.m in Sources */,
+				15B21DFA1AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.m in Sources */,
 				15E7531A1AC2C47500F2D39D /* ItemsSimilarCollectionView.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				15E753491AC573AA00F2D39D /* RetailDetailViewController.m in Sources */,
@@ -1031,6 +1058,7 @@
 				15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */,
 				15B60B711ACC59EB00DC8749 /* WYStoryboardPopoverSegue.m in Sources */,
 				15AD00281AB9E16D00B8B1D1 /* ProductListCollectionView.m in Sources */,
+				15B21DFE1AD2DF9700611559 /* ItemsInTheStoreTableViewCell.m in Sources */,
 				15ED183B1ACED7EB0091E84A /* MMDOffer.m in Sources */,
 				15AD00321AB9E20A00B8B1D1 /* ProductListCollectionViewCell.m in Sources */,
 				15E753741AC5C63000F2D39D /* FMDatabaseAdditions.m in Sources */,

@@ -10,6 +10,7 @@
 #import "MBProgressHUD.h"
 #import "MMDItem.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "ListOfItemsInTheStoreViewController.h"
 
 @interface MapViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate, GMSMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
