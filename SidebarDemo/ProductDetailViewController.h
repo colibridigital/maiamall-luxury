@@ -12,7 +12,7 @@
 #import "ALAlertBanner.h"
 #import "MBProgressHUD.h"
 
-@interface ProductDetailViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ProductDetailViewController : UIViewController< UITabBarDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) IBOutlet ItemsSimilarCollectionView *similarItemsList;
 - (IBAction)retailPageButtonClicked:(id)sender;
@@ -31,5 +31,4 @@
 @property (weak, nonatomic) IBOutlet UIButton *buyThisButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @end

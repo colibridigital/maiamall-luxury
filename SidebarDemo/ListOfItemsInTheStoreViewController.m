@@ -50,18 +50,6 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(-5.0, 0.0, 320.0, 44.0)];
-    self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    UIView *searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 310.0, 44.0)];
-    searchBarView.autoresizingMask = 0;
-    self.searchBar.delegate = self;
-    //searchBar.backgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"MaiaMall-Logo-Light" ofType: @"jpg"]];
-    self.searchBar.backgroundImage = [[UIImage alloc] init];
-    
-    
-    [searchBarView addSubview:self.searchBar];
-    self.navigationItem.titleView = searchBarView;
-    
     self.tabBarController.delegate = self;
 }
 

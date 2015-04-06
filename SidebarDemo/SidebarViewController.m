@@ -31,7 +31,7 @@ NSArray *menuItems;
 {
     [super viewDidLoad];
     
-    menuItems = @[@"title", @"board", @"map", @"settings", @"wishlist"]; // @"profile settings", @"wishlist"];
+    menuItems = @[@"title", @"board", @"map", @"settings", @"wishlist", @"cart"]; // @"profile settings", @"wishlist"];
 }
 
 - (void)didReceiveMemoryWarning
