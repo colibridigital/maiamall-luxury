@@ -68,7 +68,7 @@
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestAlwaysAuthorization];
     locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     
     [locationManager startUpdatingLocation];
     
@@ -94,14 +94,6 @@
     self.arrayWithSearchResultsBeforeFiltering = [[NSMutableArray alloc] init];
     
     [self populateMapWithData];
-
-    
-//    // Creates a marker in the center of the map.
-//    GMSMarker *marker = [[GMSMarker alloc] init];
-//    marker.position = CLLocationCoordinate2DMake(-33.86, 151.20);
-//    marker.title = @"Sydney";
-//    marker.snippet = @"Australia";
-//    marker.map = mapView_;
 }
 
 - (void)dealloc {

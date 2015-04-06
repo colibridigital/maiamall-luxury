@@ -1190,6 +1190,7 @@
 				GCC_PREFIX_HEADER = "SidebarDemo/MaiaMall-Prefix.pch";
 				INFOPLIST_FILE = "SidebarDemo/MaiaMall-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = MaiaMall;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
