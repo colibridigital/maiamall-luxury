@@ -45,8 +45,9 @@ typedef enum {
 - (instancetype)initWithItem:(MMDItem*)item;
 
 - (void)addItemToCart; //addes 1 item to cart
-- (void)removeItemFromCart; //removes 1 item from cart
-- (void)annulateItemInCart; //removes all items in the cart;
+- (void)decrementItemFromCart; //removes 1 item from cart
+- (void)annulateItemInCart; //annulates all items in the cart;
+- (void)removeItemFromCart; //removes all items in the cart;
 - (void)setItemIsInWishList:(BOOL)isInWishList;
 
 - (void)addOffer:(MMDOffer*)offer;

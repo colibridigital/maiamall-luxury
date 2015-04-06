@@ -80,6 +80,8 @@
 		15E9687F1ACFF3D1003D20B8 /* bannerSuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968751ACFF3D1003D20B8 /* bannerSuccess.png */; };
 		15E968801ACFF3D1003D20B8 /* bannerSuccess@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E968761ACFF3D1003D20B8 /* bannerSuccess@2x.png */; };
 		15E968831ACFF981003D20B8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E968821ACFF981003D20B8 /* MBProgressHUD.m */; };
+		15E968871AD2B7EB003D20B8 /* PurchaseItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E968861AD2B7EB003D20B8 /* PurchaseItemTableViewCell.m */; };
+		15E9688B1AD2BAC6003D20B8 /* PurchaseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9688A1AD2BAC6003D20B8 /* PurchaseItemViewController.m */; };
 		15ECDE491ACF2B3A00F6107F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */; };
 		15ECDE4B1ACF2B4400F6107F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE4A1ACF2B4400F6107F /* CoreData.framework */; };
 		15ECDE4D1ACF2B4A00F6107F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */; };
@@ -245,6 +247,10 @@
 		15E968761ACFF3D1003D20B8 /* bannerSuccess@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerSuccess@2x.png"; sourceTree = "<group>"; };
 		15E968811ACFF981003D20B8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		15E968821ACFF981003D20B8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		15E968851AD2B7EB003D20B8 /* PurchaseItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseItemTableViewCell.h; sourceTree = "<group>"; };
+		15E968861AD2B7EB003D20B8 /* PurchaseItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseItemTableViewCell.m; sourceTree = "<group>"; };
+		15E968891AD2BAC6003D20B8 /* PurchaseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseItemViewController.h; sourceTree = "<group>"; };
+		15E9688A1AD2BAC6003D20B8 /* PurchaseItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseItemViewController.m; sourceTree = "<group>"; };
 		15ECDE481ACF2B3A00F6107F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		15ECDE4A1ACF2B4400F6107F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		15ECDE4C1ACF2B4A00F6107F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -643,6 +649,24 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		15E968841AD2B7C3003D20B8 /* PurchaseItemTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				15E968851AD2B7EB003D20B8 /* PurchaseItemTableViewCell.h */,
+				15E968861AD2B7EB003D20B8 /* PurchaseItemTableViewCell.m */,
+			);
+			name = PurchaseItemTableViewCell;
+			sourceTree = "<group>";
+		};
+		15E968881AD2BA9F003D20B8 /* PurchaseItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15E968891AD2BAC6003D20B8 /* PurchaseItemViewController.h */,
+				15E9688A1AD2BAC6003D20B8 /* PurchaseItemViewController.m */,
+			);
+			name = PurchaseItemViewController;
+			sourceTree = "<group>";
+		};
 		15ED18281ACED7EB0091E84A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +743,8 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15E968881AD2BA9F003D20B8 /* PurchaseItemViewController */,
+				15E968841AD2B7C3003D20B8 /* PurchaseItemTableViewCell */,
 				15E968811ACFF981003D20B8 /* MBProgressHUD.h */,
 				15E968821ACFF981003D20B8 /* MBProgressHUD.m */,
 				15E968681ACFF3D1003D20B8 /* ALAlertBanner */,
@@ -979,6 +1005,7 @@
 				15E968601ACFE8C1003D20B8 /* WishlistViewController.m in Sources */,
 				15ED18371ACED7EB0091E84A /* MMDBrand.m in Sources */,
 				15E9685C1ACFDB5C003D20B8 /* SettingsViewController.m in Sources */,
+				15E9688B1AD2BAC6003D20B8 /* PurchaseItemViewController.m in Sources */,
 				15E968651ACFEB20003D20B8 /* WishlistTableViewCell.m in Sources */,
 				157562891AC082DF001FAE38 /* FavouritesListCollectionView.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
@@ -990,6 +1017,7 @@
 				15AD00191AB9CEFB00B8B1D1 /* ProductCollectionViewCell.m in Sources */,
 				15B60B771ACC5D4400DC8749 /* FilterMenuController.m in Sources */,
 				15E968771ACFF3D1003D20B8 /* ALAlertBanner.m in Sources */,
+				15E968871AD2B7EB003D20B8 /* PurchaseItemTableViewCell.m in Sources */,
 				15E968831ACFF981003D20B8 /* MBProgressHUD.m in Sources */,
 				15E7532A1AC318D500F2D39D /* NIDropDown.m in Sources */,
 				15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */,

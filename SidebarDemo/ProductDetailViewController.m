@@ -12,6 +12,7 @@
 #import "RetailDetailViewController.h"
 #import "MMDWishList.h"
 #import "AppDelegate.h"
+#import "PurchaseItemViewController.h"
 
 @interface ProductDetailViewController ()
 @property (strong, nonatomic) MMDItem * currentItemToShow;
@@ -262,5 +263,16 @@
 
     
    // [self showViewController:ret sender:self];
+}
+
+- (IBAction)buyThisItemButtonClicked:(id)sender {
+     [self.currentItemToShow addItemToCart];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+    PurchaseItemViewController * purchasePage = [storyboard instantiateViewControllerWithIdentifier:@"purchasePage"];
+
+    [self.navigationController pushViewController:purchasePage animated:YES];
+
 }
 @end
