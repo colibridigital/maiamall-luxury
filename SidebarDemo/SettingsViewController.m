@@ -37,13 +37,22 @@
     [self setSwitchColourToFemale];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    bool maleFemale = [[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch];
+    [self setSwitchTo:maleFemale];
+}
+
+- (void)setSwitchColourToMale {
+    self.femaleMaleSwitch.tintColor = femaleColor;
+    self.femaleMaleSwitch.backgroundColor = femaleColor;
+    self.femaleMaleSwitch.layer.cornerRadius = 16.0;
+}
+
 - (void)setSwitchTo:(BOOL)on {
     if (on) {
         [self setSwitchColourToFemale];
     } else {
-        self.femaleMaleSwitch.tintColor = femaleColor;
-        self.femaleMaleSwitch.backgroundColor = femaleColor;
-        self.femaleMaleSwitch.layer.cornerRadius = 16.0;
+        [self setSwitchColourToMale];
     }
     [self.femaleMaleSwitch setOn:on];
 }
@@ -58,9 +67,6 @@
     [_delegate genderWasChangedFrom:[[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch] to:sender.isOn];
     
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
