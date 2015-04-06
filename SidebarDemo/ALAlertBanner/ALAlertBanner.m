@@ -72,7 +72,7 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
 @implementation UIColor (LightAndDark)
 
 - (UIColor *)darkerColor {
-    CGFloat h, s, b, a;
+    float h, s, b, a;
     if ([self getHue:&h saturation:&s brightness:&b alpha:&a])
         return [UIColor colorWithHue:h saturation:s brightness:b * 0.75 alpha:a];
     return nil;
@@ -93,18 +93,14 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
 
 @end
 
-@implementation UIApplication (ALApplicationBarHeights)
+@implementation UIApplication (ALNavigationBarHeight)
 
 + (CGFloat)navigationBarHeight {
     //if we're on iOS7 or later, return new landscape navBar height
-    if (AL_IOS_7_OR_GREATER && UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) && [UIDevice currentDevice].userInterfaceIdiom != UIUserInterfaceIdiomPad)
+    if (AL_IOS_7_OR_GREATER && UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
         return kNavigationBarHeightiOS7Landscape;
     
     return kNavigationBarHeightDefault;
-}
-
-+ (CGFloat)statusBarHeight {
-	return [UIApplication sharedApplication].statusBarFrame.size.height;
 }
 
 @end
@@ -201,29 +197,30 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
 
 -(void)setStyle:(ALAlertBannerStyle)style {
     _style = style;
-    
-    switch (style) {
-        case ALAlertBannerStyleSuccess:
-            self.styleImageView.image = [UIImage imageNamed:@"bannerSuccess.png"];
-            break;
-            
-        case ALAlertBannerStyleFailure:
-            self.styleImageView.image = [UIImage imageNamed:@"bannerFailure.png"];
-            break;
-            
-        case ALAlertBannerStyleNotify:
-            self.styleImageView.image = [UIImage imageNamed:@"bannerNotify.png"];
-            break;
-            
-        case ALAlertBannerStyleWarning:
-            self.styleImageView.image = [UIImage imageNamed:@"bannerAlert.png"];
-            
-            //tone the shadows down a little for the yellow background
-            self.titleLabel.layer.shadowOpacity = 0.2f;
-            self.subtitleLabel.layer.shadowOpacity = 0.2f;
-            
-            break;
-    }
+//    if (self.styleImageView.image == nil) {
+//        switch (style) {
+//            case ALAlertBannerStyleSuccess:
+//                self.styleImageView.image = [UIImage imageNamed:@"bannerSuccess.png"];
+//                break;
+//                
+//            case ALAlertBannerStyleFailure:
+//                self.styleImageView.image = [UIImage imageNamed:@"bannerFailure.png"];
+//                break;
+//                
+//            case ALAlertBannerStyleNotify:
+//                self.styleImageView.image = [UIImage imageNamed:@"bannerNotify.png"];
+//                break;
+//                
+//            case ALAlertBannerStyleWarning:
+//                self.styleImageView.image = [UIImage imageNamed:@"bannerAlert.png"];
+//                
+//                //tone the shadows down a little for the yellow background
+//                self.titleLabel.layer.shadowOpacity = 0.2f;
+//                self.subtitleLabel.layer.shadowOpacity = 0.2f;
+//                
+//                break;
+//        }
+//    }
 }
 
 - (void)setShowShadow:(BOOL)showShadow {
@@ -296,16 +293,16 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
     [[ALAlertBannerManager sharedManager] forceHideAllAlertBannersInView:view];
 }
 
-+ (ALAlertBanner *)alertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title {
-    return [self alertBannerForView:view style:style position:position title:title subtitle:nil tappedBlock:nil];
++ (ALAlertBanner *)alertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title image:(UIImage*)image {
+    return [self alertBannerForView:view style:style position:position title:title subtitle:nil image:image tappedBlock:nil];
 }
 
-+ (ALAlertBanner *)alertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title subtitle:(NSString *)subtitle {
-    return [self alertBannerForView:view style:style position:position title:title subtitle:subtitle tappedBlock:nil];
++ (ALAlertBanner *)alertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title subtitle:(NSString *)subtitle image:(UIImage*)image {
+    return [self alertBannerForView:view style:style position:position title:title subtitle:subtitle image:image tappedBlock:nil];
 }
 
-+ (ALAlertBanner *)alertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title subtitle:(NSString *)subtitle tappedBlock:(void (^)(ALAlertBanner *alertBanner))tappedBlock {
-    ALAlertBanner *alertBanner = [ALAlertBanner createAlertBannerForView:view style:style position:position title:title subtitle:subtitle];
++ (ALAlertBanner *)alertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title subtitle:(NSString *)subtitle image:(UIImage*)image tappedBlock:(void (^)(ALAlertBanner *alertBanner))tappedBlock {
+    ALAlertBanner *alertBanner = [ALAlertBanner createAlertBannerForView:view style:style position:position title:title subtitle:subtitle image:image];
     alertBanner.allowTapToDismiss = tappedBlock ? NO : alertBanner.allowTapToDismiss;
     alertBanner.tappedBlock = tappedBlock;
     return alertBanner;
@@ -314,7 +311,7 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
 # pragma mark -
 # pragma mark Internal Class Methods
 
-+ (ALAlertBanner *)createAlertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title subtitle:(NSString *)subtitle {
++ (ALAlertBanner *)createAlertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title subtitle:(NSString *)subtitle image:(UIImage*)image {
     ALAlertBanner *alertBanner = [[ALAlertBanner alloc] init];
     
     if (![view isKindOfClass:[UIWindow class]] && position == ALAlertBannerPositionUnderNavBar)
@@ -325,6 +322,21 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
     alertBanner.style = style;
     alertBanner.position = position;
     alertBanner.state = ALAlertBannerStateHidden;
+    if (image != nil) {
+        
+//        float oldWidth = image.size.width;
+//        float scaleFactor = alertBanner.styleImageView.frame.size.width / oldWidth;
+        
+        float newHeight = 40;
+        float newWidth = 40;
+        
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+        [image drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        alertBanner.styleImageView.image = newImage;
+    }
     
     [view addSubview:alertBanner];
     
@@ -540,7 +552,7 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
     switch (self.position) {
         case ALAlertBannerPositionTop:
             initialYCoord = -heightForSelf;
-            if (isSuperviewKindOfWindow) initialYCoord += [UIApplication statusBarHeight];
+            if (isSuperviewKindOfWindow) initialYCoord += kStatusBarHeight;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
             if (AL_IOS_7_OR_GREATER) {
                 id nextResponder = [self nextAvailableViewController:self];
@@ -557,7 +569,7 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
             initialYCoord = superview.bounds.size.height;
             break;
         case ALAlertBannerPositionUnderNavBar:
-            initialYCoord = -heightForSelf + [UIApplication navigationBarHeight] + [UIApplication statusBarHeight];
+            initialYCoord = -heightForSelf + [UIApplication navigationBarHeight] + kStatusBarHeight;
             break;
     }
     frame.origin.y = initialYCoord;
@@ -705,14 +717,14 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
             fillColor = [UIColor colorWithRed:(173/255.0) green:(48/255.0) blue:(48/255.0) alpha:1.f];
             break;
         case ALAlertBannerStyleNotify:
-            fillColor = [UIColor colorWithRed:(48/255.0) green:(110/255.0) blue:(173/255.0) alpha:1.f];
+            fillColor = [UIColor lightGrayColor];//colorWithRed:(48/255.0) green:(110/255.0) blue:(173/255.0) alpha:1.f];
             break;
         case ALAlertBannerStyleWarning:
             fillColor = [UIColor colorWithRed:(211/255.0) green:(209/255.0) blue:(100/255.0) alpha:1.f];
             break;
     }
     
-    NSArray *colorsArray = [NSArray arrayWithObjects:(id)[fillColor CGColor], (id)[[fillColor darkerColor] CGColor], nil];
+    NSArray *colorsArray = [NSArray arrayWithObject:(id)[fillColor CGColor]/*, (id)[[fillColor ] CGColor], nil*/];
     CGColorSpaceRef colorSpace =  CGColorSpaceCreateDeviceRGB();
     const CGFloat locations[2] = {0.f, 1.f};
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)colorsArray, locations);
@@ -722,6 +734,8 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
     
+//    CGContextSetFillColorWithColor(context, [fillColor CGColor]);
+
     CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.6f].CGColor);
     CGContextFillRect(context, CGRectMake(0.f, rect.size.height - 1.f, rect.size.width, 1.f));
     CGContextSetFillColorWithColor(context, [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:0.3f].CGColor);

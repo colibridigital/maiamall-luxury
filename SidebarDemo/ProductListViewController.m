@@ -44,8 +44,6 @@
     
     self.tabBarController.delegate = self;
     
-    filterMenuController = [[FilterMenuController alloc] init];
-    [filterMenuController initWithSearchText:self.searchText];
 }
 
 - (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText {
@@ -155,8 +153,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
     if ([segue.identifier isEqualToString:@"FilterMenuSegue"])
     {
+      /*  filterMenuController = [segue destinationViewController];
+        [filterMenuController initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];*/
         
         WYStoryboardPopoverSegue *popoverSegue = (WYStoryboardPopoverSegue *)segue;
         anotherPopoverController = [popoverSegue popoverControllerWithSender:sender
@@ -167,6 +168,7 @@
         anotherPopoverController.popoverContentSize = CGSizeMake(220, 360);
         
         anotherPopoverController.delegate = self;
+        
     }
 }
 

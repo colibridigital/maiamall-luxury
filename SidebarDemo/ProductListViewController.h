@@ -15,7 +15,7 @@
 
 @interface ProductListViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITabBarControllerDelegate, UITabBarDelegate, WYPopoverControllerDelegate> {
     WYPopoverController *anotherPopoverController;
-    FilterMenuController *filterMenuController;
+    //FilterMenuController *filterMenuController;
 
 }
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;

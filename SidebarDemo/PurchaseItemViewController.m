@@ -154,13 +154,17 @@
                                                      position:ALAlertBannerPositionTop
                                                         title:@"Thank you!"
                                                      subtitle:@"Your purchase was successfull. Do not forget to pick your items up in the store!"
+                                                        image:nil
                                                   tappedBlock:nil];
     [banner setSecondsToShow:0];
     [banner show];
+
     
     
     //        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Thank you!" message:@"Your purchase was successfull. Do not forget to pick your items up in the store!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     //        [alertView show];
+    
+    self.basketSubtotalPrice.text = [NSString stringWithFormat:@"Basket Subtotal: %.2f", 0.00];
     
     [self.cartTV reloadData];
     

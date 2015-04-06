@@ -28,6 +28,9 @@
     
     NSLog(@"search %@", self.searchText);
     
+   self.arrayWithColors = [[NSMutableArray alloc] init];
+    self.arrayWithSize = [[NSMutableArray alloc] init];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -35,6 +38,9 @@
     [super viewDidAppear:YES];
     
     NSLog(@"search %@", self.searchText);
+    
+    self.arrayWithColors = [[NSMutableArray alloc] init];
+    self.arrayWithSize = [[NSMutableArray alloc] init];
 
 }
 
@@ -69,18 +75,49 @@
 }
 */
 
--(void)initWithSearchText:(NSString*)searchText{
+-(void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText {
     
     self.searchText = searchText;
+    self.arrayWithSearchResults = array;
     
 }
+
+// Number of components.
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+// Total rows in our component.
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    if (self.colourFilter.isSelected) {
+        return [self.arrayWithColors count];
+    } else if (self.sizeFilter.isSelected) {
+        return [self.arrayWithSize count];
+    } else return 0;
+}
+
+// Display each row's data.
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [self.arrayWithColors objectAtIndex: row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    //    NSLog(@"You selected this: %@", [self.pickerViewData objectAtIndex: row]);
+    
+       
+    [self.pickerView removeFromSuperview];
+    
+}
+
 
 - (IBAction)sizeFilterPressed:(id)sender {
 }
 
 - (IBAction)colourFilterPressed:(id)sender {
     NSMutableSet * setWithColors = [[NSMutableSet alloc] init];
-   /* NSMutableArray * arrayWithColors = [[NSMutableArray alloc] initWithObjects:@"None", nil];
+    
+    NSMutableArray * arrayWithColors = [[NSMutableArray alloc] initWithObjects:@"None", nil];
     
     for (MMDItem * item in self.arrayWithSearchResults) {
         if (item.itemColors.count > 0) {
@@ -92,10 +129,6 @@
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"description" ascending:YES];
     [arrayWithColors addObjectsFromArray:[setWithColors sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]]];
     
-    
-    [ActionSheetStringPicker showPickerWithTitle:@"Filter by Color" rows:arrayWithColors initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-        if ([selectedValue isEqualToString:@"None"]) {
-            [self.colorButton setTitle:@"Filter Colour" forState:UIControlStateNormal];
             
             MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.mode = MBProgressHUDModeIndeterminate;
@@ -112,10 +145,11 @@
                     }
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                        [self populateMapWithData];
+                        //[self populateMapWithData];
                     });
                 });
-            } else {
+            }
+            /*} else {
                 NSMutableArray * arrayWithFilteredItems = [[NSMutableArray alloc] init];
                 
                 if (self.arrayWithSearchResultsBeforeFiltering.count > 0) {
@@ -140,7 +174,7 @@
                 
             }
             
-        } else {
+       /* } else {
             [self.colorButton setTitle:[NSString stringWithFormat:@"Colour: %@", selectedValue] forState:UIControlStateNormal];
             
             MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -180,12 +214,8 @@
                     [self populateMapWithData];
                 });
             });
-        }
+        }*/
         
-        
-    } cancelBlock:^(ActionSheetStringPicker *picker) {
-        
-    } origin:sender];*/
 
 }
 
@@ -197,6 +227,11 @@
 
 - (IBAction)refineButtonPressed:(id)sender {
     NSLog(@"in here");
+    
+   /* UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    prodList = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+    [prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];*/
+    
 }
 
 - (IBAction)locationFilterPressed:(id)sender {

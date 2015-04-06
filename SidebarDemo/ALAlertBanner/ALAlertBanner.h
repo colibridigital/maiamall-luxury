@@ -100,7 +100,7 @@ typedef enum {
  
  By default, supplying a tap handler will disable allowTapToDismiss on this particular banner. If you want to reinstate this behavior alongside the tap handler, you can call `[[ALAlertBannerManager sharedManager] hideAlertBanner:alertBanner];` in tappedBlock().
  */
-+ (ALAlertBanner *)alertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title subtitle:(NSString *)subtitle tappedBlock:(void(^)(ALAlertBanner *alertBanner))tappedBlock;
++ (ALAlertBanner *)alertBannerForView:(UIView *)view style:(ALAlertBannerStyle)style position:(ALAlertBannerPosition)position title:(NSString *)title subtitle:(NSString *)subtitle image:(UIImage*)image tappedBlock:(void(^)(ALAlertBanner *alertBanner))tappedBlock;
 
 /**
  Show the alert banner
