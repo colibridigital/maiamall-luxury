@@ -15,10 +15,8 @@
 
 @implementation PurchaseItemViewController
 
-- (void)viewDidLoad
+- (void)calculatePrice
 {
-    [super viewDidLoad];
-    
     float subtotalPrice = 0.0;
     
     for (MMDItem * item in [[MMDCart cart] arrayWithItemsToPurchase]) {
@@ -28,6 +26,13 @@
     }
     
     self.basketSubtotalPrice.text = [NSString stringWithFormat:@"Basket Subtotal: %.2f", subtotalPrice];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self calculatePrice];
     
     [self initialiseMenuItems];
         
@@ -36,15 +41,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:NO];
     
-    float subtotalPrice = 0.0;
-    
-    for (MMDItem * item in [[MMDCart cart] arrayWithItemsToPurchase]) {
-        if (item.itemNumberInCart > 0) {
-            subtotalPrice += item.itemNumberInCart * item.itemPrice;
-        }
-    }
-    
-    self.basketSubtotalPrice.text = [NSString stringWithFormat:@"Basket Subtotal: %f", subtotalPrice];
+    [self calculatePrice];
     
     [self initialiseMenuItems];
 }
@@ -125,7 +122,7 @@
     [[[[MMDCart cart] arrayWithItemsToPurchase] objectAtIndex:indexPath.row] addItemToCart];
     [((PurchaseItemTableViewCell*)[self.cartTV cellForRowAtIndexPath:indexPath]) setTextFieldTextFornumber:((MMDItem*)[[[MMDCart cart] arrayWithItemsToPurchase] objectAtIndex:indexPath.row]).itemNumberInCart];
     [self.cartTV reloadData];
-    
+    [self calculatePrice];
 }
 
 - (IBAction)minusButtonClicked:(UIButton *)sender {
@@ -137,6 +134,9 @@
         [((PurchaseItemTableViewCell*)[self.cartTV cellForRowAtIndexPath:indexPath]) setTextFieldTextFornumber:((MMDItem*)[[[MMDCart cart] arrayWithItemsToPurchase] objectAtIndex:indexPath.row]).itemNumberInCart];
         [self.cartTV reloadData];
     }
+    
+    [self calculatePrice];
+    
 }
 
 - (IBAction)purchaseButtonClicked:(UIButton *)sender {
@@ -230,6 +230,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [[[[MMDCart cart] arrayWithItemsToPurchase] objectAtIndex:indexPath.row] removeItemFromCart];
         [tableView reloadData];
+        [self calculatePrice];
     }
 }
 
