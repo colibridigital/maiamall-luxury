@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMDItem.h"
 
-@interface FilterMenuController : UIViewController
+@interface FilterMenuController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *locationFilter;
 @property (strong, nonatomic) IBOutlet UIButton *sizeFilter;
 @property (strong, nonatomic) IBOutlet UIButton *colourFilter;
+
+@property (strong, nonatomic) NSString *searchText;
 
 - (IBAction)sizeFilterPressed:(id)sender;
 
@@ -26,4 +29,6 @@
 - (IBAction)refineButtonPressed:(id)sender;
 
 - (IBAction)locationFilterPressed:(id)sender;
+
+-(void)initWithSearchText:(NSString*)searchText;
 @end

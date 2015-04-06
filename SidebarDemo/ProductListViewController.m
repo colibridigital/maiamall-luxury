@@ -43,6 +43,9 @@
     self.navigationItem.titleView = searchBarView;
     
     self.tabBarController.delegate = self;
+    
+    filterMenuController = [[FilterMenuController alloc] init];
+    [filterMenuController initWithSearchText:self.searchText];
 }
 
 - (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText {
@@ -148,6 +151,59 @@
     //[self showViewController:det sender:self];
 
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"FilterMenuSegue"])
+    {
+        
+        WYStoryboardPopoverSegue *popoverSegue = (WYStoryboardPopoverSegue *)segue;
+        anotherPopoverController = [popoverSegue popoverControllerWithSender:sender
+                                                    permittedArrowDirections:WYPopoverArrowDirectionDown
+                                                                    animated:YES
+                                                                     options:WYPopoverAnimationOptionFadeWithScale];
+        
+        anotherPopoverController.popoverContentSize = CGSizeMake(220, 360);
+        
+        anotherPopoverController.delegate = self;
+    }
+}
+
+#pragma mark - WYPopoverControllerDelegate
+
+- (void)popoverControllerDidPresentPopover:(WYPopoverController *)controller
+{
+    NSLog(@"popoverControllerDidPresentPopover");
+    
+}
+
+- (BOOL)popoverControllerShouldDismissPopover:(WYPopoverController *)controller
+{
+    return YES;
+}
+
+- (void)popoverControllerDidDismissPopover:(WYPopoverController *)controller
+{
+    if (controller == anotherPopoverController)
+    {
+        anotherPopoverController.delegate = nil;
+        anotherPopoverController = nil;
+    }
+    
+}
+
+- (BOOL)popoverControllerShouldIgnoreKeyboardBounds:(WYPopoverController *)popoverController
+{
+    return YES;
+}
+
+- (void)popoverController:(WYPopoverController *)popoverController willTranslatePopoverWithYOffset:(float *)value
+{
+    // keyboard is shown and the popover will be moved up by 163 pixels for example ( *value = 163 )
+    *value = 0; // set value to 0 if you want to avoid the popover to be moved
+}
+
 
 
 /*

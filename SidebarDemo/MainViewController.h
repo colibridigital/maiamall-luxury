@@ -15,6 +15,7 @@
 #import "MMDDataBase.h"
 #import "MMDItem.h"
 #import "SettingsViewController.h"
+#import "FilterMenuController.h"
 
 @interface MainViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate, WYPopoverControllerDelegate, GenderWasChanged>
  {

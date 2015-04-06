@@ -543,13 +543,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="UXS-up-DOe" firstAttribute="bottom" secondItem="jpn-OE-hsw" secondAttribute="top" id="Gft-7K-Jgb"/>
-                            <constraint firstItem="UXS-up-DOe" firstAttribute="leading" secondItem="6FA-3e-eJH" secondAttribute="leadingMargin" constant="-10" id="JlY-2Y-aia"/>
-                            <constraint firstItem="Dme-G2-rPj" firstAttribute="leading" secondItem="6FA-3e-eJH" secondAttribute="leading" id="LKj-so-LTH"/>
-                            <constraint firstItem="UXS-up-DOe" firstAttribute="top" secondItem="sXU-cL-NQU" secondAttribute="bottom" constant="5" id="UNJ-mx-LVJ"/>
-                            <constraint firstItem="UXS-up-DOe" firstAttribute="centerX" secondItem="Dme-G2-rPj" secondAttribute="centerX" id="Wm7-bA-CSq"/>
-                            <constraint firstAttribute="bottom" secondItem="Dme-G2-rPj" secondAttribute="bottom" id="u3Z-Fu-9q3"/>
-                            <constraint firstAttribute="trailing" secondItem="Dme-G2-rPj" secondAttribute="trailing" id="uhy-eS-0dk"/>
+                            <constraint firstAttribute="bottom" secondItem="Dme-G2-rPj" secondAttribute="bottom" id="1DX-Hf-aIz"/>
+                            <constraint firstItem="UXS-up-DOe" firstAttribute="top" secondItem="sXU-cL-NQU" secondAttribute="bottom" constant="5" id="8Xp-9k-YcJ"/>
+                            <constraint firstItem="Dme-G2-rPj" firstAttribute="leading" secondItem="6FA-3e-eJH" secondAttribute="leading" id="ADW-Fb-kBW"/>
+                            <constraint firstItem="UXS-up-DOe" firstAttribute="bottom" secondItem="jpn-OE-hsw" secondAttribute="top" id="MhN-cH-Dhu"/>
+                            <constraint firstItem="Dme-G2-rPj" firstAttribute="centerX" secondItem="UXS-up-DOe" secondAttribute="centerX" id="Zpw-eg-Fkr"/>
+                            <constraint firstItem="UXS-up-DOe" firstAttribute="leading" secondItem="6FA-3e-eJH" secondAttribute="leadingMargin" constant="-10" id="cKw-vz-8SI"/>
+                            <constraint firstAttribute="trailing" secondItem="Dme-G2-rPj" secondAttribute="trailing" id="pAk-GW-3jr"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -559,11 +559,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="mlw-ti-yah">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="eSb-KY-lSZ" kind="custom" identifier="FilterMenuSegue" customClass="WYStoryboardPopoverSegue" id="95b-qb-Muc"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="filterSearchMenu" destination="mlw-ti-yah" id="FuP-eq-Nez"/>
                         <outlet property="prodListCollectionView" destination="UXS-up-DOe" id="rCs-QL-zRe"/>
                         <outlet property="sidebarButton" destination="s2X-uL-Jgt" id="0Iq-rj-1Ym"/>
                         <outlet property="tabBarController" destination="Dme-G2-rPj" id="6bx-Ia-Z2g"/>
@@ -774,6 +776,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5Yh-Kq-dQb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZx-1d-Oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="prodNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Gk-XR-oKP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vDL-3w-mhb">
@@ -785,7 +788,6 @@
                         <segue destination="kUH-f6-7eD" kind="relationship" relationship="rootViewController" id="DYp-R9-qAr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kZx-1d-Oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1338" y="342"/>
         </scene>
@@ -2000,6 +2002,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="95b-qb-Muc"/>
         <segue reference="dsV-kj-tD1"/>
         <segue reference="fEs-ex-e8Z"/>
         <segue reference="z3Z-27-kAD"/>
