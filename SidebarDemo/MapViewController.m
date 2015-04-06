@@ -8,7 +8,6 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
 
 @interface MapViewController ()
 
@@ -169,5 +168,49 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+   /* [self.searchBar resignFirstResponder];
+    
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Searching...";
+    
+    dispatch_async(dispatch_queue_create("Search", nil), ^{
+        NSMutableArray * arrayWithSearchResults = [[NSMutableArray alloc] init];
+        
+        for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
+            if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
+                [arrayWithSearchResults addObject:item];
+            }
+        }
+        
+        if (arrayWithSearchResults.count > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                
+                self.arrayWithSearchResults = arrayWithSearchResults;
+                
+                [self populateMapWithData];
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"No Results Found";
+            });
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            });
+        }
+        
+    });*/
+    
+}
+
 
 @end
