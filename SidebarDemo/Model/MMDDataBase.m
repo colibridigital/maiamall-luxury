@@ -168,6 +168,68 @@ static MMDDataBase *dataBase;
     sqlite3_finalize(statementForColorName);
 }
 
+- (void)loadSizeDetails:(int)itemId itemSizes:(NSMutableArray *)itemSizes {
+    NSString *queryForSizeName = [NSString stringWithFormat:@"SELECT size_id FROM ProductSize WHERE product_id=%i", itemId];
+    sqlite3_stmt *statementForSizeName;
+    if (sqlite3_prepare_v2(dataBase, [queryForSizeName UTF8String], -1, &statementForSizeName, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForSizeName) == SQLITE_ROW) {
+            
+            int sizeId = (int) sqlite3_column_int(statementForSizeName, 0);
+            NSString * itemSize = @"";
+            
+            NSString *queryForSpecificSizeName = [NSString stringWithFormat:@"SELECT value FROM Size WHERE id=%i", sizeId];
+            sqlite3_stmt *statementForSpecificSizeName;
+            if (sqlite3_prepare_v2(dataBase, [queryForSpecificSizeName UTF8String], -1, &statementForSpecificSizeName, nil)
+                == SQLITE_OK) {
+                while (sqlite3_step(statementForSpecificSizeName) == SQLITE_ROW) {
+                    char * itemSizeChar = (char *)sqlite3_column_text(statementForSpecificSizeName, 0);
+                    itemSize = [[NSString alloc] initWithUTF8String:itemSizeChar];
+                }
+            }
+            sqlite3_finalize(statementForSpecificSizeName);
+            
+            [itemSizes addObject:itemSize];
+        }
+    }
+    sqlite3_finalize(statementForSizeName);
+}
+
+- (MMDBrand *)loadBrandDetails:(int)itemBrandId {
+    //                usleep(1000000);
+    //            }
+    
+    MMDBrand *itemBrand;
+    NSString *queryForBrandName = [NSString stringWithFormat:@"SELECT name FROM Brand WHERE id=%i", itemBrandId];
+    sqlite3_stmt *statementForBrandName;
+    if (sqlite3_prepare_v2(dataBase, [queryForBrandName UTF8String], -1, &statementForBrandName, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForBrandName) == SQLITE_ROW) {
+            char * brandTitleChar = (char *)sqlite3_column_text(statementForBrandName, 0);
+            NSString * brandTitle = [[NSString alloc] initWithUTF8String:brandTitleChar];
+            
+            itemBrand = [[MMDBrand alloc] initWithId:[NSString stringWithFormat:@"%i", itemBrandId] title:brandTitle image:nil];
+        }
+    }
+    sqlite3_finalize(statementForBrandName);
+    return itemBrand;
+}
+
+- (NSString *)loadCategoryDetails:(int)itemCategoryId {
+    NSString *itemCategory=@"";
+    NSString *queryForCategoryName = [NSString stringWithFormat:@"SELECT name FROM Category WHERE id=%i", itemCategoryId];
+    sqlite3_stmt *statementForCategoryName;
+    if (sqlite3_prepare_v2(dataBase, [queryForCategoryName UTF8String], -1, &statementForCategoryName, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForCategoryName) == SQLITE_ROW) {
+            char * itemCategoryChar = (char *)sqlite3_column_text(statementForCategoryName, 0);
+            itemCategory = [[NSString alloc] initWithUTF8String:itemCategoryChar];
+        }
+    }
+    sqlite3_finalize(statementForCategoryName);
+    return itemCategory;
+}
+
 - (NSMutableArray *)getItems {
     NSMutableArray * retval = [[NSMutableArray alloc] init];
     NSString *queryForItems = @"SELECT * FROM Product";
@@ -208,62 +270,16 @@ static MMDDataBase *dataBase;
             int itemHasOffer = (int)sqlite3_column_int(statementForItems, 11);
             
             if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
-                //                usleep(1000000);
-                //            }
-                
-                NSString *queryForBrandName = [NSString stringWithFormat:@"SELECT name FROM Brand WHERE id=%i", itemBrandId];
-                sqlite3_stmt *statementForBrandName;
-                if (sqlite3_prepare_v2(dataBase, [queryForBrandName UTF8String], -1, &statementForBrandName, nil)
-                    == SQLITE_OK) {
-                    while (sqlite3_step(statementForBrandName) == SQLITE_ROW) {
-                        char * brandTitleChar = (char *)sqlite3_column_text(statementForBrandName, 0);
-                        NSString * brandTitle = [[NSString alloc] initWithUTF8String:brandTitleChar];
-                        
-                        itemBrand = [[MMDBrand alloc] initWithId:[NSString stringWithFormat:@"%i", itemBrandId] title:brandTitle image:nil];
-                    }
-                }
-                sqlite3_finalize(statementForBrandName);
+                itemBrand = [self loadBrandDetails:itemBrandId];
                 
                 
-                NSString *queryForCategoryName = [NSString stringWithFormat:@"SELECT name FROM Category WHERE id=%i", itemCategoryId];
-                sqlite3_stmt *statementForCategoryName;
-                if (sqlite3_prepare_v2(dataBase, [queryForCategoryName UTF8String], -1, &statementForCategoryName, nil)
-                    == SQLITE_OK) {
-                    while (sqlite3_step(statementForCategoryName) == SQLITE_ROW) {
-                        char * itemCategoryChar = (char *)sqlite3_column_text(statementForCategoryName, 0);
-                        itemCategory = [[NSString alloc] initWithUTF8String:itemCategoryChar];
-                    }
-                }
-                sqlite3_finalize(statementForCategoryName);
+                itemCategory = [self loadCategoryDetails:itemCategoryId];
                 
                 itemStore = [self getStoreDetails:itemStoreId];
                 
                 [self getColourDetails:itemId itemColors:itemColors];
                 
-                NSString *queryForSizeName = [NSString stringWithFormat:@"SELECT size_id FROM ProductSize WHERE product_id=%i", itemId];
-                sqlite3_stmt *statementForSizeName;
-                if (sqlite3_prepare_v2(dataBase, [queryForSizeName UTF8String], -1, &statementForSizeName, nil)
-                    == SQLITE_OK) {
-                    while (sqlite3_step(statementForSizeName) == SQLITE_ROW) {
-                        
-                        int sizeId = (int) sqlite3_column_int(statementForSizeName, 0);
-                        NSString * itemSize = @"";
-                        
-                        NSString *queryForSpecificSizeName = [NSString stringWithFormat:@"SELECT value FROM Size WHERE id=%i", sizeId];
-                        sqlite3_stmt *statementForSpecificSizeName;
-                        if (sqlite3_prepare_v2(dataBase, [queryForSpecificSizeName UTF8String], -1, &statementForSpecificSizeName, nil)
-                            == SQLITE_OK) {
-                            while (sqlite3_step(statementForSpecificSizeName) == SQLITE_ROW) {
-                                char * itemSizeChar = (char *)sqlite3_column_text(statementForSpecificSizeName, 0);
-                                itemSize = [[NSString alloc] initWithUTF8String:itemSizeChar];
-                            }
-                        }
-                        sqlite3_finalize(statementForSpecificSizeName);
-                        
-                        [itemSizes addObject:itemSize];
-                    }
-                }
-                sqlite3_finalize(statementForSizeName);
+                [self loadSizeDetails:itemId itemSizes:itemSizes];
                 
                 UIImage *itemImage;
                 [self loadProductImage:itemId itemImage_p:&itemImage];
