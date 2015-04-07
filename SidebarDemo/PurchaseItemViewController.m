@@ -8,6 +8,7 @@
 
 #import "PurchaseItemViewController.h"
 #import "SWRevealViewController.h"
+#import "ProductListViewController.h"
 
 @interface PurchaseItemViewController ()
 
@@ -267,6 +268,65 @@
         [tableView reloadData];
         [self calculatePrice];
     }
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    
+    //UINavigationController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
+    
+    // [self showViewController:prodListDetails sender:self];
+    
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Searching...";
+    
+    dispatch_async(dispatch_queue_create("Search", nil), ^{
+        self.arrayWithSearchResults = [[NSMutableArray alloc] init];
+        
+        for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
+            if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+                if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound && item.itemGender == female) {
+                    [self.arrayWithSearchResults addObject:item];
+                }
+            } else {
+                if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
+                    [self.arrayWithSearchResults addObject:item];
+                }
+            }
+            
+        }
+        
+        if (self.arrayWithSearchResults.count > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                ProductListViewController * searchPage = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+                [searchPage initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchBar.text];
+                [self.navigationController pushViewController:searchPage animated:YES];
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"No Results Found";
+            });
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            });
+        }
+        
+    });
+    
+    
 }
 
 #pragma mark - Collection View DataSource and Delegate

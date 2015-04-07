@@ -215,15 +215,17 @@
         
         for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
             // if (item.itemGender == female && ![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
-            if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
-                [arrayWithSearchResults addObject:item];
+            if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+                if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound && item.itemGender == female) {
+                    [arrayWithSearchResults addObject:item];
+                }
+            } else {
+                if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
+                    [arrayWithSearchResults addObject:item];
+                }
             }
-            /* if (item.itemGender == male && settingsViewController.femaleMaleSwitch.isOn){
-             if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
-             [arrayWithSearchResults addObject:item];
-             }
-             }
-             }*/
+
+            
         }
         
         if (arrayWithSearchResults.count > 0) {

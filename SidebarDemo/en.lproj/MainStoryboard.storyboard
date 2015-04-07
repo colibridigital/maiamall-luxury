@@ -1483,7 +1483,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ad3-80-OS4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="stY-PE-XvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="shopNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fVy-bs-hv8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M0t-j5-2lZ">
@@ -1495,6 +1494,7 @@
                         <segue destination="2Xe-D5-qrT" kind="relationship" relationship="rootViewController" id="02E-CD-Obd"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stY-PE-XvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2105" y="986"/>
         </scene>
@@ -1677,7 +1677,7 @@
                             </tableView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Proceed to Checkout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYA-pb-O2W">
                                 <rect key="frame" x="26" y="124" width="269" height="100"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1871,7 +1871,7 @@
         <segue reference="8vS-07-Ztn"/>
         <segue reference="z3Z-27-kAD"/>
         <segue reference="bUX-Mu-wq1"/>
-        <segue reference="9M4-gb-eYK"/>
+        <segue reference="rXC-bG-KgF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -13,6 +13,7 @@
 #import "MMDCart.h"
 #import "DefineKeys.h"
 #import "PurchaseItemTableViewCell.h"
+#import "MBProgressHUD.h"
 
 
 @interface PurchaseItemViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, UIGestureRecognizerDelegate>
@@ -31,5 +32,7 @@
 - (IBAction)plusButtonClicked:(UIButton *)sender;
 - (IBAction)minusButtonClicked:(UIButton *)sender;
 - (IBAction)purchaseButtonClicked:(UIButton *)sender;
+
+@property (strong, nonatomic) NSMutableArray * arrayWithSearchResults;
 
 @end
