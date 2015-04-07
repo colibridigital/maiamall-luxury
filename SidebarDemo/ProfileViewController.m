@@ -12,6 +12,7 @@
 #import "CollectionsCollectionViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ProductDetailViewController.h"
+#import "CollectionListViewController.h"
 
 @interface ProfileViewController ()
 
@@ -145,10 +146,11 @@
        // UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
     
         [self showViewController:prodDetail sender:self];
-    } else {
+    } else if (collectionView == self.collsCollectionView){
+        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
-        UINavigationController *prod = [storyboard instantiateViewControllerWithIdentifier:@"collectionNav"];
+        CollectionListViewController *prod = [storyboard instantiateViewControllerWithIdentifier:@"collectionListView"];
         
         [self showViewController:prod sender:self];
 

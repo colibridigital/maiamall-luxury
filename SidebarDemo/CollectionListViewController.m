@@ -9,6 +9,7 @@
 #import "CollectionListViewController.h"
 #import "SWRevealViewController.h"
 #import "CollectionDetailCollectionViewCell.h"
+#import "ProductDetailViewController.h"
 
 @interface CollectionListViewController ()
 
@@ -117,6 +118,23 @@
     
     return cell;
 }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        ProductDetailViewController *prodDetail = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
+        
+        // UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
+        
+        [self showViewController:prodDetail sender:self];
+   
+    
+}
+
+
 
 
 /*

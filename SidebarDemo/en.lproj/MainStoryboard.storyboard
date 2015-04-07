@@ -307,7 +307,6 @@
                         <segue destination="dwR-W1-uFm" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="xtC-8U-Yc5"/>
                         <segue destination="8Gk-XR-oKP" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="eGQ-Je-elh"/>
                         <segue destination="c3M-xw-OHS" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="qkZ-hm-BSr"/>
-                        <segue destination="qC6-wg-trU" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="Uef-IB-1ZF"/>
                         <segue destination="dsd-AF-pqU" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="M2T-Zk-W86"/>
                         <segue destination="nLf-ge-9Ic" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="sKb-PN-fgW"/>
                         <segue destination="fVy-bs-hv8" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="vLb-f8-Ejo"/>
@@ -1145,28 +1144,10 @@
             </objects>
             <point key="canvasLocation" x="969" y="2300"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="BUx-Yx-KCL">
-            <objects>
-                <navigationController storyboardIdentifier="collectionNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qC6-wg-trU" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RNH-D8-itc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="yE4-j4-fYN" kind="relationship" relationship="rootViewController" id="oR7-44-Vh1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zOs-mI-4Ay" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1305" y="1646"/>
-        </scene>
         <!--Collection List Collection View Controller-->
         <scene sceneID="HKR-lx-y0k">
             <objects>
-                <viewController title="Collection List Collection View Controller" id="yE4-j4-fYN" customClass="CollectionListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="collectionListView" title="Collection List Collection View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yE4-j4-fYN" customClass="CollectionListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nTD-ZS-ruf"/>
                         <viewControllerLayoutGuide type="bottom" id="rhL-f4-riu"/>
@@ -1229,19 +1210,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="794-ro-h24">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="ExV-Ly-Xpk">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="MXP-i5-a0e">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionDetailView" destination="BqR-aJ-ADx" id="PvO-dT-BSW"/>
-                        <outlet property="filterSearchMenu" destination="MXP-i5-a0e" id="iWx-Nz-KUh"/>
-                        <outlet property="sidebarButton" destination="ExV-Ly-Xpk" id="J8J-gn-4J4"/>
                         <outlet property="tabBarController" destination="s74-sH-1o5" id="blg-fK-FJP"/>
                     </connections>
                 </viewController>
