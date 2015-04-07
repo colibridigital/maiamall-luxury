@@ -8,6 +8,7 @@
 
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
+#import "PurchaseItemViewController.h"
 
 @interface SidebarViewController ()
 
@@ -30,6 +31,7 @@ NSArray *menuItems;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     
     menuItems = @[@"title", @"board", @"map", @"settings", @"wishlist", @"cart"]; // @"profile settings", @"wishlist"];
 }
@@ -60,6 +62,7 @@ NSArray *menuItems;
     
     return cell;
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     

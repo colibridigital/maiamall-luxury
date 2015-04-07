@@ -94,14 +94,58 @@
 
     
     self.productTitle.text = [NSString stringWithFormat:@"%@", self.currentItemToShow.itemTitle ? self.currentItemToShow.itemTitle : @"N/A"];
+   
+    
+    
     self.productPrice.text = [NSString stringWithFormat:@"£%.2f", self.currentItemToShow.itemPrice];
+    
+    
     self.productDescription.text = self.currentItemToShow.itemDescription;
+    [self.productDescription setHidden:YES];
+    
+    [self addGestureRecognizer:self.productImage];
+    
+    self.productImage.userInteractionEnabled = YES;
+    
     [self.productImage setImage:self.currentItemToShow.itemImage];
     [self.retailPageButton setTitle:self.currentItemToShow.itemStore.storeTitle forState:UIControlStateNormal];
     
     [self initialiseMenuItems];
 
 }
+
+- (void)addGestureRecognizer:(UIImageView *)imageView{
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    singleTap.delegate = self;
+    [imageView addGestureRecognizer:singleTap];
+}
+
+-(void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    
+    if (self.productDescription.isHidden) {
+        [self.productDescription setHidden:NO];
+        [self.productPrice setHidden:YES];
+    }
+    
+    //CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
+    
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch * touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan) {
+        [self.productDescription setHidden:YES];
+        [self.productPrice setHidden:NO];
+    }
+}
+
+
 
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {

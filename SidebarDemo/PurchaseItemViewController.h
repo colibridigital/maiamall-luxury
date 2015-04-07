@@ -15,12 +15,13 @@
 #import "PurchaseItemTableViewCell.h"
 
 
-@interface PurchaseItemViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate>
+@interface PurchaseItemViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *cartTV;
 @property (strong, nonatomic) IBOutlet UILabel *basketSubtotalPrice;
 
 @property (strong, nonatomic) IBOutlet UILabel *messageLabel;
+@property (strong, nonatomic) IBOutlet UILabel *cartTitle;
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;

@@ -12,7 +12,7 @@
 #import "ALAlertBanner.h"
 #import "MBProgressHUD.h"
 
-@interface ProductDetailViewController : UIViewController< UITabBarDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ProductDetailViewController : UIViewController< UITabBarDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet ItemsSimilarCollectionView *similarItemsList;
 - (IBAction)retailPageButtonClicked:(id)sender;

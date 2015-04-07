@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MMDStore.h"
+#import "ALAlertBanner.h"
 
 @interface RetailDetailViewController : UIViewController<UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate>
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
@@ -16,5 +17,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *brandImage;
 
 - (void)initWithStore:(MMDStore*)store;
+
+- (IBAction)bookAnApptClicked:(UIButton *)sender;
+- (IBAction)offersClicked:(UIButton *)sender;
 
 @end

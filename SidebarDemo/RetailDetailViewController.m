@@ -87,6 +87,42 @@
     }
 }
 
+- (IBAction)offersClicked:(UIButton *)sender {
+    //    if (self.currentStore.storeOffers.count > 0) {
+    //
+    //    } else {
+    ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view
+                                                        style:ALAlertBannerStyleNotify
+                                                     position:ALAlertBannerPositionTop
+                                                        title:@"Sorry..."
+                                                     subtitle:[NSString stringWithFormat:@"%@ does not have any offers at this time, check back soon!", self.currentStore.storeTitle]
+                                                        image:nil
+                                                  tappedBlock:nil];
+    [banner setSecondsToShow:0];
+    [banner show];
+    
+    //        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Sorry..." message:[NSString stringWithFormat:@"%@ does not have any offers at this time, check back soon!", self.currentStore.storeTitle] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    //        [alertView show];
+    //    }
+}
+
+- (IBAction)bookAnApptClicked:(UIButton *)sender {
+    
+    ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view
+                                                        style:ALAlertBannerStyleNotify
+                                                     position:ALAlertBannerPositionTop
+                                                        title:@"Welcome"
+                                                     subtitle:@"You appointment have been succesfully booked. We welcome you with joy!"
+                                                        image:nil
+                                                  tappedBlock:nil];
+    [banner setSecondsToShow:0];
+    [banner show];
+    
+    //    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Welcome" message:@"You appointment have been succesfully booked. We welcome you with joy!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    //    [alertView show];
+}
+
+
 
 /*
 #pragma mark - Navigation

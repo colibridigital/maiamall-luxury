@@ -46,6 +46,16 @@
     [self initialiseMenuItems];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:NO];
+    
+    [self calculatePrice];
+    
+    [self initialiseMenuItems];
+    
+    [self addGestureRecognizer:self.cartTitle];
+}
+
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     if (item.tag == 0) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
@@ -136,6 +146,47 @@
     }
     
     [self calculatePrice];
+    
+}
+
+- (void)addGestureRecognizer:(UILabel *)label{
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    singleTap.delegate = self;
+    [label addGestureRecognizer:singleTap];
+}
+
+-(void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    
+    [[MMDCart cart] cartWasPurchased];
+    
+    //    [MBProgressHUD hideAllHUDsForView:self.cartTV animated:YES];
+    
+    ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view
+                                                        style:ALAlertBannerStyleNotify
+                                                     position:ALAlertBannerPositionTop
+                                                        title:@"Thank you!"
+                                                     subtitle:@"Your purchase was successfull. Do not forget to pick your items up in the store!"
+                                                        image:nil
+                                                  tappedBlock:nil];
+    [banner setSecondsToShow:0];
+    [banner show];
+    
+    
+    
+    //        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Thank you!" message:@"Your purchase was successfull. Do not forget to pick your items up in the store!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //        [alertView show];
+    
+    self.basketSubtotalPrice.text = [NSString stringWithFormat:@"Basket Subtotal: %.2f", 0.00];
+    
+    [self.cartTV reloadData];
+    
+    //CGPoint p = [gestureRecognizer locationInView:gestureRecognizer.view];
     
 }
 

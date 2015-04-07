@@ -231,6 +231,30 @@
 {
     if (collectionView == self.trendCollectionView) {
         TrendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TREND_CELL" forIndexPath:indexPath];
+        
+        if (indexPath.row == 4) {
+            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"naomi" ofType: @"jpg"]];
+            
+            cell.trendImage.image = img;
+
+        } else if (indexPath.row == 3) {
+            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"denimTrend" ofType: @"jpg"]];
+            
+            cell.trendImage.image = img;
+        } else if (indexPath.row == 2) {
+            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"vogueTrend" ofType: @"jpg"]];
+            
+            cell.trendImage.image = img;
+        } else if (indexPath.row == 1) {
+            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"shoesTrend" ofType: @"jpg"]];
+            
+            cell.trendImage.image = img;
+        } else if (indexPath.row == 0) {
+            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bagsTrend" ofType: @"jpg"]];
+            
+            cell.trendImage.image = img;
+        }
+        
         return cell;
     } else {
         ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PROD_CELL" forIndexPath:indexPath];
@@ -263,6 +287,44 @@
         [self.navigationController pushViewController:prodDetail animated:YES];
         
        // [self showViewController:det sender:self];
+    } else if (collectionView == self.trendCollectionView) {
+        
+        
+        if (indexPath.row == 4) {
+        
+            NSString *myURL = @"http://www.fashionsfinest.com/fashion/celebrity-style/item/3973-ultimate-style-from-naomi-campbell";
+            
+            NSURL *url =[NSURL URLWithString:myURL];
+            
+            [[UIApplication sharedApplication] openURL:url];
+        } else if (indexPath.row == 3) {
+            NSString *myURL = @"http://www.style.com/trends/fashion";
+            
+            NSURL *url =[NSURL URLWithString:myURL];
+            
+            [[UIApplication sharedApplication] openURL:url];
+        } else if (indexPath.row == 2) {
+            NSString *myURL = @"http://www.vogue.co.uk/fashion/trends";
+            
+            NSURL *url =[NSURL URLWithString:myURL];
+            
+            [[UIApplication sharedApplication] openURL:url];
+        } else if (indexPath.row == 1) {
+            NSString *myURL = @"http://www.fashionisers.com/trends/spring-summer-2015-shoe-trends/";
+            
+            NSURL *url =[NSURL URLWithString:myURL];
+            
+            [[UIApplication sharedApplication] openURL:url];
+        } else if (indexPath.row == 0) {
+            NSString *myURL = @"http://www.purseblog.com/news/30-best-bags-spring-2015-runways/";
+            
+            NSURL *url =[NSURL URLWithString:myURL];
+            
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        
+        
+       
     }
     
 }
