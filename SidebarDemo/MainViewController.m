@@ -12,6 +12,7 @@
 #import "MapViewController.h"
 #import "ProductCollectionViewCell.h"
 #import "ProductListViewController.h"
+#import "TrendsViewController.h"
 #import "ProductDetailViewController.h"
 
 @interface MainViewController ()
@@ -321,32 +322,72 @@
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+               // [[UIApplication sharedApplication] openURL:url];
             } else if (indexPath.row == 3) {
                 NSString *myURL = @"http://www.style.com/trends/fashion";
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+                //[[UIApplication sharedApplication] openURL:url];
             } else if (indexPath.row == 2) {
                 NSString *myURL = @"http://www.vogue.co.uk/fashion/trends";
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+               // [[UIApplication sharedApplication] openURL:url];
             } else if (indexPath.row == 1) {
                 NSString *myURL = @"http://www.fashionisers.com/trends/spring-summer-2015-shoe-trends/";
 
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+               // [[UIApplication sharedApplication] openURL:url];
             } else if (indexPath.row == 0) {
                 NSString *myURL = @"http://www.purseblog.com/news/30-best-bags-spring-2015-runways/";
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+               // [[UIApplication sharedApplication] openURL:url];
             }
         } else {
             if (indexPath.row == 4) {
@@ -355,30 +396,70 @@
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+               // [[UIApplication sharedApplication] openURL:url];
             } else if (indexPath.row == 3) {
                 NSString *myURL = @"http://www.brostrick.com/mens-fashion/best-mens-jeans-denim-pants/";
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+               // [[UIApplication sharedApplication] openURL:url];
             } else if (indexPath.row == 2) {
                 NSString *myURL = @"http://www.gq.com/style/style-manual/201204/dress-shoes-leather-polish#slide=1";
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+               // [[UIApplication sharedApplication] openURL:url];
             } else if (indexPath.row == 1) {
                 NSString *myURL = @"http://www.brostrick.com/mens-fashion/t-shirts-for-men-graphic-tees/";
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+               // [[UIApplication sharedApplication] openURL:url];
             } else if (indexPath.row == 0) {
                 NSString *myURL = @"http://www.fashionbeans.com/2014/mens-fashion-trend-2015-dressed-down-suiting/";
                 
                 NSURL *url =[NSURL URLWithString:myURL];
                 
-                [[UIApplication sharedApplication] openURL:url];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+                TrendsViewController* trendsVC = [storyboard instantiateViewControllerWithIdentifier:@"trendsView"];
+                
+                [trendsVC initWithURL:url];
+                
+                [self.navigationController pushViewController:trendsVC animated:YES];
+                
+                //[[UIApplication sharedApplication] openURL:url];
             }
 
         }

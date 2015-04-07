@@ -1790,6 +1790,54 @@
             </objects>
             <point key="canvasLocation" x="2505" y="1640"/>
         </scene>
+        <!--Trends View Controller-->
+        <scene sceneID="geO-xt-wTH">
+            <objects>
+                <viewController storyboardIdentifier="trendsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a0e-e3-7pw" customClass="TrendsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sv3-LP-a9j"/>
+                        <viewControllerLayoutGuide type="bottom" id="BtJ-2Z-VoC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g1h-5e-t2C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3pc-DA-v2g">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem tag="2" title="" image="Home-50.png" id="vU3-Rd-p3F">
+                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                    </tabBarItem>
+                                    <tabBarItem image="User-50.png" id="osL-Sc-cLK">
+                                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="t9W-Zm-qQY">
+                                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="1" image="Location Filled-50.png" id="oFk-UA-Hdf">
+                                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
+                                    </tabBarItem>
+                                </items>
+                            </tabBar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jby-z4-7g6">
+                                <rect key="frame" x="5" y="72" width="310" height="439"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="blogView" destination="jby-z4-7g6" id="OOx-h7-6xn"/>
+                        <outlet property="tabBarController" destination="3pc-DA-v2g" id="xrP-A9-h7f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZm-Zg-4bF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1364" y="1640"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Alphabetical Sorting Az-50.png" width="50" height="50"/>

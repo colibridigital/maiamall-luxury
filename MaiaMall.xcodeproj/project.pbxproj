@@ -19,6 +19,7 @@
 		151902F21AD4623D00644C50 /* shoes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902F11AD4623D00644C50 /* shoes.jpg */; };
 		151902F41AD4624700644C50 /* tshirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 151902F31AD4624700644C50 /* tshirt.png */; };
 		151902F61AD4632200644C50 /* suit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902F51AD4632200644C50 /* suit.jpg */; };
+		151902FA1AD46E2300644C50 /* TrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151902F91AD46E2300644C50 /* TrendsViewController.m */; };
 		157562781ABAF024001FAE38 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157562771ABAF024001FAE38 /* ProductDetailViewController.m */; };
 		1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 157562791ABAF2FD001FAE38 /* blouse.png */; };
 		1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1575627E1ABCEB1B001FAE38 /* ProfileViewController.m */; };
@@ -161,6 +162,8 @@
 		151902F11AD4623D00644C50 /* shoes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shoes.jpg; sourceTree = "<group>"; };
 		151902F31AD4624700644C50 /* tshirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tshirt.png; sourceTree = "<group>"; };
 		151902F51AD4632200644C50 /* suit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = suit.jpg; sourceTree = "<group>"; };
+		151902F81AD46E2300644C50 /* TrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendsViewController.h; sourceTree = "<group>"; };
+		151902F91AD46E2300644C50 /* TrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendsViewController.m; sourceTree = "<group>"; };
 		157562761ABAF024001FAE38 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		157562771ABAF024001FAE38 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		157562791ABAF2FD001FAE38 /* blouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blouse.png; sourceTree = "<group>"; };
@@ -376,6 +379,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151902F71AD46DAE00644C50 /* TrendsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				151902F81AD46E2300644C50 /* TrendsViewController.h */,
+				151902F91AD46E2300644C50 /* TrendsViewController.m */,
+			);
+			name = TrendsViewController;
+			sourceTree = "<group>";
+		};
 		157562751ABAEFFC001FAE38 /* ProductDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +779,7 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				151902F71AD46DAE00644C50 /* TrendsViewController */,
 				15B21DFB1AD2DF6800611559 /* ItemsInTheStoreTableViewCell */,
 				15B21DF71AD2DB5400611559 /* ListOfItemsInTheStoreViewController */,
 				15E968881AD2BA9F003D20B8 /* PurchaseItemViewController */,
@@ -1047,6 +1060,7 @@
 				15ED18381ACED7EB0091E84A /* MMDCart.m in Sources */,
 				15E753771AC5C63000F2D39D /* FMResultSet.m in Sources */,
 				1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */,
+				151902FA1AD46E2300644C50 /* TrendsViewController.m in Sources */,
 				15E753751AC5C63000F2D39D /* FMDatabasePool.m in Sources */,
 				15B21DFA1AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.m in Sources */,
 				15E7531A1AC2C47500F2D39D /* ItemsSimilarCollectionView.m in Sources */,
