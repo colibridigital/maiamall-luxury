@@ -230,6 +230,25 @@ static MMDDataBase *dataBase;
     return itemCategory;
 }
 
+- (UIImage *)manipulateImage:(int)itemId {
+    UIImage *itemImage;
+    [self loadProductImage:itemId itemImage_p:&itemImage];
+    
+    float sourceImageHeight = itemImage.size.height;
+    float sourceImageWidth = itemImage.size.width;
+    
+    if(sourceImageHeight > 500 && sourceImageWidth > 460) {
+        itemImage =  [self imageWithImage:itemImage scaledToSize:CGSizeMake(itemImage.size.width/2, itemImage.size.height/2)];
+    } else {
+        itemImage =  [self imageWithImage:itemImage scaledToSize:CGSizeMake(itemImage.size.width/1.3, itemImage.size.height/1.3)];
+    }
+    
+    NSData *dataForJPEGFile = UIImageJPEGRepresentation(itemImage, 0.5);
+    
+    UIImage * finalImage = [UIImage imageWithData:dataForJPEGFile];
+    return finalImage;
+}
+
 - (NSMutableArray *)getItems {
     NSMutableArray * retval = [[NSMutableArray alloc] init];
     NSString *queryForItems = @"SELECT * FROM Product";
@@ -281,14 +300,8 @@ static MMDDataBase *dataBase;
                 
                 [self loadSizeDetails:itemId itemSizes:itemSizes];
                 
-                UIImage *itemImage;
-                [self loadProductImage:itemId itemImage_p:&itemImage];
-                
-                itemImage =  [self imageWithImage:itemImage scaledToSize:CGSizeMake(itemImage.size.width/2, itemImage.size.height/2)];
-                
-                NSData *dataForJPEGFile = UIImageJPEGRepresentation(itemImage, 0.6);
-                
-                UIImage * finalImage = [UIImage imageWithData:dataForJPEGFile];
+                UIImage *finalImage;
+                finalImage = [self manipulateImage:itemId];
                 
 #warning add offers
                 
