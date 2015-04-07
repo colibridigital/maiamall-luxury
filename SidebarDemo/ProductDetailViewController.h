@@ -29,6 +29,4 @@
 @property (weak, nonatomic) IBOutlet UITextView *productDescription;
 @property (weak, nonatomic) IBOutlet UIButton *retailPageButton;
 @property (weak, nonatomic) IBOutlet UIButton *buyThisButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
 @end

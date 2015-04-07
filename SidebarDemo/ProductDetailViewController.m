@@ -7,7 +7,6 @@
 //
 
 #import "ProductDetailViewController.h"
-#import "SWRevealViewController.h"
 #import "ItemsSimilarCollectionViewCell.h"
 #import "RetailDetailViewController.h"
 #import "MMDWishList.h"
@@ -36,18 +35,13 @@
 
 - (void)initialiseMenuItems
 {
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.sidebarButton setTarget: self.revealViewController];
-        [self.sidebarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
     
     self.tabBarController.delegate =self;
     
     [self.similarItemsList registerNibAndCell];
     [self.similarItemsList reloadData];
+    
+    [self.productDescription flashScrollIndicators];
 }
 
 - (void)viewDidLoad
@@ -94,7 +88,7 @@
     NSLog(@"product info %@", self.currentItemToShow.itemTitle);
     
     if (!self.currentItemToShow.itemIsInWishList) {
-        UIBarButtonItem * addToWishList = [[UIBarButtonItem alloc] initWithTitle:@"Add To Wish List" style:UIBarButtonItemStylePlain target:self action:@selector(addCurrentItemToWishList)];
+        UIBarButtonItem * addToWishList = [[UIBarButtonItem alloc] initWithTitle:@"Add To Wishlist" style:UIBarButtonItemStylePlain target:self action:@selector(addCurrentItemToWishList)];
         [self.navigationItem setRightBarButtonItem:addToWishList];
     }
 
