@@ -16,6 +16,9 @@
 @implementation SettingsViewController
 
 - (void)setSwitchColourToFemale {
+    
+    self.femaleMaleSwitch.onTintColor = femaleColor;
+    
     self.femaleMaleSwitch.tintColor = femaleColor;
     self.femaleMaleSwitch.backgroundColor = femaleColor;
     self.femaleMaleSwitch.layer.cornerRadius = 16.0;
@@ -43,8 +46,11 @@
 }
 
 - (void)setSwitchColourToMale {
-    self.femaleMaleSwitch.tintColor = femaleColor;
-    self.femaleMaleSwitch.backgroundColor = femaleColor;
+    
+    self.femaleMaleSwitch.onTintColor = maleColor;
+    
+    self.femaleMaleSwitch.tintColor = maleColor;
+    self.femaleMaleSwitch.backgroundColor = maleColor;
     self.femaleMaleSwitch.layer.cornerRadius = 16.0;
 }
 
