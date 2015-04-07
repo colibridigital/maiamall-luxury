@@ -14,6 +14,11 @@
 		151902E81AD404F700644C50 /* vogueTrend.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902E71AD404F700644C50 /* vogueTrend.jpg */; };
 		151902EA1AD405EE00644C50 /* shoesTrend.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902E91AD405EE00644C50 /* shoesTrend.jpg */; };
 		151902EC1AD406C000644C50 /* bagsTrend.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902EB1AD406C000644C50 /* bagsTrend.jpg */; };
+		151902EE1AD45F4800644C50 /* printsMen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902ED1AD45F4800644C50 /* printsMen.jpg */; };
+		151902F01AD45FC000644C50 /* jeans.png in Resources */ = {isa = PBXBuildFile; fileRef = 151902EF1AD45FC000644C50 /* jeans.png */; };
+		151902F21AD4623D00644C50 /* shoes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902F11AD4623D00644C50 /* shoes.jpg */; };
+		151902F41AD4624700644C50 /* tshirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 151902F31AD4624700644C50 /* tshirt.png */; };
+		151902F61AD4632200644C50 /* suit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902F51AD4632200644C50 /* suit.jpg */; };
 		157562781ABAF024001FAE38 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157562771ABAF024001FAE38 /* ProductDetailViewController.m */; };
 		1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 157562791ABAF2FD001FAE38 /* blouse.png */; };
 		1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1575627E1ABCEB1B001FAE38 /* ProfileViewController.m */; };
@@ -151,6 +156,11 @@
 		151902E71AD404F700644C50 /* vogueTrend.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vogueTrend.jpg; sourceTree = "<group>"; };
 		151902E91AD405EE00644C50 /* shoesTrend.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shoesTrend.jpg; sourceTree = "<group>"; };
 		151902EB1AD406C000644C50 /* bagsTrend.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bagsTrend.jpg; sourceTree = "<group>"; };
+		151902ED1AD45F4800644C50 /* printsMen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = printsMen.jpg; sourceTree = "<group>"; };
+		151902EF1AD45FC000644C50 /* jeans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jeans.png; sourceTree = "<group>"; };
+		151902F11AD4623D00644C50 /* shoes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shoes.jpg; sourceTree = "<group>"; };
+		151902F31AD4624700644C50 /* tshirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tshirt.png; sourceTree = "<group>"; };
+		151902F51AD4632200644C50 /* suit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = suit.jpg; sourceTree = "<group>"; };
 		157562761ABAF024001FAE38 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		157562771ABAF024001FAE38 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		157562791ABAF2FD001FAE38 /* blouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blouse.png; sourceTree = "<group>"; };
@@ -825,6 +835,11 @@
 		F4EECF34177C9A1E00778578 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				151902F51AD4632200644C50 /* suit.jpg */,
+				151902F31AD4624700644C50 /* tshirt.png */,
+				151902F11AD4623D00644C50 /* shoes.jpg */,
+				151902EF1AD45FC000644C50 /* jeans.png */,
+				151902ED1AD45F4800644C50 /* printsMen.jpg */,
 				151902EB1AD406C000644C50 /* bagsTrend.jpg */,
 				151902E91AD405EE00644C50 /* shoesTrend.jpg */,
 				151902E71AD404F700644C50 /* vogueTrend.jpg */,
@@ -942,11 +957,15 @@
 				15B60B7F1ACC858200DC8749 /* Map Marker-50.png in Resources */,
 				151902EA1AD405EE00644C50 /* shoesTrend.jpg in Resources */,
 				F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */,
+				151902F61AD4632200644C50 /* suit.jpg in Resources */,
+				151902F21AD4623D00644C50 /* shoes.jpg in Resources */,
+				151902EE1AD45F4800644C50 /* printsMen.jpg in Resources */,
 				15E7537B1AC5E8DC00F2D39D /* LVWall.png in Resources */,
 				15E753641AC5AB9C00F2D39D /* CollectionDetailCollectionViewCell.xib in Resources */,
 				157562911AC087D3001FAE38 /* msImage.png in Resources */,
 				F4EECF24177C99F400778578 /* Default.png in Resources */,
 				151902E61AD4046D00644C50 /* denimTrend.jpg in Resources */,
+				151902F41AD4624700644C50 /* tshirt.png in Resources */,
 				15AD00331AB9E20A00B8B1D1 /* ProductListCollectionViewCell.xib in Resources */,
 				F4EECF26177C99F400778578 /* Default@2x.png in Resources */,
 				F4EECF28177C99F400778578 /* Default-568h@2x.png in Resources */,
@@ -991,6 +1010,7 @@
 				157562851AC08121001FAE38 /* CollectionsCollectionViewCell.xib in Resources */,
 				15AD00391AB9EF6E00B8B1D1 /* product2.png in Resources */,
 				F4EECF6A177F4C0200778578 /* menu.png in Resources */,
+				151902F01AD45FC000644C50 /* jeans.png in Resources */,
 				15E9687F1ACFF3D1003D20B8 /* bannerSuccess.png in Resources */,
 				15E968791ACFF3D1003D20B8 /* bannerAlert.png in Resources */,
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,

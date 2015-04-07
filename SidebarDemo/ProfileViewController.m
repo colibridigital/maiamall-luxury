@@ -11,6 +11,7 @@
 #import "ProductCollectionViewCell.h"
 #import "CollectionsCollectionViewCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ProductDetailViewController.h"
 
 @interface ProfileViewController ()
 
@@ -138,10 +139,12 @@
     if (collectionView == self.favsCollectionView) {
     
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        ProductDetailViewController *prodDetail = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
     
-        UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
+       // UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
     
-        [self showViewController:det sender:self];
+        [self showViewController:prodDetail sender:self];
     } else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         

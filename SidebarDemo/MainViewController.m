@@ -231,28 +231,53 @@
 {
     if (collectionView == self.trendCollectionView) {
         TrendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TREND_CELL" forIndexPath:indexPath];
-        
-        if (indexPath.row == 4) {
-            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"naomi" ofType: @"jpg"]];
-            
-            cell.trendImage.image = img;
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+            if (indexPath.row == 4) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"naomi" ofType: @"jpg"]];
+                
+                cell.trendImage.image = img;
+                
+            } else if (indexPath.row == 3) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"denimTrend" ofType: @"jpg"]];
+                
+                cell.trendImage.image = img;
+            } else if (indexPath.row == 2) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"vogueTrend" ofType: @"jpg"]];
+                
+                cell.trendImage.image = img;
+            } else if (indexPath.row == 1) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"shoesTrend" ofType: @"jpg"]];
+                
+                cell.trendImage.image = img;
+            } else if (indexPath.row == 0) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bagsTrend" ofType: @"jpg"]];
+                
+                cell.trendImage.image = img;
+            }
+        }else {
+            if (indexPath.row == 4) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"printsMen" ofType: @"jpg"]];
+                
+                cell.trendImage.image = img;
+                
+            } else if (indexPath.row == 3) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"jeans" ofType: @"png"]];
+                
+                cell.trendImage.image = img;
+            } else if (indexPath.row == 2) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"shoes" ofType: @"jpg"]];
+                
+                cell.trendImage.image = img;
+            } else if (indexPath.row == 1) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tshirt" ofType: @"png"]];
+                
+                cell.trendImage.image = img;
+            } else if (indexPath.row == 0) {
+                UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"suit" ofType: @"jpg"]];
+                
+                cell.trendImage.image = img;
+            }
 
-        } else if (indexPath.row == 3) {
-            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"denimTrend" ofType: @"jpg"]];
-            
-            cell.trendImage.image = img;
-        } else if (indexPath.row == 2) {
-            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"vogueTrend" ofType: @"jpg"]];
-            
-            cell.trendImage.image = img;
-        } else if (indexPath.row == 1) {
-            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"shoesTrend" ofType: @"jpg"]];
-            
-            cell.trendImage.image = img;
-        } else if (indexPath.row == 0) {
-            UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bagsTrend" ofType: @"jpg"]];
-            
-            cell.trendImage.image = img;
         }
         
         return cell;
@@ -271,10 +296,10 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (collectionView == self.productCollectionView) {
-    
+        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    
-      //  UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
+        
+        //  UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
         
         ProductDetailViewController *prodDetail = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
         
@@ -286,45 +311,78 @@
         
         [self.navigationController pushViewController:prodDetail animated:YES];
         
-       // [self showViewController:det sender:self];
+        // [self showViewController:det sender:self];
     } else if (collectionView == self.trendCollectionView) {
         
-        
-        if (indexPath.row == 4) {
-        
-            NSString *myURL = @"http://www.fashionsfinest.com/fashion/celebrity-style/item/3973-ultimate-style-from-naomi-campbell";
-            
-            NSURL *url =[NSURL URLWithString:myURL];
-            
-            [[UIApplication sharedApplication] openURL:url];
-        } else if (indexPath.row == 3) {
-            NSString *myURL = @"http://www.style.com/trends/fashion";
-            
-            NSURL *url =[NSURL URLWithString:myURL];
-            
-            [[UIApplication sharedApplication] openURL:url];
-        } else if (indexPath.row == 2) {
-            NSString *myURL = @"http://www.vogue.co.uk/fashion/trends";
-            
-            NSURL *url =[NSURL URLWithString:myURL];
-            
-            [[UIApplication sharedApplication] openURL:url];
-        } else if (indexPath.row == 1) {
-            NSString *myURL = @"http://www.fashionisers.com/trends/spring-summer-2015-shoe-trends/";
-            
-            NSURL *url =[NSURL URLWithString:myURL];
-            
-            [[UIApplication sharedApplication] openURL:url];
-        } else if (indexPath.row == 0) {
-            NSString *myURL = @"http://www.purseblog.com/news/30-best-bags-spring-2015-runways/";
-            
-            NSURL *url =[NSURL URLWithString:myURL];
-            
-            [[UIApplication sharedApplication] openURL:url];
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+            if (indexPath.row == 4) {
+                
+                NSString *myURL = @"http://www.fashionsfinest.com/fashion/celebrity-style/item/3973-ultimate-style-from-naomi-campbell";
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            } else if (indexPath.row == 3) {
+                NSString *myURL = @"http://www.style.com/trends/fashion";
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            } else if (indexPath.row == 2) {
+                NSString *myURL = @"http://www.vogue.co.uk/fashion/trends";
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            } else if (indexPath.row == 1) {
+                NSString *myURL = @"http://www.fashionisers.com/trends/spring-summer-2015-shoe-trends/";
+
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            } else if (indexPath.row == 0) {
+                NSString *myURL = @"http://www.purseblog.com/news/30-best-bags-spring-2015-runways/";
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        } else {
+            if (indexPath.row == 4) {
+                
+                NSString *myURL = @"http://www.telegraph.co.uk/men/fashion-and-style/11304179/Five-key-mens-style-trends-for-2015.html";
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            } else if (indexPath.row == 3) {
+                NSString *myURL = @"http://www.brostrick.com/mens-fashion/best-mens-jeans-denim-pants/";
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            } else if (indexPath.row == 2) {
+                NSString *myURL = @"http://www.gq.com/style/style-manual/201204/dress-shoes-leather-polish#slide=1";
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            } else if (indexPath.row == 1) {
+                NSString *myURL = @"http://www.brostrick.com/mens-fashion/t-shirts-for-men-graphic-tees/";
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            } else if (indexPath.row == 0) {
+                NSString *myURL = @"http://www.fashionbeans.com/2014/mens-fashion-trend-2015-dressed-down-suiting/";
+                
+                NSURL *url =[NSURL URLWithString:myURL];
+                
+                [[UIApplication sharedApplication] openURL:url];
+            }
+
         }
         
-        
-       
     }
     
 }
