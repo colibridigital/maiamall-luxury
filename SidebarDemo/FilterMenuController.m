@@ -384,7 +384,7 @@
     } else {
         [self.map initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
         
-       // [self.map.anotherPopoverController dismissPopoverAnimated:YES];
+        [self.map.anotherPopoverController dismissPopoverAnimated:YES];
         
         [self.map populateMapWithData];
     }

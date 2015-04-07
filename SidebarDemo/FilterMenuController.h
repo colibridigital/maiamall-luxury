@@ -48,6 +48,6 @@
 @property (strong, nonatomic) NSString * keyForColorFilter;
 @property (strong, nonatomic) NSString * keyForSizeFilter;
 
-@property (nonatomic) BOOL *isInMapView;
+@property (nonatomic) BOOL isInMapView;
 
 @end

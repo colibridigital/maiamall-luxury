@@ -93,6 +93,12 @@
     
     NSLog(@"product info %@", self.currentItemToShow.itemTitle);
     
+    if (!self.currentItemToShow.itemIsInWishList) {
+        UIBarButtonItem * addToWishList = [[UIBarButtonItem alloc] initWithTitle:@"Add To Wish List" style:UIBarButtonItemStylePlain target:self action:@selector(addCurrentItemToWishList)];
+        [self.navigationItem setRightBarButtonItem:addToWishList];
+    }
+
+    
     self.productTitle.text = [NSString stringWithFormat:@"%@", self.currentItemToShow.itemTitle ? self.currentItemToShow.itemTitle : @"N/A"];
     self.productPrice.text = [NSString stringWithFormat:@"£%.2f", self.currentItemToShow.itemPrice];
     self.productDescription.text = self.currentItemToShow.itemDescription;
@@ -200,7 +206,7 @@
 }
 */
 
-- (IBAction)addItemToWishList:(id)sender {
+- (void)addCurrentItemToWishList {
     [[MMDWishList sharedInstance] addItemToWishList:self.currentItemToShow];
     
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

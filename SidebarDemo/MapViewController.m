@@ -9,16 +9,19 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import "ProductDetailViewController.h"
+#import "FilterMenuController.h"
 
 @interface MapViewController ()
 
+@property(strong, nonatomic)FilterMenuController *filterMenuController;
 @end
+
 
 @implementation MapViewController {
     GMSMapView *mapView_;
     BOOL firstLocationUpdate_;
     CLLocationManager *locationManager;
-}
+    }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -371,6 +374,66 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     
     
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"FilterMenuSegue"])
+    {
+        self.filterMenuController = [segue destinationViewController];
+        [self.filterMenuController initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
+        [self.filterMenuController setIsInMapView:YES];
+        
+        WYStoryboardPopoverSegue *popoverSegue = (WYStoryboardPopoverSegue *)segue;
+        self.anotherPopoverController = [popoverSegue popoverControllerWithSender:sender
+                                                         permittedArrowDirections:WYPopoverArrowDirectionDown
+                                                                         animated:YES
+                                                                          options:WYPopoverAnimationOptionFadeWithScale];
+        
+        self.filterMenuController.map= self;
+        
+        self.anotherPopoverController.popoverContentSize = CGSizeMake(220, 360);
+        
+        self.anotherPopoverController.delegate = self;
+        
+    }
+}
+
+#pragma mark - WYPopoverControllerDelegate
+
+- (void)popoverControllerDidPresentPopover:(WYPopoverController *)controller
+{
+    NSLog(@"popoverControllerDidPresentPopover");
+    
+}
+
+- (BOOL)popoverControllerShouldDismissPopover:(WYPopoverController *)controller
+{
+    return YES;
+}
+
+- (void)popoverControllerDidDismissPopover:(WYPopoverController *)controller
+{
+    if (controller == self.anotherPopoverController)
+    {
+        self.anotherPopoverController.delegate = nil;
+        self.anotherPopoverController = nil;
+        //[self.prodListCollectionView reloadData];
+    }
+    
+}
+
+- (BOOL)popoverControllerShouldIgnoreKeyboardBounds:(WYPopoverController *)popoverController
+{
+    return YES;
+}
+
+- (void)popoverController:(WYPopoverController *)popoverController willTranslatePopoverWithYOffset:(float *)value
+{
+    // keyboard is shown and the popover will be moved up by 163 pixels for example ( *value = 163 )
+    *value = 0; // set value to 0 if you want to avoid the popover to be moved
+}
+
 
 
 

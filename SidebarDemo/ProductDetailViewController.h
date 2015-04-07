@@ -19,7 +19,7 @@
 - (IBAction)buyThisItemButtonClicked:(id)sender;
 
 - (void)initWithItem:(MMDItem*)item;
-- (IBAction)addItemToWishList:(id)sender;
+- (void)addCurrentItemToWishList;
 
 @property (strong, nonatomic) IBOutlet UIButton *addToWishlistButton;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;

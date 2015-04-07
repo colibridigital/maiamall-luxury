@@ -11,13 +11,16 @@
 #import "MMDItem.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "ListOfItemsInTheStoreViewController.h"
+#import "WYPopoverController.h"
+#import "WYStoryboardPopoverSegue.h"
 
-@interface MapViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate, GMSMapViewDelegate>
+@interface MapViewController : UIViewController<UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate, GMSMapViewDelegate, WYPopoverControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
+@property(strong, nonatomic) WYPopoverController *anotherPopoverController;
 
 @property (strong, nonatomic) NSMutableArray * arrayWithSearchResults; //array of MMDItems
 @property (strong, nonatomic) NSMutableArray * arrayWithSearchResultsBeforeFiltering;

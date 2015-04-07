@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		151902E01AD34C8400644C50 /* ProductListViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 15AD00351AB9E6AB00B8B1D1 /* ProductListViewController.h */; };
+		151902E21AD3EF1200644C50 /* Add To Favorites-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 151902E11AD3EF1200644C50 /* Add To Favorites-50.png */; };
 		157562781ABAF024001FAE38 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157562771ABAF024001FAE38 /* ProductDetailViewController.m */; };
 		1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 157562791ABAF2FD001FAE38 /* blouse.png */; };
 		1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1575627E1ABCEB1B001FAE38 /* ProfileViewController.m */; };
@@ -139,6 +140,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		151902E11AD3EF1200644C50 /* Add To Favorites-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add To Favorites-50.png"; sourceTree = "<group>"; };
 		157562761ABAF024001FAE38 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		157562771ABAF024001FAE38 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		157562791ABAF2FD001FAE38 /* blouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blouse.png; sourceTree = "<group>"; };
@@ -813,6 +815,7 @@
 		F4EECF34177C9A1E00778578 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				151902E11AD3EF1200644C50 /* Add To Favorites-50.png */,
 				15B21DF31AD2CDC000611559 /* filterMenuIcon.png */,
 				15B21DF41AD2CDC000611559 /* giftMenuIcon.png */,
 				15E968661ACFEF2F003D20B8 /* Buy-50.png */,
@@ -973,6 +976,7 @@
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
 				15E968671ACFEF2F003D20B8 /* Buy-50.png in Resources */,
 				15E753221AC2C82900F2D39D /* harrods.png in Resources */,
+				151902E21AD3EF1200644C50 /* Add To Favorites-50.png in Resources */,
 				15AD00001AB9A03700B8B1D1 /* Location Filled-50.png in Resources */,
 				F4FE87FB1780081300CB3DA8 /* comments_photo.jpg in Resources */,
 				F4FE87FC1780081300CB3DA8 /* wishlist_photo.jpg in Resources */,
