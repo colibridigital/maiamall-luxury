@@ -1866,12 +1866,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vLb-f8-Ejo"/>
         <segue reference="dsV-kj-tD1"/>
+        <segue reference="vLb-f8-Ejo"/>
+        <segue reference="bUX-Mu-wq1"/>
         <segue reference="8vS-07-Ztn"/>
         <segue reference="z3Z-27-kAD"/>
-        <segue reference="bUX-Mu-wq1"/>
-        <segue reference="rXC-bG-KgF"/>
+        <segue reference="9M4-gb-eYK"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -216,16 +216,16 @@
         NSMutableArray * arrayWithSearchResults = [[NSMutableArray alloc] init];
         
         for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
+            
             if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
                 if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound && item.itemGender == female) {
-                    [self.arrayWithSearchResults addObject:item];
+                    [arrayWithSearchResults addObject:item];
                 }
             } else {
                 if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
-                    [self.arrayWithSearchResults addObject:item];
+                    [arrayWithSearchResults addObject:item];
                 }
             }
-
         }
         
         if (arrayWithSearchResults.count > 0) {
