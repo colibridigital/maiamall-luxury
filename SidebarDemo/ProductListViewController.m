@@ -166,6 +166,7 @@
     {
         self.filterMenuController = [segue destinationViewController];
         [self.filterMenuController initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
+        [self.filterMenuController setIsInMapView:NO];
         
         WYStoryboardPopoverSegue *popoverSegue = (WYStoryboardPopoverSegue *)segue;
         self.anotherPopoverController = [popoverSegue popoverControllerWithSender:sender
@@ -204,21 +205,6 @@
         //[self.prodListCollectionView reloadData];
     }
     
-}
-
--(void)cancelPopover:(WYPopoverController*)controller {
-    NSLog(@"in dismissal");
-    
-    if (controller == self.anotherPopoverController) {
-        
-        NSLog(@"in dismiss");
-        
-        controller.delegate = nil;
-        [self.anotherPopoverController dismissPopoverAnimated:YES];
-        self.anotherPopoverController.delegate = nil;
-        self.anotherPopoverController = nil;
-        
-    }
 }
 
 - (BOOL)popoverControllerShouldIgnoreKeyboardBounds:(WYPopoverController *)popoverController

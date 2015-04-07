@@ -10,6 +10,7 @@
 #import "MMDItem.h"
 #import "MBProgressHUD.h"
 #import "ProductListViewController.h"
+#import "MapViewController.h"
 
 
 @interface FilterMenuController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
@@ -23,6 +24,7 @@
 @property (strong, nonatomic) NSString * searchText;
 @property (strong, nonatomic) NSMutableArray * arrayWithColors;
 @property (strong, nonatomic) NSMutableArray * arrayWithSize;
+@property (strong, nonatomic) NSMutableArray * pickerViewData;
 
 - (IBAction)sizeFilterPressed:(id)sender;
 
@@ -39,9 +41,13 @@
 - (IBAction)locationFilterPressed:(id)sender;
 
 @property(strong, nonatomic) ProductListViewController *prodList;
+@property(strong, nonatomic) MapViewController *map;
 
 - (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText;
 
 @property (strong, nonatomic) NSString * keyForColorFilter;
 @property (strong, nonatomic) NSString * keyForSizeFilter;
+
+@property (nonatomic) BOOL *isInMapView;
+
 @end

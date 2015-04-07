@@ -24,6 +24,4 @@
 
 - (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText;
 
--(void)cancelPopover:(WYPopoverController*)controller;
-
 @end

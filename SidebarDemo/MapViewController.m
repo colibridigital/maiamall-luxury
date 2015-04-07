@@ -29,6 +29,11 @@
     return self;
 }
 
+- (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText {
+    self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:[array copy]];
+    self.searchText = searchText;
+}
+
 - (void)initialiseMenuItems
 {
     SWRevealViewController *revealViewController = self.revealViewController;

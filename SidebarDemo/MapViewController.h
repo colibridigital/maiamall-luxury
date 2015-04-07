@@ -25,4 +25,7 @@
 
 @property (strong, nonatomic)  NSMutableArray * arrayWithStoresWhichAlreadyOnTheMap;
 
+- (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText;
+- (void)populateMapWithData;
+
 @end
