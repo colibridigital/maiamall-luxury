@@ -284,9 +284,15 @@ static MMDDataBase *dataBase;
                 UIImage *itemImage;
                 [self loadProductImage:itemId itemImage_p:&itemImage];
                 
+                itemImage =  [self imageWithImage:itemImage scaledToSize:CGSizeMake(itemImage.size.width/4, itemImage.size.height/4)];
+                
+                NSData *dataForJPEGFile = UIImageJPEGRepresentation(itemImage, 0.5);
+                
+                UIImage * finalImage = [UIImage imageWithData:dataForJPEGFile];
+                
 #warning add offers
                 
-                MMDItem * item = [[MMDItem alloc] initWithId:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription image:itemImage SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
+                MMDItem * item = [[MMDItem alloc] initWithId:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription image:finalImage SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
                 
                 [retval addObject:item];
             }
@@ -295,6 +301,17 @@ static MMDDataBase *dataBase;
     }
     
     return retval;
+}
+
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 - (NSMutableArray*)getOffers {
