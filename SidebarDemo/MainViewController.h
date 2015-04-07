@@ -35,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 
 @property (strong, nonatomic) NSMutableArray * arrayWithRecommendedItems;
+@property (strong, nonatomic) NSMutableArray * arrayWithSearchResults;
 
--(void)cancelPopover:(WYPopoverController*)controller;
 
 @end

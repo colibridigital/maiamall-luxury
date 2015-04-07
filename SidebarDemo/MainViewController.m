@@ -59,9 +59,9 @@
     
     
     self.tabBarController.delegate = self;
+  
     
-    
-   // dropDown.table.delegate = self;
+    self.arrayWithSearchResults = [[NSMutableArray alloc] init];
     
     self.genderWasChanged = NO;
 
@@ -282,30 +282,44 @@
     
    // [self showViewController:prodListDetails sender:self];
     
-    [self.searchBar resignFirstResponder];
-    
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Searching...";
     
     dispatch_async(dispatch_queue_create("Search", nil), ^{
-        
-        NSMutableArray * arrayWithSearchResults = [[NSMutableArray alloc] init];
+        self.arrayWithSearchResults = [[NSMutableArray alloc] init];
         
         for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
                 if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
-                [arrayWithSearchResults addObject:item];
+                [self.arrayWithSearchResults addObject:item];
                 }
           
         }
         
-        if (arrayWithSearchResults.count > 0) {
+        if (self.arrayWithSearchResults.count > 0) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
                 ProductListViewController * searchPage = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
-                [searchPage initWithArrayWithSearchResults:arrayWithSearchResults andTextForSearch:self.searchBar.text];
+                [searchPage initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchBar.text];
                 [self.navigationController pushViewController:searchPage animated:YES];
             });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"No Results Found";
+            });
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            });
         }
+        
     });
+
     
 }
 
@@ -319,35 +333,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-
-
-/*
-- (IBAction)filterSearchMenuClicked:(id)sender {
-    
-   /* [self.view bringSubviewToFront:self.dropDown];
-    
-    self.dropDown.userInteractionEnabled = TRUE;
-    self.dropDown.table.userInteractionEnabled = TRUE;
-    
-    
-    NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"", @"",@"", nil];
-    NSArray * arrImage = [[NSArray alloc] init];
-    arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"Alphabetical Sorting Az-50.png"], [UIImage imageNamed:@"Location Filled-50.png"], [UIImage imageNamed:@"Price Tag Pound Filled-50.png"], nil];
-    if(self.dropDown == nil) {
-        CGFloat f = 120;
-        self.dropDown = [[NIDropDown alloc]showDropDown:sender :&f :arr :arrImage :@"down"];
-        self.dropDown.delegate = self;
-    }
-    else {
-        [self.dropDown hideDropDown:sender];
-        [self rel];
-    }*/
-    
-//}
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -378,15 +363,6 @@
 - (BOOL)popoverControllerShouldDismissPopover:(WYPopoverController *)controller
 {
     return YES;
-}
-
--(void)cancelPopover:(WYPopoverController*)controller {
-    if (controller == anotherPopoverController) {
-        anotherPopoverController.delegate = nil;
-        [controller dismissPopoverAnimated:YES];
-        anotherPopoverController.delegate = nil;
-        anotherPopoverController = nil;
-    }
 }
 
 - (void)popoverControllerDidDismissPopover:(WYPopoverController *)controller

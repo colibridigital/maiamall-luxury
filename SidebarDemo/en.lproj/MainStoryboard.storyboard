@@ -520,7 +520,7 @@
                                 </items>
                             </tabBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-up-DOe" customClass="ProductListCollectionView">
-                                <rect key="frame" x="6" y="69" width="309" height="455"/>
+                                <rect key="frame" x="6" y="72" width="309" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="mM3-AS-AKV">
                                     <size key="itemSize" width="100" height="140"/>
@@ -549,13 +549,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Dme-G2-rPj" secondAttribute="bottom" id="1DX-Hf-aIz"/>
-                            <constraint firstItem="UXS-up-DOe" firstAttribute="top" secondItem="sXU-cL-NQU" secondAttribute="bottom" constant="5" id="8Xp-9k-YcJ"/>
-                            <constraint firstItem="Dme-G2-rPj" firstAttribute="leading" secondItem="6FA-3e-eJH" secondAttribute="leading" id="ADW-Fb-kBW"/>
-                            <constraint firstItem="UXS-up-DOe" firstAttribute="bottom" secondItem="jpn-OE-hsw" secondAttribute="top" id="MhN-cH-Dhu"/>
-                            <constraint firstItem="Dme-G2-rPj" firstAttribute="centerX" secondItem="UXS-up-DOe" secondAttribute="centerX" id="Zpw-eg-Fkr"/>
-                            <constraint firstItem="UXS-up-DOe" firstAttribute="leading" secondItem="6FA-3e-eJH" secondAttribute="leadingMargin" constant="-10" id="cKw-vz-8SI"/>
-                            <constraint firstAttribute="trailing" secondItem="Dme-G2-rPj" secondAttribute="trailing" id="pAk-GW-3jr"/>
+                            <constraint firstAttribute="bottom" secondItem="Dme-G2-rPj" secondAttribute="bottom" id="3Ip-PW-xSP"/>
+                            <constraint firstAttribute="trailing" secondItem="Dme-G2-rPj" secondAttribute="trailing" id="CRf-Ov-FmH"/>
+                            <constraint firstItem="Dme-G2-rPj" firstAttribute="centerX" secondItem="UXS-up-DOe" secondAttribute="centerX" id="NMK-Zq-hPk"/>
+                            <constraint firstItem="Dme-G2-rPj" firstAttribute="leading" secondItem="6FA-3e-eJH" secondAttribute="leading" id="Nm5-tn-gYp"/>
+                            <constraint firstItem="Dme-G2-rPj" firstAttribute="top" secondItem="UXS-up-DOe" secondAttribute="bottom" constant="12" id="aNd-CH-HYE"/>
+                            <constraint firstItem="UXS-up-DOe" firstAttribute="top" secondItem="sXU-cL-NQU" secondAttribute="bottom" constant="8" symbolic="YES" id="gwE-8X-HRC"/>
+                            <constraint firstItem="UXS-up-DOe" firstAttribute="leading" secondItem="6FA-3e-eJH" secondAttribute="leadingMargin" constant="-10" id="ugV-37-n3u"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -1917,12 +1917,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="95b-qb-Muc"/>
         <segue reference="dsV-kj-tD1"/>
         <segue reference="fEs-ex-e8Z"/>
         <segue reference="8vS-07-Ztn"/>
         <segue reference="z3Z-27-kAD"/>
         <segue reference="bUX-Mu-wq1"/>
-        <segue reference="rXC-bG-KgF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

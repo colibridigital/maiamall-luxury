@@ -50,4 +50,6 @@
 
 @property (nonatomic) BOOL isInMapView;
 
+@property (nonatomic) BOOL isInMainView;
+
 @end

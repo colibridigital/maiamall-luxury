@@ -137,7 +137,7 @@
                     
                     NSLog(@"in filter 1");
                     
-                    if(!self.isInMapView) {
+                    if(!self.isInMapView || self.isInMainView) {
                     
                         [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
                     } else {
@@ -181,7 +181,7 @@
                     
                     NSLog(@"in filter 2 %lu", self.arrayWithSearchResults.count);
                     
-                    if (!self.isInMapView) {
+                    if (!self.isInMapView || self.isInMainView) {
                     
                         [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
                     } else {
@@ -211,7 +211,7 @@
                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                     NSLog(@"in filter 3 %lu", self.arrayWithSearchResults.count);
                     
-                    if(!self.isInMapView) {
+                    if(!self.isInMapView || self.isInMainView) {
                     
                         [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
                     } else {
@@ -252,7 +252,7 @@
                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                     
                     NSLog(@"in filter 4 %lu", self.arrayWithSearchResults.count);
-                    if (!self.isInMapView) {
+                    if (!self.isInMapView || self.isInMainView) {
                         [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
                     } else {
                         [self.map initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
@@ -299,7 +299,7 @@
                 
                 NSLog(@"in filter 5 %lu", self.arrayWithSearchResults.count);
                 
-                if(!self.isInMapView) {
+                if(!self.isInMapView || self.isInMainView) {
                 
                     [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
                 } else {
@@ -387,6 +387,16 @@
         [self.map.anotherPopoverController dismissPopoverAnimated:YES];
         
         [self.map populateMapWithData];
+    }
+    
+    if (self.isInMainView) {
+        //[self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
+        
+        UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        ProductListViewController * searchPage = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+        [searchPage initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
+        [self.navigationController pushViewController:searchPage animated:YES];
+        
     }
 }
 
