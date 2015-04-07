@@ -232,20 +232,63 @@ static MMDDataBase *dataBase;
 
 - (UIImage *)manipulateImage:(int)itemId {
     UIImage *itemImage;
+    UIImage *finalImage;
+    UIImage *targetImage;
+    
     [self loadProductImage:itemId itemImage_p:&itemImage];
     
-    float sourceImageHeight = itemImage.size.height;
-    float sourceImageWidth = itemImage.size.width;
+    CGSize targetSize = CGSizeMake(230, 250);
+    CGSize imageSize = itemImage.size;
+    CGFloat width = itemImage.size.width;
+    CGFloat height = itemImage.size.height;
     
-    if(sourceImageHeight > 500 && sourceImageWidth > 460) {
-        itemImage =  [self imageWithImage:itemImage scaledToSize:CGSizeMake(itemImage.size.width/2, itemImage.size.height/2)];
-    } else {
-        itemImage =  [self imageWithImage:itemImage scaledToSize:CGSizeMake(itemImage.size.width/1.3, itemImage.size.height/1.3)];
-    }
+    CGFloat targetWidth = targetSize.width;
+    CGFloat targetHeight = targetSize.height;
     
-    NSData *dataForJPEGFile = UIImageJPEGRepresentation(itemImage, 0.5);
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
     
-    UIImage * finalImage = [UIImage imageWithData:dataForJPEGFile];
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+    
+        CGFloat widthFactor = targetWidth / width;
+        CGFloat heightFactor = targetHeight / height;
+        
+        if (widthFactor < heightFactor)
+            scaleFactor = widthFactor;
+        else
+            scaleFactor = heightFactor;
+        
+        scaledWidth  = width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+        
+        // center the image
+        
+        if (widthFactor < heightFactor) {
+            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+        } else if (widthFactor > heightFactor) {
+            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+        }
+    
+    
+    // this is actually the interesting part:
+    
+    UIGraphicsBeginImageContext(targetSize);
+    
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
+    
+    [itemImage drawInRect:thumbnailRect];
+    
+    targetImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    if(targetImage == nil) NSLog(@"could not scale image");
+    
+    NSData *dataForJPEGFile = UIImageJPEGRepresentation(targetImage, 0.7);
+    finalImage = [UIImage imageWithData:dataForJPEGFile];
     return finalImage;
 }
 
