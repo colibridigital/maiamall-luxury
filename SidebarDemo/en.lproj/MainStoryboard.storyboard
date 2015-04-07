@@ -40,16 +40,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="FdD-Xt-VvL">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="FdD-Xt-VvL">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" selectedImage="Default.png" id="dSS-83-NlV">
+                                    <tabBarItem image="User Male4-50.png" selectedImage="Default.png" id="dSS-83-NlV">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="fdj-N0-d8P">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="fdj-N0-d8P">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="OJG-i9-xAH">
+                                    <tabBarItem tag="1" image="Location-50.png" id="OJG-i9-xAH">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
                                 </items>
@@ -121,10 +121,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="iSV-ns-u3y">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="4DU-rm-gHC">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="4DU-rm-gHC">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="5QN-gv-TPN">
+                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="5QN-gv-TPN">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="eSb-KY-lSZ" kind="custom" identifier="FilterMenuSegue" customClass="WYStoryboardPopoverSegue" id="9M4-gb-eYK"/>
@@ -438,16 +438,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="0nq-cT-buH">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="0nq-cT-buH">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" selectedImage="Default.png" id="WaX-cE-Drd">
+                                    <tabBarItem image="User Male4-50.png" selectedImage="Default.png" id="WaX-cE-Drd">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="oGf-bI-gTj">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="oGf-bI-gTj">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="kwC-71-q6M">
+                                    <tabBarItem tag="1" image="Location-50.png" id="kwC-71-q6M">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
                                 </items>
@@ -468,10 +468,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D1p-AO-yZ1">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Hd1-oD-ajo">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="Hd1-oD-ajo">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="ti6-u1-e4G">
+                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="ti6-u1-e4G">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="eSb-KY-lSZ" kind="custom" identifier="FilterMenuSegue" customClass="WYStoryboardPopoverSegue" id="rXC-bG-KgF"/>
@@ -504,16 +504,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="Q6u-9P-Ur8">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="Q6u-9P-Ur8">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="DTX-ka-29e">
+                                    <tabBarItem image="User Male4-50.png" id="DTX-ka-29e">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="Xhh-TO-usq">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="Xhh-TO-usq">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="wEy-Oc-i2M">
+                                    <tabBarItem tag="1" image="Location-50.png" id="wEy-Oc-i2M">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -559,10 +559,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="YBe-1P-HNn">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="s2X-uL-Jgt">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="s2X-uL-Jgt">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="mlw-ti-yah">
+                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="mlw-ti-yah">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="eSb-KY-lSZ" kind="custom" identifier="FilterMenuSegue" customClass="WYStoryboardPopoverSegue" id="95b-qb-Muc"/>
@@ -596,16 +596,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="mhM-j9-Hm4">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="mhM-j9-Hm4">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="jN1-Fb-AfD">
+                                    <tabBarItem image="User Male4-50.png" id="jN1-Fb-AfD">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="xmi-XX-cmM">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="xmi-XX-cmM">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="Wg2-OC-0af">
+                                    <tabBarItem tag="1" image="Location-50.png" id="Wg2-OC-0af">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -743,16 +743,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="K4O-YK-4pO">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="K4O-YK-4pO">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" selectedImage="Default.png" id="U2o-mf-jRy">
+                                    <tabBarItem image="User Male4-50.png" selectedImage="Default.png" id="U2o-mf-jRy">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="q9C-Ra-9aK">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="q9C-Ra-9aK">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="uo3-SM-bJf">
+                                    <tabBarItem tag="1" image="Location-50.png" id="uo3-SM-bJf">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
                                 </items>
@@ -897,10 +897,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kHF-yh-LTQ">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="cyo-rz-hFJ">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="cyo-rz-hFJ">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="VEm-qf-Y53">
+                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="VEm-qf-Y53">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -952,16 +952,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="xNV-6M-70L">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="xNV-6M-70L">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="s6y-rp-GNx">
+                                    <tabBarItem image="User Male4-50.png" id="s6y-rp-GNx">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="w4l-x7-xJR">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="w4l-x7-xJR">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="m6w-fz-hgG">
+                                    <tabBarItem tag="1" image="Location-50.png" id="m6w-fz-hgG">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -1055,16 +1055,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="hV0-xf-7on">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="hV0-xf-7on">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" selectedImage="Default.png" id="Plo-e7-n4p">
+                                    <tabBarItem image="User Male4-50.png" selectedImage="Default.png" id="Plo-e7-n4p">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="oRU-IA-HwG">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="oRU-IA-HwG">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="fyv-Sd-Nf5">
+                                    <tabBarItem tag="1" image="Location-50.png" id="fyv-Sd-Nf5">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
                                 </items>
@@ -1121,10 +1121,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kDh-k8-gOK">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="YMJ-Vn-BPU">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="YMJ-Vn-BPU">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="1mn-XX-kZT">
+                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="1mn-XX-kZT">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1160,16 +1160,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="xHt-aG-c2X">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="xHt-aG-c2X">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="Nmt-jY-0ok">
+                                    <tabBarItem image="User Male4-50.png" id="Nmt-jY-0ok">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="wbb-9r-wWa">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="wbb-9r-wWa">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="2An-Av-mhk">
+                                    <tabBarItem tag="1" image="Location-50.png" id="2An-Av-mhk">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -1252,16 +1252,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="RZS-WD-Qpl">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="RZS-WD-Qpl">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="jpT-jX-CYz">
+                                    <tabBarItem image="User Male4-50.png" id="jpT-jX-CYz">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="dSH-0i-YYv">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="dSH-0i-YYv">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="1uz-Vt-qW4">
+                                    <tabBarItem tag="1" image="Location-50.png" id="1uz-Vt-qW4">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -1295,10 +1295,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="4lG-r7-Frp">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="lmj-OL-3qd">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="lmj-OL-3qd">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="qOH-xX-D3b">
+                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="qOH-xX-D3b">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1365,16 +1365,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="wyA-cC-h9m">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="wyA-cC-h9m">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="jYi-gp-fy6">
+                                    <tabBarItem image="User Male4-50.png" id="jYi-gp-fy6">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="oVy-aU-Iul">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="oVy-aU-Iul">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="cV0-eI-tZ2">
+                                    <tabBarItem tag="1" image="Location-50.png" id="cV0-eI-tZ2">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -1461,10 +1461,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Lhg-ut-RjR">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="ZSc-OB-T4b">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="ZSc-OB-T4b">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="ohf-Xt-0jM">
+                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="ohf-Xt-0jM">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1514,16 +1514,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="7QS-DI-p5N">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="7QS-DI-p5N">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="Io8-vr-dhM">
+                                    <tabBarItem image="User Male4-50.png" id="Io8-vr-dhM">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="ycI-1a-pMz">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="ycI-1a-pMz">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="Zkg-eX-5ZN">
+                                    <tabBarItem tag="1" image="Location-50.png" id="Zkg-eX-5ZN">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -1686,10 +1686,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="UPH-go-evB">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="fI4-rg-ofW">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="fI4-rg-ofW">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filled Filter-50.png" id="fxO-Z0-p6t">
+                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="fxO-Z0-p6t">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1723,16 +1723,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="BNQ-yf-KEn">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="BNQ-yf-KEn">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="1ym-0L-veE">
+                                    <tabBarItem image="User Male4-50.png" id="1ym-0L-veE">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="xbP-sY-Wn4">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="xbP-sY-Wn4">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="G2U-tk-04A">
+                                    <tabBarItem tag="1" image="Location-50.png" id="G2U-tk-04A">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -1806,16 +1806,16 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem tag="2" title="" image="Home-50.png" id="vU3-Rd-p3F">
+                                    <tabBarItem tag="2" title="" image="Home-50 copy.png" id="vU3-Rd-p3F">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem image="User-50.png" id="osL-Sc-cLK">
+                                    <tabBarItem image="User Male4-50.png" id="osL-Sc-cLK">
                                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="News Filled-50.png" id="t9W-Zm-qQY">
+                                    <tabBarItem tag="3" title="" image="News-50-2.png" id="t9W-Zm-qQY">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" image="Location Filled-50.png" id="oFk-UA-Hdf">
+                                    <tabBarItem tag="1" image="Location-50.png" id="oFk-UA-Hdf">
                                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-6"/>
                                     </tabBarItem>
                                 </items>
@@ -1843,21 +1843,25 @@
         <image name="Alphabetical Sorting Az-50.png" width="50" height="50"/>
         <image name="Alphabetical Sorting Za-50.png" width="36" height="36"/>
         <image name="Default.png" width="320" height="480"/>
-        <image name="Filled Filter-50.png" width="22" height="22"/>
+        <image name="Filter-50.png" width="29" height="29"/>
+        <image name="Home-50 copy.png" width="36" height="36"/>
         <image name="Home-50.png" width="29" height="29"/>
         <image name="LVWall.png" width="2560" height="1440"/>
         <image name="Location Filled-50.png" width="29" height="29"/>
+        <image name="Location-50.png" width="36" height="36"/>
         <image name="MaiaMall-Logo-Light.jpg" width="1200" height="800"/>
         <image name="Map Marker-50.png" width="36" height="36"/>
+        <image name="Menu-50.png" width="29" height="29"/>
         <image name="News Filled-50.png" width="36" height="36"/>
+        <image name="News-50-2.png" width="36" height="36"/>
         <image name="Paint Bucket-50.png" width="36" height="36"/>
         <image name="Price Tag Pound Filled-50.png" width="29" height="29"/>
         <image name="Tape Measure2-50.png" width="36" height="36"/>
+        <image name="User Male4-50.png" width="36" height="36"/>
         <image name="User-50.png" width="29" height="29"/>
         <image name="blouse.png" width="418" height="492"/>
         <image name="donVersace.jpg" width="1048" height="996"/>
         <image name="giftMenuIcon.png" width="50" height="50"/>
-        <image name="menu.png" width="28" height="20"/>
         <image name="msImage.png" width="820" height="1050"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1868,10 +1872,10 @@
     <inferredMetricsTieBreakers>
         <segue reference="dsV-kj-tD1"/>
         <segue reference="vLb-f8-Ejo"/>
+        <segue reference="95b-qb-Muc"/>
         <segue reference="bUX-Mu-wq1"/>
         <segue reference="8vS-07-Ztn"/>
         <segue reference="z3Z-27-kAD"/>
-        <segue reference="9M4-gb-eYK"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
