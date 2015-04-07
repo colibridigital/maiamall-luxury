@@ -284,9 +284,9 @@ static MMDDataBase *dataBase;
                 UIImage *itemImage;
                 [self loadProductImage:itemId itemImage_p:&itemImage];
                 
-                itemImage =  [self imageWithImage:itemImage scaledToSize:CGSizeMake(itemImage.size.width/4, itemImage.size.height/4)];
+                itemImage =  [self imageWithImage:itemImage scaledToSize:CGSizeMake(itemImage.size.width/2, itemImage.size.height/2)];
                 
-                NSData *dataForJPEGFile = UIImageJPEGRepresentation(itemImage, 0.5);
+                NSData *dataForJPEGFile = UIImageJPEGRepresentation(itemImage, 0.6);
                 
                 UIImage * finalImage = [UIImage imageWithData:dataForJPEGFile];
                 
