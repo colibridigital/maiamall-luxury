@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151902E01AD34C8400644C50 /* ProductListViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 15AD00351AB9E6AB00B8B1D1 /* ProductListViewController.h */; };
 		157562781ABAF024001FAE38 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157562771ABAF024001FAE38 /* ProductDetailViewController.m */; };
 		1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 157562791ABAF2FD001FAE38 /* blouse.png */; };
 		1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1575627E1ABCEB1B001FAE38 /* ProfileViewController.m */; };
@@ -50,9 +51,6 @@
 		15E7531F1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7531D1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m */; };
 		15E753201AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E7531E1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib */; };
 		15E753221AC2C82900F2D39D /* harrods.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E753211AC2C82900F2D39D /* harrods.png */; };
-		15E7532A1AC318D500F2D39D /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753291AC318D500F2D39D /* NIDropDown.m */; };
-		15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7532D1AC3209300F2D39D /* FilterMenuCell.m */; };
-		15E753301AC3209300F2D39D /* FilterMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E7532E1AC3209300F2D39D /* FilterMenuCell.xib */; };
 		15E753321AC3299600F2D39D /* Alphabetical Sorting Az-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E753311AC3299600F2D39D /* Alphabetical Sorting Az-50.png */; };
 		15E753451AC570AC00F2D39D /* News Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E753441AC570AC00F2D39D /* News Filled-50.png */; };
 		15E753491AC573AA00F2D39D /* RetailDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E753481AC573AA00F2D39D /* RetailDetailViewController.m */; };
@@ -203,11 +201,6 @@
 		15E7531D1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsSimilarCollectionViewCell.m; sourceTree = "<group>"; };
 		15E7531E1AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsSimilarCollectionViewCell.xib; sourceTree = "<group>"; };
 		15E753211AC2C82900F2D39D /* harrods.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harrods.png; sourceTree = "<group>"; };
-		15E753281AC318D500F2D39D /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
-		15E753291AC318D500F2D39D /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
-		15E7532C1AC3209300F2D39D /* FilterMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterMenuCell.h; sourceTree = "<group>"; };
-		15E7532D1AC3209300F2D39D /* FilterMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterMenuCell.m; sourceTree = "<group>"; };
-		15E7532E1AC3209300F2D39D /* FilterMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterMenuCell.xib; sourceTree = "<group>"; };
 		15E753311AC3299600F2D39D /* Alphabetical Sorting Az-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alphabetical Sorting Az-50.png"; sourceTree = "<group>"; };
 		15E753441AC570AC00F2D39D /* News Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "News Filled-50.png"; sourceTree = "<group>"; };
 		15E753471AC573AA00F2D39D /* RetailDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetailDetailViewController.h; sourceTree = "<group>"; };
@@ -539,25 +532,6 @@
 			name = ItemsSimilarCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		15E753271AC318C600F2D39D /* NIDropDown */ = {
-			isa = PBXGroup;
-			children = (
-				15E753281AC318D500F2D39D /* NIDropDown.h */,
-				15E753291AC318D500F2D39D /* NIDropDown.m */,
-			);
-			name = NIDropDown;
-			sourceTree = "<group>";
-		};
-		15E7532B1AC3206F00F2D39D /* FilterMenuCell */ = {
-			isa = PBXGroup;
-			children = (
-				15E7532C1AC3209300F2D39D /* FilterMenuCell.h */,
-				15E7532D1AC3209300F2D39D /* FilterMenuCell.m */,
-				15E7532E1AC3209300F2D39D /* FilterMenuCell.xib */,
-			);
-			name = FilterMenuCell;
-			sourceTree = "<group>";
-		};
 		15E753461AC5738B00F2D39D /* RetailDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -792,8 +766,6 @@
 				15E753501AC5A44C00F2D39D /* CollectionListViewController */,
 				15E7534A1AC5933200F2D39D /* BlogViewController */,
 				15E753461AC5738B00F2D39D /* RetailDetailViewController */,
-				15E7532B1AC3206F00F2D39D /* FilterMenuCell */,
-				15E753271AC318C600F2D39D /* NIDropDown */,
 				15E7531B1AC2C4CE00F2D39D /* ItemsSimilarCollectionViewCell */,
 				15E753171AC2C44900F2D39D /* ItemsSimilarCollectionView */,
 				1575628A1AC0833D001FAE38 /* CollectionsCollectionView */,
@@ -948,6 +920,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151902E01AD34C8400644C50 /* ProductListViewController.h in Resources */,
 				15B60B7F1ACC858200DC8749 /* Map Marker-50.png in Resources */,
 				F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */,
 				15E7537B1AC5E8DC00F2D39D /* LVWall.png in Resources */,
@@ -986,7 +959,6 @@
 				F4EECF61177F384900778578 /* wishlist.png in Resources */,
 				15E968801ACFF3D1003D20B8 /* bannerSuccess@2x.png in Resources */,
 				15B60B7B1ACC825600DC8749 /* Tape Measure2-50.png in Resources */,
-				15E753301AC3209300F2D39D /* FilterMenuCell.xib in Resources */,
 				15E9687C1ACFF3D1003D20B8 /* bannerFailure@2x.png in Resources */,
 				F4EECF63177F3CAB00778578 /* tag.png in Resources */,
 				15ADFFFA1AB99EBB00B8B1D1 /* Filled Filter-50.png in Resources */,
@@ -1054,8 +1026,6 @@
 				15E968771ACFF3D1003D20B8 /* ALAlertBanner.m in Sources */,
 				15E968871AD2B7EB003D20B8 /* PurchaseItemTableViewCell.m in Sources */,
 				15E968831ACFF981003D20B8 /* MBProgressHUD.m in Sources */,
-				15E7532A1AC318D500F2D39D /* NIDropDown.m in Sources */,
-				15E7532F1AC3209300F2D39D /* FilterMenuCell.m in Sources */,
 				15B60B711ACC59EB00DC8749 /* WYStoryboardPopoverSegue.m in Sources */,
 				15AD00281AB9E16D00B8B1D1 /* ProductListCollectionView.m in Sources */,
 				15B21DFE1AD2DF9700611559 /* ItemsInTheStoreTableViewCell.m in Sources */,

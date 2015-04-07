@@ -36,4 +36,6 @@
 
 @property (strong, nonatomic) NSMutableArray * arrayWithRecommendedItems;
 
+-(void)cancelPopover:(WYPopoverController*)controller;
+
 @end

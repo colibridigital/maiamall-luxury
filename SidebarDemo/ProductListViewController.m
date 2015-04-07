@@ -10,11 +10,15 @@
 #import "ProductListCollectionViewCell.h"
 #import "SWRevealViewController.h"
 #import "ProductDetailViewController.h"
+#import "FilterMenuController.h"
 
 
 @interface ProductListViewController ()
+
 @property (strong, nonatomic) NSMutableArray * arrayWithSearchResults; //array of MMDItems
 @property (strong, nonatomic) NSString * searchText;
+@property(strong, nonatomic) FilterMenuController *filterMenuController;
+
 @end
 
 @implementation ProductListViewController
@@ -49,6 +53,10 @@
 - (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText {
     self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:[array copy]];
     self.searchText = searchText;
+    
+    NSLog(@"array %lu", self.arrayWithSearchResults.count);
+    
+    //[self.prodListCollectionView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -156,18 +164,20 @@
     
     if ([segue.identifier isEqualToString:@"FilterMenuSegue"])
     {
-      /*  filterMenuController = [segue destinationViewController];
-        [filterMenuController initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];*/
+        self.filterMenuController = [segue destinationViewController];
+        [self.filterMenuController initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
         
         WYStoryboardPopoverSegue *popoverSegue = (WYStoryboardPopoverSegue *)segue;
-        anotherPopoverController = [popoverSegue popoverControllerWithSender:sender
+        self.anotherPopoverController = [popoverSegue popoverControllerWithSender:sender
                                                     permittedArrowDirections:WYPopoverArrowDirectionDown
                                                                     animated:YES
                                                                      options:WYPopoverAnimationOptionFadeWithScale];
         
-        anotherPopoverController.popoverContentSize = CGSizeMake(220, 360);
+        self.filterMenuController.prodList = self;
         
-        anotherPopoverController.delegate = self;
+        self.anotherPopoverController.popoverContentSize = CGSizeMake(220, 360);
+        
+        self.anotherPopoverController.delegate = self;
         
     }
 }
@@ -187,12 +197,28 @@
 
 - (void)popoverControllerDidDismissPopover:(WYPopoverController *)controller
 {
-    if (controller == anotherPopoverController)
+    if (controller == self.anotherPopoverController)
     {
-        anotherPopoverController.delegate = nil;
-        anotherPopoverController = nil;
+        self.anotherPopoverController.delegate = nil;
+        self.anotherPopoverController = nil;
+        //[self.prodListCollectionView reloadData];
     }
     
+}
+
+-(void)cancelPopover:(WYPopoverController*)controller {
+    NSLog(@"in dismissal");
+    
+    if (controller == self.anotherPopoverController) {
+        
+        NSLog(@"in dismiss");
+        
+        controller.delegate = nil;
+        [self.anotherPopoverController dismissPopoverAnimated:YES];
+        self.anotherPopoverController.delegate = nil;
+        self.anotherPopoverController = nil;
+        
+    }
 }
 
 - (BOOL)popoverControllerShouldIgnoreKeyboardBounds:(WYPopoverController *)popoverController

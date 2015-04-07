@@ -8,7 +8,10 @@
 
 #import "FilterMenuController.h"
 
-@interface FilterMenuController ()
+
+@interface FilterMenuController () {
+    
+}
 @end
 
 @implementation FilterMenuController
@@ -28,8 +31,8 @@
     
     NSLog(@"search %@", self.searchText);
     
-   self.arrayWithColors = [[NSMutableArray alloc] init];
-    self.arrayWithSize = [[NSMutableArray alloc] init];
+   self.arrayWithColors = [[NSMutableArray alloc] initWithObjects:@"None", nil];
+    self.arrayWithSize = [[NSMutableArray alloc] initWithObjects:@"None", nil];
     
 }
 
@@ -39,8 +42,8 @@
     
     NSLog(@"search %@", self.searchText);
     
-    self.arrayWithColors = [[NSMutableArray alloc] init];
-    self.arrayWithSize = [[NSMutableArray alloc] init];
+    self.arrayWithColors = [[NSMutableArray alloc] initWithObjects:@"None", nil];
+    self.arrayWithSize = [[NSMutableArray alloc] initWithObjects:@"None", nil];
 
 }
 
@@ -99,83 +102,74 @@
 
 // Display each row's data.
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [self.arrayWithColors objectAtIndex: row];
+    
+    return [self.arrayWithColors objectAtIndex:row];
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     //    NSLog(@"You selected this: %@", [self.pickerViewData objectAtIndex: row]);
     
-       
-    [self.pickerView removeFromSuperview];
+    NSString* selectedValue = [self.arrayWithColors objectAtIndex:row];
     
-}
-
-
-- (IBAction)sizeFilterPressed:(id)sender {
-}
-
-- (IBAction)colourFilterPressed:(id)sender {
-    NSMutableSet * setWithColors = [[NSMutableSet alloc] init];
-    
-    NSMutableArray * arrayWithColors = [[NSMutableArray alloc] initWithObjects:@"None", nil];
-    
-    for (MMDItem * item in self.arrayWithSearchResults) {
-        if (item.itemColors.count > 0) {
-            for (NSString * itemColor in item.itemColors) {
-                [setWithColors addObject:itemColor];
-            }
-        }
-    }
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"description" ascending:YES];
-    [arrayWithColors addObjectsFromArray:[setWithColors sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]]];
-    
+    if ([selectedValue isEqualToString:@"None"]) {
+        
+        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.labelText = @"Filtering";
+        
+        self.keyForColorFilter = @"None";
+        
+        if ([self.keyForSizeFilter isEqualToString:@"None"]) {
             
-            MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.mode = MBProgressHUDModeIndeterminate;
-            hud.labelText = @"Filtering";
-            
-            self.keyForColorFilter = @"None";
-            
-            if ([self.keyForSizeFilter isEqualToString:@"None"]) {
-                
-                dispatch_async(dispatch_queue_create("Filtering", nil), ^{
-                    if (self.arrayWithSearchResultsBeforeFiltering.count > 0) {
-                        self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:self.arrayWithSearchResultsBeforeFiltering];
-                        [self.arrayWithSearchResultsBeforeFiltering removeAllObjects];
-                    }
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                        //[self populateMapWithData];
-                    });
-                });
-            }
-            /*} else {
-                NSMutableArray * arrayWithFilteredItems = [[NSMutableArray alloc] init];
-                
+            dispatch_async(dispatch_queue_create("Filtering", nil), ^{
                 if (self.arrayWithSearchResultsBeforeFiltering.count > 0) {
                     self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:self.arrayWithSearchResultsBeforeFiltering];
                     [self.arrayWithSearchResultsBeforeFiltering removeAllObjects];
                 }
-                
-                for (MMDItem * item in self.arrayWithSearchResults) {
-                    for (NSString * size in item.itemSizes) {
-                        if ([size isEqualToString:self.keyForSizeFilter]) {
-                            [arrayWithFilteredItems addObject:item];
-                        }
-                    }
-                }
-                
-                self.arrayWithSearchResultsBeforeFiltering = [[NSMutableArray alloc] initWithArray:self.arrayWithSearchResults];
-                self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:arrayWithFilteredItems];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                    [self populateMapWithData];
+                    
+                    NSLog(@"in filter 1");
+                    
+                   // UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                    
+                    //self.prodList = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+                    [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
+                    
                 });
-                
+            });
+        } else {
+            NSMutableArray * arrayWithFilteredItems = [[NSMutableArray alloc] init];
+            
+            if (self.arrayWithSearchResultsBeforeFiltering.count > 0) {
+                self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:self.arrayWithSearchResultsBeforeFiltering];
+                [self.arrayWithSearchResultsBeforeFiltering removeAllObjects];
             }
             
-       /* } else {
-            [self.colorButton setTitle:[NSString stringWithFormat:@"Colour: %@", selectedValue] forState:UIControlStateNormal];
+            for (MMDItem * item in self.arrayWithSearchResults) {
+                for (NSString * size in item.itemSizes) {
+                    if ([size isEqualToString:self.keyForSizeFilter]) {
+                        [arrayWithFilteredItems addObject:item];
+                    }
+                }
+            }
+            
+            self.arrayWithSearchResultsBeforeFiltering = [[NSMutableArray alloc] initWithArray:self.arrayWithSearchResults];
+            self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:arrayWithFilteredItems];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                
+                NSLog(@"in filter 2");
+                
+               // UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                
+               // prodList = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+                [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
+            });
+            
+        }
+        
+    } else {
             
             MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.mode = MBProgressHUDModeIndeterminate;
@@ -193,15 +187,15 @@
                 for (MMDItem * item in self.arrayWithSearchResults) {
                     for (NSString * color in item.itemColors) {
                         if ([color isEqualToString:selectedValue]) {
-                            if (![self.keyForSizeFilter isEqualToString:@"None"]) {
+                            /*if (![self.keyForSizeFilter isEqualToString:@"None"]) {
                                 for (NSString * size in item.itemSizes) {
                                     if ([size isEqualToString:self.keyForSizeFilter]) {
                                         [arrayWithFilteredItems addObject:item];
                                     }
                                 }
-                            } else {
+                            } else {*/
                                 [arrayWithFilteredItems addObject:item];
-                            }
+                            //}
                         }
                     }
                 }
@@ -211,12 +205,46 @@
                 self.arrayWithSearchResults = [[NSMutableArray alloc] initWithArray:arrayWithFilteredItems];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                    [self populateMapWithData];
+                    
+                    NSLog(@"in filter 3 %lu", self.arrayWithSearchResults.count);
+                    
+                    //UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                    
+                   // prodList = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+                    
+                    
+                    [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
                 });
             });
-        }*/
-        
+        }
+    
+}
 
+
+- (IBAction)sizeFilterPressed:(id)sender {
+}
+
+- (IBAction)colourFilterPressed:(id)sender {
+    NSMutableSet * setWithColors = [[NSMutableSet alloc] init];
+    
+   // NSMutableArray * arrayWithColors = [[NSMutableArray alloc] initWithObjects:@"None", nil];
+    
+    for (MMDItem * item in self.arrayWithSearchResults) {
+        if (item.itemColors.count > 0) {
+            for (NSString * itemColor in item.itemColors) {
+                [setWithColors addObject:itemColor];
+            }
+        }
+    }
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"description" ascending:YES];
+    [self.arrayWithColors addObjectsFromArray:[setWithColors sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]]];
+    
+    [self.colourFilter setSelected:YES];
+    
+    NSLog(@"how many colours %lu", self.arrayWithColors.count);
+    
+    [self.pickerView reloadAllComponents];
+    
 }
 
 - (IBAction)priceFilterPressed:(id)sender {
@@ -228,10 +256,16 @@
 - (IBAction)refineButtonPressed:(id)sender {
     NSLog(@"in here");
     
-   /* UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    prodList = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
-    [prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];*/
+  //  [self dismissViewControllerAnimated:TRUE completion:nil];
     
+    //UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    //prodList = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+    [self.prodList initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchText];
+    
+    //[self.prodList cancelPopover:self.prodList.anotherPopoverController];
+    [self.prodList.anotherPopoverController dismissPopoverAnimated:YES];
+    
+    [self.prodList.prodListCollectionView reloadData];
 }
 
 - (IBAction)locationFilterPressed:(id)sender {

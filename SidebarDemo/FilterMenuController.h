@@ -11,9 +11,9 @@
 #import "MBProgressHUD.h"
 #import "ProductListViewController.h"
 
-@interface FilterMenuController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate> {
-    //ProductListViewController *prodList;
-}
+
+@interface FilterMenuController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UIButton *locationFilter;
 @property (strong, nonatomic) IBOutlet UIButton *sizeFilter;
 @property (strong, nonatomic) IBOutlet UIButton *colourFilter;
@@ -37,6 +37,8 @@
 - (IBAction)refineButtonPressed:(id)sender;
 
 - (IBAction)locationFilterPressed:(id)sender;
+
+@property(strong, nonatomic) ProductListViewController *prodList;
 
 - (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText;
 

@@ -380,6 +380,15 @@
     return YES;
 }
 
+-(void)cancelPopover:(WYPopoverController*)controller {
+    if (controller == anotherPopoverController) {
+        anotherPopoverController.delegate = nil;
+        [controller dismissPopoverAnimated:YES];
+        anotherPopoverController.delegate = nil;
+        anotherPopoverController = nil;
+    }
+}
+
 - (void)popoverControllerDidDismissPopover:(WYPopoverController *)controller
 {
     if (controller == anotherPopoverController)

@@ -384,9 +384,6 @@
                                     <action selector="priceFilterPressed:" destination="eSb-KY-lSZ" eventType="touchUpInside" id="T2f-p2-JlB"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMs-tG-QHC">
-                                <rect key="frame" x="74" y="150" width="130" height="162"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-B8-Wll">
                                 <rect key="frame" x="78" y="322" width="65" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
@@ -398,6 +395,13 @@
                                     <action selector="refineButtonPressed:" destination="eSb-KY-lSZ" eventType="touchUpInside" id="SNH-tc-9T3"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMs-tG-QHC">
+                                <rect key="frame" x="74" y="150" width="130" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="eSb-KY-lSZ" id="TPx-jf-fhm"/>
+                                    <outlet property="delegate" destination="eSb-KY-lSZ" id="BNR-R2-FhJ"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -776,7 +780,6 @@
         <!--Navigation Controller-->
         <scene sceneID="5Yh-Kq-dQb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kZx-1d-Oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="prodNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Gk-XR-oKP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vDL-3w-mhb">
@@ -788,6 +791,7 @@
                         <segue destination="kUH-f6-7eD" kind="relationship" relationship="rootViewController" id="DYp-R9-qAr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZx-1d-Oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1338" y="342"/>
         </scene>
