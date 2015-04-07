@@ -66,9 +66,9 @@
 
 - (void)initMap
 {
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
-                                                            longitude:151.20
-                                                                 zoom:6];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:51.5036
+                                                            longitude:0.0183
+                                                                 zoom:14];
     mapView_ = [GMSMapView mapWithFrame:CGRectMake(-5, 63, 331, 457) camera:camera];
     mapView_.myLocationEnabled = YES;
     [self.view addSubview:mapView_];
