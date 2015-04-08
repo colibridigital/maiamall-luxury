@@ -278,7 +278,8 @@
                                                          subtitle:[NSString stringWithFormat:@"There is an offer for you based on your %@.", self.currentItemToShow.itemTitle]
                                                             image:itemImage
                                                       tappedBlock:^(ALAlertBanner *alertBanner) {
-                                                          [ALAlertBanner hideAllAlertBanners];                                                          UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                                                          [ALAlertBanner hideAllAlertBanners];
+                                                          UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
                                                           ProductDetailViewController * itemPage = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
 #warning change for offer page
                                                           [itemPage initWithItem:self.currentItemToShow];
@@ -286,7 +287,7 @@
                                                           [self.navigationController pushViewController:itemPage animated:YES];
                                                       }];
 
-        [banner setSecondsToShow:0];
+        [banner setSecondsToShow:3];
         [banner show];
         
         

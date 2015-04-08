@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CollectionDetailCollectionView.h"
 
-@interface CollectionListViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITabBarControllerDelegate, UITabBarDelegate>
+@interface CollectionListViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITabBarDelegate>
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
-@property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (weak, nonatomic) IBOutlet CollectionDetailCollectionView *collectionDetailView;
 

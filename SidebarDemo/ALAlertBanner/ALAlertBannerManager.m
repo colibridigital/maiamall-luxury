@@ -266,6 +266,7 @@
 - (void)hideAllAlertBanners {
     for (UIView *view in self.bannerViews) {
         [self hideAlertBannersInView:view];
+       // [self forceHideAllAlertBannersInView:view];
     }
 }
 

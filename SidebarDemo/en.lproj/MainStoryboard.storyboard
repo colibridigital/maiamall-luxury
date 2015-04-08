@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FUu-XX-1jG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FUu-XX-1jG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -1144,10 +1144,10 @@
             </objects>
             <point key="canvasLocation" x="969" y="2300"/>
         </scene>
-        <!--Collection List Collection View Controller-->
+        <!--Collection List View Controller-->
         <scene sceneID="HKR-lx-y0k">
             <objects>
-                <viewController storyboardIdentifier="collectionListView" title="Collection List Collection View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yE4-j4-fYN" customClass="CollectionListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="collectionListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yE4-j4-fYN" customClass="CollectionListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nTD-ZS-ruf"/>
                         <viewControllerLayoutGuide type="bottom" id="rhL-f4-riu"/>
@@ -1870,18 +1870,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dsV-kj-tD1"/>
-        <segue reference="vLb-f8-Ejo"/>
-        <segue reference="95b-qb-Muc"/>
-        <segue reference="bUX-Mu-wq1"/>
-        <segue reference="8vS-07-Ztn"/>
-        <segue reference="z3Z-27-kAD"/>
-        <segue reference="bUX-Mu-wq1"/>
         <segue reference="95b-qb-Muc"/>
         <segue reference="8vS-07-Ztn"/>
-        <segue reference="z3Z-27-kAD"/>
         <segue reference="fEs-ex-e8Z"/>
         <segue reference="dsV-kj-tD1"/>
+        <segue reference="z3Z-27-kAD"/>
+        <segue reference="bUX-Mu-wq1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
