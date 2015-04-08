@@ -26,6 +26,7 @@ typedef enum {
 @property (strong, nonatomic, readonly) NSString * itemTitle;
 @property (strong, nonatomic, readonly) NSString * itemDescription;
 @property (strong, nonatomic, readonly) UIImage * itemImage;
+@property (strong, nonatomic, readwrite) NSString * itemImagePath;
 @property (nonatomic, readonly) BOOL hasDefaultImage;
 @property (strong, nonatomic, readonly) NSString * itemSKU;
 @property (strong, nonatomic, readonly) NSString * itemCollection;
@@ -42,6 +43,7 @@ typedef enum {
 
 
 - (instancetype)initWithId:(NSString*)itemId title:(NSString*)itemTitle description:(NSString*)itemDescription image:(UIImage*)itemImage SKU:(NSString*)itemSKU collection:(NSString*)itemCollection category:(NSString*)itemCategory price:(float)itemPrice store:(MMDStore*)itemStore brand:(MMDBrand*)itemBrand gender:(kGender)itemGender color:(NSMutableArray*)itemColors size:(NSMutableArray*)itemSizes;
+- (instancetype)initWithImagePath:(NSString*)itemId title:(NSString*)itemTitle description:(NSString*)itemDescription imagePath:(NSString*)itemImagePath SKU:(NSString*)itemSKU collection:(NSString*)itemCollection category:(NSString*)itemCategory price:(float)itemPrice store:(MMDStore*)itemStore brand:(MMDBrand *)itemBrand gender:(kGender)itemGender color:(NSMutableArray *)itemColors size:(NSMutableArray *)itemSizes;
 - (instancetype)initWithItem:(MMDItem*)item;
 
 - (void)addItemToCart; //addes 1 item to cart

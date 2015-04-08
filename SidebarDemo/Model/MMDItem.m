@@ -126,6 +126,29 @@
     
 }
 
+- (instancetype)initWithImagePath:(NSString*)itemId title:(NSString*)itemTitle description:(NSString*)itemDescription imagePath:(NSString*)itemImagePath SKU:(NSString*)itemSKU collection:(NSString*)itemCollection category:(NSString*)itemCategory price:(float)itemPrice store:(MMDStore*)itemStore brand:(MMDBrand *)itemBrand gender:(kGender)itemGender color:(NSMutableArray *)itemColors size:(NSMutableArray *)itemSizes {
+    
+    self.itemId = itemId;
+    self.itemTitle = itemTitle;
+    self.itemDescription = itemDescription;
+    self.itemImagePath = itemImagePath;
+    self.itemSKU = itemSKU;
+    self.itemCollection = itemCollection;
+    self.itemCategory = itemCategory;
+    self.itemPrice = itemPrice;
+    self.itemStore = itemStore;
+    self.itemBrand = itemBrand;
+    self.itemIsInWishList = NO;
+    self.itemGender = itemGender;
+    self.itemColors = [[NSMutableArray alloc] initWithArray:[itemColors copy]];;
+    self.itemSizes = [[NSMutableArray alloc] initWithArray:[itemSizes copy]];;
+    self.itemNumberInCart = 0;
+    self.itemOffers = [[NSMutableArray alloc] init];
+    
+    return self;
+    
+}
+
 - (instancetype)initWithItem:(MMDItem*)item {
     self.itemId = item.itemId;
     self.itemTitle = item.itemTitle;

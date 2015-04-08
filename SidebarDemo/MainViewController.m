@@ -287,7 +287,11 @@
         
         NSLog(@"in showing the cell");
         
-        cell.productImage.image = ((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.item]).itemImage;
+        NSString *imagePath = ((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.item]).itemImagePath;
+        
+        UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+        
+        cell.productImage.image = itemImage;
         
         return cell;
     }

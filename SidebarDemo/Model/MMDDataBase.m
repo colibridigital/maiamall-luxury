@@ -230,7 +230,39 @@ static MMDDataBase *dataBase;
     return itemCategory;
 }
 
-- (UIImage *)manipulateImage:(int)itemId {
+- (NSString *)saveImageGetPath:(UIImage *)finalImage {
+    NSData *imageData = UIImagePNGRepresentation(finalImage);
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *imagePath =[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",[self randomStringWithLength:10]]];
+    
+    NSLog((@"pre writing to file"));
+    if (![imageData writeToFile:imagePath atomically:NO])
+    {
+        NSLog((@"Failed to cache image data to disk"));
+    }
+    else
+    {
+        NSLog((@"the cachedImagedPath is %@",imagePath));
+    }
+    return imagePath;
+}
+
+-(NSString *) randomStringWithLength: (int) len {
+    
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    
+    for (int i=0; i<len; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+    }
+    
+    return randomString;
+}
+
+- (NSString *)manipulateImage:(int)itemId {
     UIImage *itemImage;
     UIImage *finalImage;
     UIImage *targetImage;
@@ -289,7 +321,11 @@ static MMDDataBase *dataBase;
     
     NSData *dataForJPEGFile = UIImageJPEGRepresentation(targetImage, 0.7);
     finalImage = [UIImage imageWithData:dataForJPEGFile];
-    return finalImage;
+    
+    
+    NSString *imagePath = [self saveImageGetPath:finalImage];
+    
+    return imagePath;
 }
 
 - (NSMutableArray *)getItems {
@@ -343,12 +379,11 @@ static MMDDataBase *dataBase;
                 
                 [self loadSizeDetails:itemId itemSizes:itemSizes];
                 
-                UIImage *finalImage;
-                finalImage = [self manipulateImage:itemId];
+                NSString *imagePath = [self manipulateImage:itemId];
                 
 #warning add offers
                 
-                MMDItem * item = [[MMDItem alloc] initWithId:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription image:finalImage SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
+                MMDItem * item = [[MMDItem alloc] initWithImagePath:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription imagePath:imagePath SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
                 
                 [retval addObject:item];
             }
