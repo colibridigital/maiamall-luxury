@@ -25,7 +25,7 @@
     NSString *imagePath = item.itemImagePath;
     UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
     
-    if (item.itemImage != nil) {
+    if (item.itemImagePath != nil) {
         float oldWidth = itemImage.size.width;
         float scaleFactor = self.image.frame.size.width / oldWidth;
         

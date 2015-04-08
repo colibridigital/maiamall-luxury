@@ -352,7 +352,12 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
         
         UIGraphicsBeginImageContext(CGSizeMake(widthOfMarker, heightOfMarker));
         [imageOfBubble drawInRect:CGRectMake(0, 0, widthOfMarker, heightOfMarker)];
-        [item.itemImage drawInRect:CGRectMake(widthOfMarkersBoard, widthOfMarkersBoard, widthOfMarker-widthOfMarkersBoard*2, heightOfMarker - (heightOfMarkersTail + widthOfMarkersBoard))];
+        
+        NSString *imagePath = item.itemImagePath;
+        UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+
+        
+        [itemImage drawInRect:CGRectMake(widthOfMarkersBoard, widthOfMarkersBoard, widthOfMarker-widthOfMarkersBoard*2, heightOfMarker - (heightOfMarkersTail + widthOfMarkersBoard))];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
