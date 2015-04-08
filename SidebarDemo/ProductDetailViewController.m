@@ -200,7 +200,7 @@
     ItemsSimilarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ISIM_CELL" forIndexPath:indexPath];
     
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-    if (((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemImage != nil) {
+    if (((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemImagePath != nil) {
         NSString *imagePath = ((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemImagePath;
         UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
         
