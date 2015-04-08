@@ -107,7 +107,10 @@
     
     self.productImage.userInteractionEnabled = YES;
     
-    [self.productImage setImage:self.currentItemToShow.itemImage];
+    NSString *imagePath = self.currentItemToShow.itemImagePath;
+    UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+    
+    [self.productImage setImage:itemImage];
     [self.retailPageButton setTitle:self.currentItemToShow.itemStore.storeTitle forState:UIControlStateNormal];
     
     [self initialiseMenuItems];
@@ -198,9 +201,13 @@
     
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
     if (((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemImage != nil) {
-        [dict setObject:((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemImage forKey:kItemImage];
+        NSString *imagePath = ((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemImagePath;
+        UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+        
+        [dict setObject:itemImage forKey:kItemImage];
     }
     if (((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemBrand.brandImage != nil) {
+        
         [dict setObject:((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemBrand.brandImage forKey:kBrandImage];
     }
     if (((MMDItem*)[self.arrayWithRecommendedItems objectAtIndex:indexPath.row]).itemStore.storeLogo != nil) {
@@ -260,12 +267,16 @@
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         
         
+        NSString *imagePath = self.currentItemToShow.itemImagePath;
+        UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+
+        
         ALAlertBanner *banner = [ALAlertBanner alertBannerForView:appDelegate.window
                                                             style:ALAlertBannerStyleNotify
                                                          position:ALAlertBannerPositionTop
                                                             title:@"Offer!"
                                                          subtitle:[NSString stringWithFormat:@"There is an offer for you based on your %@.", self.currentItemToShow.itemTitle]
-                                                            image:self.currentItemToShow.itemImage
+                                                            image:itemImage
                                                       tappedBlock:^(ALAlertBanner *alertBanner) {
                                                           [ALAlertBanner hideAllAlertBanners];                                                          UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
                                                           ProductDetailViewController * itemPage = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
