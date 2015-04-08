@@ -9,6 +9,7 @@
 #import "PurchaseItemViewController.h"
 #import "SWRevealViewController.h"
 #import "ProductListViewController.h"
+#import "MapViewController.h"
 
 @interface PurchaseItemViewController ()
 
