@@ -58,8 +58,6 @@
     
     [searchBarView addSubview:self.searchBar];
     self.navigationItem.titleView = searchBarView;
-    
-    self.arrayWithSearchResults = [[NSMutableArray alloc] init];
 
     self.tabBarController.delegate = self;
 }
@@ -133,6 +131,8 @@
     [self initialiseMenuItems];
     
     [self initMap];
+    
+    self.arrayWithSearchResults = [[NSMutableArray alloc] init];
 
 }
 
@@ -296,6 +296,8 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
         [mapView_ clear];
         [self.arrayWithStoresWhichAlreadyOnTheMap removeAllObjects];
     }
+    
+    NSLog(@"search: %lu, %@", self.arrayWithSearchResults.count, self.searchText);
     
     //getting stores with list of products in them
     NSMutableArray * arrayWithStoresAndArrayOfItemsAvailableInThatStore = [[NSMutableArray alloc] init];

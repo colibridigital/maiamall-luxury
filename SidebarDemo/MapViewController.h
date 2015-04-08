@@ -31,4 +31,6 @@
 - (void)initWithArrayWithSearchResults:(NSMutableArray*)array andTextForSearch:(NSString*)searchText;
 - (void)populateMapWithData;
 
+- (void)initMap;
+
 @end

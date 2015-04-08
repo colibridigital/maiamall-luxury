@@ -24,6 +24,7 @@
     SettingsViewController *settingsViewController;
     
 }
+- (IBAction)filterSearchMenuClicked:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet TrendCollectionView *trendCollectionView;

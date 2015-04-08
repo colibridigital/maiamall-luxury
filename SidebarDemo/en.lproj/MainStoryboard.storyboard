@@ -124,10 +124,10 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="4DU-rm-gHC">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="5QN-gv-TPN">
+                        <barButtonItem key="rightBarButtonItem" image="Map Marker-50.png" id="5QN-gv-TPN">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="eSb-KY-lSZ" kind="custom" identifier="FilterMenuSegue" customClass="WYStoryboardPopoverSegue" id="9M4-gb-eYK"/>
+                                <action selector="filterSearchMenuClicked:" destination="2" id="dkS-sV-nAx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -900,8 +900,11 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="cyo-rz-hFJ">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="VEm-qf-Y53">
+                        <barButtonItem key="rightBarButtonItem" image="Map Marker-50.png" id="VEm-qf-Y53">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterSearchMenuClicked:" destination="Sks-ra-b8P" id="hew-2c-dYU"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1124,8 +1127,11 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="YMJ-Vn-BPU">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="1mn-XX-kZT">
+                        <barButtonItem key="rightBarButtonItem" image="Map Marker-50.png" id="1mn-XX-kZT">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterSearchMenuClicked:" destination="42D-VV-PTN" id="csK-7G-cNM"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1298,8 +1304,11 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="lmj-OL-3qd">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="qOH-xX-D3b">
+                        <barButtonItem key="rightBarButtonItem" image="Map Marker-50.png" id="qOH-xX-D3b">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterSearchMenuClicked:" destination="qGJ-NE-xiA" id="4eb-GE-rg6"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1464,8 +1473,11 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="ZSc-OB-T4b">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="ohf-Xt-0jM">
+                        <barButtonItem key="rightBarButtonItem" image="Map Marker-50.png" id="ohf-Xt-0jM">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterSearchMenuClicked:" destination="w0A-aD-rrJ" id="OAY-nA-4RD"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1689,8 +1701,11 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu-50.png" id="fI4-rg-ofW">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Filter-50.png" id="fxO-Z0-p6t">
+                        <barButtonItem key="rightBarButtonItem" image="Map Marker-50.png" id="fxO-Z0-p6t">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterSearchMenuClicked:" destination="2Xe-D5-qrT" id="thL-U5-dle"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1850,7 +1865,7 @@
         <image name="Location Filled-50.png" width="29" height="29"/>
         <image name="Location-50.png" width="36" height="36"/>
         <image name="MaiaMall-Logo-Light.jpg" width="1200" height="800"/>
-        <image name="Map Marker-50.png" width="36" height="36"/>
+        <image name="Map Marker-50.png" width="29" height="29"/>
         <image name="Menu-50.png" width="29" height="29"/>
         <image name="News Filled-50.png" width="36" height="36"/>
         <image name="News-50-2.png" width="36" height="36"/>

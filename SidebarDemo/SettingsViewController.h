@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
 @property (strong, nonatomic) IBOutlet UISwitch *femaleMaleSwitch;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) NSMutableArray *arrayWithSearchResults;
 
 @property (weak, nonatomic) id<GenderWasChanged> delegate;
 

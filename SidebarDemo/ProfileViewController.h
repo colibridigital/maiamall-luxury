@@ -19,4 +19,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) IBOutlet UIButton *folllowButton;
 
+@property (strong, nonatomic) NSMutableArray * arrayWithSearchResults;
+
 @end

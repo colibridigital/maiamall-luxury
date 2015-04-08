@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterSearchMenu;
 @property (strong, nonatomic) IBOutlet UITableView *wishlistItems;
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property(strong, nonatomic)  NSMutableArray *arrayWithSearchResults;
 @end
 

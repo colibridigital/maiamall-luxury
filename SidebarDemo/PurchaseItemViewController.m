@@ -329,6 +329,53 @@
     
 }
 
+- (IBAction)filterSearchMenuClicked:(id)sender {
+    
+    self.arrayWithSearchResults = [[NSMutableArray alloc] init];
+    
+    for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+            if ([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound && item.itemGender == female) {
+                [self.arrayWithSearchResults addObject:item];
+            }
+        } else {
+            if ([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) {
+                [self.arrayWithSearchResults addObject:item];
+            }
+        }
+        
+    }
+    
+    if (self.searchBar.text != nil && self.arrayWithSearchResults.count > 0) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+            
+            MapViewController *map = [storyboard instantiateViewControllerWithIdentifier:@"map"];
+            
+            [map initWithArrayWithSearchResults:self.arrayWithSearchResults andTextForSearch:self.searchBar.text];
+            //[map initMap];
+            
+            [map populateMapWithData];
+            
+            [self.navigationController pushViewController:map animated:YES];
+        });
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+            MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"No Results Found";
+        });
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        });
+    }
+}
+
+
 #pragma mark - Collection View DataSource and Delegate
 
 @end
