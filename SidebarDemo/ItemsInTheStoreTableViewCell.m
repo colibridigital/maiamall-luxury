@@ -24,7 +24,10 @@
     
     MMDItem * item = [dict objectForKey:kItem];
     
-    if (item.itemImage != nil) {
+    NSString *imagePath = item.itemImagePath;
+    UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+    
+    if (item.itemImagePath != nil) {
         float oldWidth = item.itemImage.size.width;
         float scaleFactor = self.image.frame.size.width / oldWidth;
         
@@ -32,7 +35,7 @@
         float newWidth = oldWidth * scaleFactor;
         
         UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
-        [item.itemImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+        [itemImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         

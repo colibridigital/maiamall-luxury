@@ -320,6 +320,10 @@ static MMDDataBase *dataBase;
     if(targetImage == nil) NSLog(@"could not scale image");
     
     NSData *dataForJPEGFile = UIImageJPEGRepresentation(targetImage, 0.7);
+    
+    itemImage = nil;
+    targetImage = nil;
+    
     finalImage = [UIImage imageWithData:dataForJPEGFile];
     
     
