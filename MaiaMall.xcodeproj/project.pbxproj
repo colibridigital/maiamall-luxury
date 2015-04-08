@@ -20,6 +20,12 @@
 		151902F41AD4624700644C50 /* tshirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 151902F31AD4624700644C50 /* tshirt.png */; };
 		151902F61AD4632200644C50 /* suit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902F51AD4632200644C50 /* suit.jpg */; };
 		151902FA1AD46E2300644C50 /* TrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151902F91AD46E2300644C50 /* TrendsViewController.m */; };
+		1536F2E41AD49DA200E41C57 /* Filter-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2E01AD49DA200E41C57 /* Filter-50.png */; };
+		1536F2E51AD49DA200E41C57 /* Home-50 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2E11AD49DA200E41C57 /* Home-50 copy.png */; };
+		1536F2E61AD49DA200E41C57 /* News-50-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2E21AD49DA200E41C57 /* News-50-2.png */; };
+		1536F2E71AD49DA200E41C57 /* User Male4-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2E31AD49DA200E41C57 /* User Male4-50.png */; };
+		1536F2E91AD49E4B00E41C57 /* Location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2E81AD49E4B00E41C57 /* Location-50.png */; };
+		1536F2EB1AD49EC600E41C57 /* Menu-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2EA1AD49EC600E41C57 /* Menu-50.png */; };
 		157562781ABAF024001FAE38 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157562771ABAF024001FAE38 /* ProductDetailViewController.m */; };
 		1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 157562791ABAF2FD001FAE38 /* blouse.png */; };
 		1575627F1ABCEB1B001FAE38 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1575627E1ABCEB1B001FAE38 /* ProfileViewController.m */; };
@@ -164,6 +170,12 @@
 		151902F51AD4632200644C50 /* suit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = suit.jpg; sourceTree = "<group>"; };
 		151902F81AD46E2300644C50 /* TrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendsViewController.h; sourceTree = "<group>"; };
 		151902F91AD46E2300644C50 /* TrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendsViewController.m; sourceTree = "<group>"; };
+		1536F2E01AD49DA200E41C57 /* Filter-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filter-50.png"; sourceTree = "<group>"; };
+		1536F2E11AD49DA200E41C57 /* Home-50 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50 copy.png"; sourceTree = "<group>"; };
+		1536F2E21AD49DA200E41C57 /* News-50-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "News-50-2.png"; sourceTree = "<group>"; };
+		1536F2E31AD49DA200E41C57 /* User Male4-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User Male4-50.png"; sourceTree = "<group>"; };
+		1536F2E81AD49E4B00E41C57 /* Location-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location-50.png"; sourceTree = "<group>"; };
+		1536F2EA1AD49EC600E41C57 /* Menu-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-50.png"; sourceTree = "<group>"; };
 		157562761ABAF024001FAE38 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		157562771ABAF024001FAE38 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		157562791ABAF2FD001FAE38 /* blouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blouse.png; sourceTree = "<group>"; };
@@ -848,6 +860,12 @@
 		F4EECF34177C9A1E00778578 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1536F2EA1AD49EC600E41C57 /* Menu-50.png */,
+				1536F2E81AD49E4B00E41C57 /* Location-50.png */,
+				1536F2E01AD49DA200E41C57 /* Filter-50.png */,
+				1536F2E11AD49DA200E41C57 /* Home-50 copy.png */,
+				1536F2E21AD49DA200E41C57 /* News-50-2.png */,
+				1536F2E31AD49DA200E41C57 /* User Male4-50.png */,
 				151902F51AD4632200644C50 /* suit.jpg */,
 				151902F31AD4624700644C50 /* tshirt.png */,
 				151902F11AD4623D00644C50 /* shoes.jpg */,
@@ -983,6 +1001,7 @@
 				F4EECF26177C99F400778578 /* Default@2x.png in Resources */,
 				F4EECF28177C99F400778578 /* Default-568h@2x.png in Resources */,
 				15B21DF51AD2CDC100611559 /* filterMenuIcon.png in Resources */,
+				1536F2EB1AD49EC600E41C57 /* Menu-50.png in Resources */,
 				15ECDE611ACF36EA00F6107F /* GoogleMaps.bundle in Resources */,
 				15E9687D1ACFF3D1003D20B8 /* bannerNotify.png in Resources */,
 				1575627A1ABAF2FD001FAE38 /* blouse.png in Resources */,
@@ -990,15 +1009,18 @@
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
 				F4EECF5B177F384900778578 /* bookmark.png in Resources */,
 				F4EECF5C177F384900778578 /* calendar.png in Resources */,
+				1536F2E41AD49DA200E41C57 /* Filter-50.png in Resources */,
 				15B60B7D1ACC835100DC8749 /* Alphabetical Sorting Za-50.png in Resources */,
 				15E9687A1ACFF3D1003D20B8 /* bannerAlert@2x.png in Resources */,
 				15E753201AC2C4F200F2D39D /* ItemsSimilarCollectionViewCell.xib in Resources */,
 				15E7534F1AC59F5D00F2D39D /* donVersace.jpg in Resources */,
+				1536F2E51AD49DA200E41C57 /* Home-50 copy.png in Resources */,
 				15E753451AC570AC00F2D39D /* News Filled-50.png in Resources */,
 				F4EECF5D177F384900778578 /* comments.png in Resources */,
 				15AD00061AB9C33400B8B1D1 /* TrendCollectionViewCell.xib in Resources */,
 				F4EECF5E177F384900778578 /* map.png in Resources */,
 				15ADFFFF1AB9A03700B8B1D1 /* Home-50.png in Resources */,
+				1536F2E91AD49E4B00E41C57 /* Location-50.png in Resources */,
 				15E9687E1ACFF3D1003D20B8 /* bannerNotify@2x.png in Resources */,
 				15B21DF61AD2CDC100611559 /* giftMenuIcon.png in Resources */,
 				151902EC1AD406C000644C50 /* bagsTrend.jpg in Resources */,
@@ -1007,6 +1029,8 @@
 				151902E81AD404F700644C50 /* vogueTrend.jpg in Resources */,
 				15E9687B1ACFF3D1003D20B8 /* bannerFailure.png in Resources */,
 				15ED18411ACEE15E0091E84A /* maiamall.s3db in Resources */,
+				1536F2E61AD49DA200E41C57 /* News-50-2.png in Resources */,
+				1536F2E71AD49DA200E41C57 /* User Male4-50.png in Resources */,
 				F4EECF60177F384900778578 /* photo.png in Resources */,
 				15E753321AC3299600F2D39D /* Alphabetical Sorting Az-50.png in Resources */,
 				15AD001A1AB9CEFB00B8B1D1 /* ProductCollectionViewCell.xib in Resources */,
