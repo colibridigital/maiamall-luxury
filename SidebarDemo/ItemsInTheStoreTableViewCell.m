@@ -28,10 +28,10 @@
     UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
     
     if (item.itemImagePath != nil) {
-        float oldWidth = item.itemImage.size.width;
+        float oldWidth = itemImage.size.width;
         float scaleFactor = self.image.frame.size.width / oldWidth;
         
-        float newHeight = item.itemImage.size.height * scaleFactor;
+        float newHeight = itemImage.size.height * scaleFactor;
         float newWidth = oldWidth * scaleFactor;
         
         UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
