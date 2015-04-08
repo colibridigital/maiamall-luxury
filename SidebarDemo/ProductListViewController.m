@@ -132,7 +132,9 @@
 {
     ProductListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DETAIL_CELL" forIndexPath:indexPath];
     
-    cell.detailImage.image = ((MMDItem*)[self.arrayWithSearchResults objectAtIndex:indexPath.row]).itemImage;
+    NSString *imagePath = ((MMDItem*)[self.arrayWithSearchResults objectAtIndex:indexPath.item]).itemImagePath;
+    UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+    cell.detailImage.image = itemImage;
     
    // UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"product2" ofType: @"png"]];
     

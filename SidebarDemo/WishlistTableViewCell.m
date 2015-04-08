@@ -30,15 +30,18 @@
 }
 
 - (void)initWithItem:(MMDItem*)item {
-    if (item.itemImage != nil) {
-        float oldWidth = item.itemImage.size.width;
+    NSString *imagePath = item.itemImagePath;
+    UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+    
+    if (itemImage != nil) {
+        float oldWidth = itemImage.size.width;
         float scaleFactor = self.image.frame.size.width / oldWidth;
         
-        float newHeight = item.itemImage.size.height * scaleFactor;
+        float newHeight = itemImage.size.height * scaleFactor;
         float newWidth = oldWidth * scaleFactor;
         
         UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
-        [item.itemImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+        [itemImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
