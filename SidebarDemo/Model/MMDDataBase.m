@@ -92,17 +92,29 @@ static MMDDataBase *dataBase;
     [self closeDataBase];
 }
 
-- (void)loadProductImage:(int)itemId itemImage_p:(UIImage **)itemImage_p {
+- (UIImage*)loadProductImage:(int)itemId {
     
     NSString *queryForItemImage = [NSString stringWithFormat:@"SELECT url FROM ProductImage WHERE product_id=%i", itemId];
+    
+    UIImage* itemImage_p = [[UIImage alloc] init];
+    
     sqlite3_stmt *statementForItemImage;
     if (sqlite3_prepare_v2(dataBase, [queryForItemImage UTF8String], -1, &statementForItemImage, nil)
         == SQLITE_OK) {
         while (sqlite3_step(statementForItemImage) == SQLITE_ROW) {
             char * itemImageURL = (char *)sqlite3_column_text(statementForItemImage, 0);
-            *itemImage_p = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithUTF8String:itemImageURL]]]];
+            
+            NSString* urlString = [NSString stringWithUTF8String:itemImageURL];
+            
+            NSString* newURL = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+            
+            NSData * imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:newURL]];
+                                                                         
+            itemImage_p = [UIImage imageWithData:imageData];
         }
     }
+    
+    return itemImage_p;
 }
 
 - (MMDStore *)getStoreDetails:(int)itemStoreId {
@@ -231,12 +243,12 @@ static MMDDataBase *dataBase;
 }
 
 - (NSString *)saveImageGetPath:(UIImage *)finalImage {
-    NSData *imageData = UIImagePNGRepresentation(finalImage);
+    NSData *imageData = UIImageJPEGRepresentation(finalImage, 1.0);
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *imagePath =[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",[self randomStringWithLength:10]]];
+    NSString *imagePath =[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",[self randomStringWithLength:10]]];
     
     NSLog((@"pre writing to file"));
     if (![imageData writeToFile:imagePath atomically:NO])
@@ -267,9 +279,9 @@ static MMDDataBase *dataBase;
     UIImage *finalImage;
     UIImage *targetImage;
     
-    [self loadProductImage:itemId itemImage_p:&itemImage];
+    itemImage = [self loadProductImage:itemId];
     
-    CGSize targetSize = CGSizeMake(230, 250);
+   CGSize targetSize = CGSizeMake(230, 250);
     CGSize imageSize = itemImage.size;
     CGFloat width = itemImage.size.width;
     CGFloat height = itemImage.size.height;
@@ -307,6 +319,9 @@ static MMDDataBase *dataBase;
     
     UIGraphicsBeginImageContext(targetSize);
     
+   // [itemImage drawInRect:CGRectMake(0, 0, targetWidth, targetHeight)];
+    
+  
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
     thumbnailRect.size.width  = scaledWidth;
@@ -320,12 +335,9 @@ static MMDDataBase *dataBase;
     if(targetImage == nil) NSLog(@"could not scale image");
     
     NSData *dataForJPEGFile = UIImageJPEGRepresentation(targetImage, 0.7);
-    
-    itemImage = nil;
-    targetImage = nil;
+  
     
     finalImage = [UIImage imageWithData:dataForJPEGFile];
-    
     
     NSString *imagePath = [self saveImageGetPath:finalImage];
     
@@ -371,7 +383,7 @@ static MMDDataBase *dataBase;
             
             int itemHasOffer = (int)sqlite3_column_int(statementForItems, 11);
             
-            if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
+            //if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
                 itemBrand = [self loadBrandDetails:itemBrandId];
                 
                 
@@ -390,7 +402,7 @@ static MMDDataBase *dataBase;
                 MMDItem * item = [[MMDItem alloc] initWithImagePath:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription imagePath:imagePath SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
                 
                 [retval addObject:item];
-            }
+            //}
         }
         sqlite3_finalize(statementForItems);
     }

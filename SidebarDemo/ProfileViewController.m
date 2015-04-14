@@ -74,6 +74,18 @@
     [self.collsCollectionView reloadData];
     
     self.tabBarController.delegate = self;
+    
+    UITabBarItem *item = [self.tabBarController.items objectAtIndex:1];
+    item.image = [[UIImage imageNamed:@"User Female-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:0];
+    item.image = [[UIImage imageNamed:@"Home-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:2];
+    item.image = [[UIImage imageNamed:@"News-50-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:3];
+    item.image = [[UIImage imageNamed:@"Location-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {

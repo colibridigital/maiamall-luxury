@@ -60,6 +60,19 @@
     self.navigationItem.titleView = searchBarView;
 
     self.tabBarController.delegate = self;
+    
+    UITabBarItem *item = [self.tabBarController.items objectAtIndex:1];
+    item.image = [[UIImage imageNamed:@"User Female-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:0];
+    item.image = [[UIImage imageNamed:@"Home-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:2];
+    item.image = [[UIImage imageNamed:@"News-50-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:3];
+    item.image = [[UIImage imageNamed:@"Location-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+   // self.tabBarController.tintColor.item.selectedImage = [UIImage imageNamed:@"selected.png"];
 }
 
 - (void)initMap
@@ -350,7 +363,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
         CGFloat widthOfMarkersBoard = 1;
         CGFloat heightOfMarkersTail = heightOfMarker/10 + 1; //this is just works ;)
         
-        UIImage * imageOfBubble = [UIImage imageNamed:@"bubbleView"];
+        UIImage * imageOfBubble = [UIImage imageNamed:@"BubbleView"];
         
         UIGraphicsBeginImageContext(CGSizeMake(widthOfMarker, heightOfMarker));
         [imageOfBubble drawInRect:CGRectMake(0, 0, widthOfMarker, heightOfMarker)];
@@ -406,7 +419,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
         
         self.filterMenuController.map= self;
         
-        self.anotherPopoverController.popoverContentSize = CGSizeMake(220, 360);
+        self.anotherPopoverController.popoverContentSize = CGSizeMake(220, 260);
         
         self.anotherPopoverController.delegate = self;
         

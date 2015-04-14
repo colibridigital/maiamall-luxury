@@ -18,6 +18,9 @@
     [super viewDidLoad];
     
     self.tabBarController.delegate = self;
+    
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor colorWithRed:86 green:62 blue:51 alpha:1.0]];
+
     // Do any additional setup after loading the view.
 }
 
@@ -29,6 +32,8 @@
     [super viewWillAppear:animated];
     
     self.tabBarController.delegate = self;
+    
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor colorWithRed:86 green:62 blue:51 alpha:1.0]];
     
     [self.view bringSubviewToFront:self.blogView];
 

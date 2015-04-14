@@ -32,6 +32,6 @@
 - (IBAction)switchChanged:(UISwitch *)sender;
 
 #define maleColor [UIColor colorWithRed:192/255.0 green:192/255.0 blue:192/255.0 alpha:1.0]
-#define femaleColor [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]
+#define femaleColor [UIColor colorWithRed:86/255.0 green:62/255.0 blue:51/255.0 alpha:1.0]
 
 @end

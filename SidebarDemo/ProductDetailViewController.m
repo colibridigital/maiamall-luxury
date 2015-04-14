@@ -12,6 +12,7 @@
 #import "MMDWishList.h"
 #import "AppDelegate.h"
 #import "PurchaseItemViewController.h"
+#import "MapViewForItemViewController.h"
 
 @interface ProductDetailViewController ()
 @property (strong, nonatomic) MMDItem * currentItemToShow;
@@ -37,6 +38,21 @@
 {
     
     self.tabBarController.delegate =self;
+    
+    UITabBarItem *item = [self.tabBarController.items objectAtIndex:1];
+    item.image = [[UIImage imageNamed:@"User Female-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:0];
+    item.image = [[UIImage imageNamed:@"Home-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:2];
+    item.image = [[UIImage imageNamed:@"News-50-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    item = [self.tabBarController.items objectAtIndex:3];
+    item.image = [[UIImage imageNamed:@"Location-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor colorWithRed:86 green:62 blue:51 alpha:1.0]];
+
     
     [self.similarItemsList registerNibAndCell];
     [self.similarItemsList reloadData];
@@ -319,5 +335,13 @@
 
     [self.navigationController pushViewController:purchasePage animated:YES];
 
+}
+
+- (IBAction)toMapClicked:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    MapViewForItemViewController *mapPage = [storyboard instantiateViewControllerWithIdentifier:@"itemMapView"];
+    [mapPage initWithItem:self.currentItemToShow];
+    [self.navigationController pushViewController:mapPage animated:YES];
+    
 }
 @end
