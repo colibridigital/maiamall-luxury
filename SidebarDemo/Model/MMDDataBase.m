@@ -108,7 +108,15 @@ static MMDDataBase *dataBase;
             
             NSString* newURL = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
             
-            NSData * imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:newURL]];
+            NSString* newURL2 = [newURL stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+            
+            
+            //this is James's hack! TODO: fixThis
+            if(itemId == 263) {
+                newURL2 = @"http://contents.louisvuitton.com/is/image/lv/1/PP_VP_L/--M41187_PM2_Front%20view.jpg";
+            }
+            
+            NSData * imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:newURL2]];
                                                                          
             itemImage_p = [UIImage imageWithData:imageData];
         }

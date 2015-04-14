@@ -154,6 +154,7 @@
     self.itemTitle = item.itemTitle;
     self.itemDescription = item.itemDescription;
     self.itemImage = item.itemImage;
+    self.itemImagePath = item.itemImagePath;
     self.hasDefaultImage = item.hasDefaultImage;
     self.itemSKU = item.itemSKU;
     self.itemCollection = item.itemCollection;

@@ -30,6 +30,8 @@
     
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:86.0/255.0 green:62.0/255.0 blue:51.0/255.0 alpha:1.0]];
     
+    [[UISearchBar appearance] setTintColor:[UIColor colorWithRed:86.0/255.0 green:62.0/255.0 blue:51.0/255.0 alpha:1.0]];
+    
     WYPopoverBackgroundView *popoverAppearance = [WYPopoverBackgroundView appearance];
     [popoverAppearance setArrowHeight:40];
     [popoverAppearance setArrowBase:60];
