@@ -157,6 +157,9 @@
         [[[[MMDCart cart] arrayWithItemsToPurchase] objectAtIndex:indexPath.row] decrementItemFromCart];
         [((PurchaseItemTableViewCell*)[self.cartTV cellForRowAtIndexPath:indexPath]) setTextFieldTextFornumber:((MMDItem*)[[[MMDCart cart] arrayWithItemsToPurchase] objectAtIndex:indexPath.row]).itemNumberInCart];
         [self.cartTV reloadData];
+    } else if (((MMDItem*)[[[MMDCart cart] arrayWithItemsToPurchase] objectAtIndex:indexPath.row]).itemNumberInCart == 0) {
+        [[[[MMDCart cart] arrayWithItemsToPurchase] objectAtIndex:indexPath.row] removeItemFromCart];
+        [self.cartTV reloadData];
     }
     
     [self calculatePrice];
