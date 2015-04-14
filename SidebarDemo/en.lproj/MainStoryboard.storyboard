@@ -675,8 +675,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R92-sN-eWd">
-                                <rect key="frame" x="143" y="360" width="34" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="Location-50.png">
+                                <rect key="frame" x="140" y="358" width="40" height="32"/>
+                                <state key="normal" backgroundImage="Location-50.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
