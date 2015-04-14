@@ -509,11 +509,11 @@
         
         for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
             if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
-                    if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound && item.itemGender == female) {
-                        [self.arrayWithSearchResults addObject:item];
-                    }
+                if ((([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) && item.itemGender == female) {
+                    [self.arrayWithSearchResults addObject:item];
+                }
             } else {
-                if ([[item.itemTitle lowercaseString] rangeOfString:[searchBar.text lowercaseString]].location != NSNotFound) {
+                if (([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) {
                     [self.arrayWithSearchResults addObject:item];
                 }
             }
@@ -620,11 +620,11 @@
     
     for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
         if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
-            if (([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) && item.itemGender == female) {
+            if ((([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) && item.itemGender == female) {
                 [self.arrayWithSearchResults addObject:item];
             }
         } else {
-            if ([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) {
+            if (([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) {
                 [self.arrayWithSearchResults addObject:item];
             }
         }

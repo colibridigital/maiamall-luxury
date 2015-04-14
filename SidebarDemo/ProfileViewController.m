@@ -14,6 +14,7 @@
 #import "ProductDetailViewController.h"
 #import "CollectionListViewController.h"
 #import "MapViewController.h"
+#import "ProductListViewController.h"
 
 @interface ProfileViewController ()
 
@@ -171,17 +172,59 @@
     
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    
+    //UINavigationController *prodListDetails = [storyboard instantiateViewControllerWithIdentifier:@"prodNav"];
+    
+    // [self showViewController:prodListDetails sender:self];
+    
+    [self.searchBar resignFirstResponder];
+    
+    
+    dispatch_async(dispatch_queue_create("Search", nil), ^{
+        
+        NSMutableArray * arrayWithSearchResults = [[NSMutableArray alloc] init];
+        
+        for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
+            if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
+                if ((([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) && item.itemGender == female) {
+                    [arrayWithSearchResults addObject:item];
+                }
+            } else {
+                if (([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) {
+                    [arrayWithSearchResults addObject:item];
+                }
+            }
+            
+            
+        }
+        
+        if (arrayWithSearchResults.count > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                ProductListViewController * searchPage = [storyboard instantiateViewControllerWithIdentifier:@"prodListSearchDetails"];
+                [searchPage initWithArrayWithSearchResults:arrayWithSearchResults andTextForSearch:self.searchBar.text];
+                [self.navigationController pushViewController:searchPage animated:YES];
+            });
+        }
+    });
+    
+    
+}
+
 - (IBAction)filterSearchMenuClicked:(id)sender {
     
     self.arrayWithSearchResults = [[NSMutableArray alloc] init];
     
     for (MMDItem* item in [[MMDDataBase database] arrayWithItems]) {
         if (![[NSUserDefaults standardUserDefaults] boolForKey:kFemaleOrMaleSwitch]) {
-            if ([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound && item.itemGender == female) {
+            if ((([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound)) && item.itemGender == female) {
                 [self.arrayWithSearchResults addObject:item];
             }
         } else {
-            if ([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) {
+            if (([[item.itemTitle lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound) || ([[item.itemCategory lowercaseString] rangeOfString:[self.searchBar.text lowercaseString]].location != NSNotFound))  {
                 [self.arrayWithSearchResults addObject:item];
             }
         }
@@ -216,6 +259,7 @@
         });
     }
 }
+
 
 
 
