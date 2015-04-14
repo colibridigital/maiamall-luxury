@@ -190,7 +190,7 @@
         
         self.filterMenuController.prodList = self;
         
-        self.anotherPopoverController.popoverContentSize = CGSizeMake(220, 360);
+        self.anotherPopoverController.popoverContentSize = CGSizeMake(220, 260);
         
         self.anotherPopoverController.delegate = self;
         
