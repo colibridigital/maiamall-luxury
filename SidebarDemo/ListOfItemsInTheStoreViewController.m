@@ -64,7 +64,7 @@
     item = [self.tabBarController.items objectAtIndex:3];
     item.image = [[UIImage imageNamed:@"Location-50.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    [self.navigationItem.backBarButtonItem setTintColor:[UIColor colorWithRed:86 green:62 blue:51 alpha:1.0]];
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor colorWithRed:86.0/255.0 green:62.0/255.0 blue:51.0/255.0 alpha:1.0]];
 
 }
 

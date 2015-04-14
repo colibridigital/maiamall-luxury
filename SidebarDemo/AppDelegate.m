@@ -24,9 +24,11 @@
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 0);
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:10.0/255.0 green:10.0/255.0 blue:10.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           [UIColor colorWithRed:86.0/255.0 green:62.0/255.0 blue:51.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"Helvetica-Light" size:21.0], NSFontAttributeName, nil]];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:86.0/255.0 green:62.0/255.0 blue:51.0/255.0 alpha:1.0]];
     
     WYPopoverBackgroundView *popoverAppearance = [WYPopoverBackgroundView appearance];
     [popoverAppearance setArrowHeight:40];

@@ -168,6 +168,8 @@
     mapView_.settings.myLocationButton = YES;
     
     [self initialiseMenuItems];
+    
+    [self populateMapWithData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
