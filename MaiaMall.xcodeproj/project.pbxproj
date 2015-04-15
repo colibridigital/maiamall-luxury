@@ -19,6 +19,13 @@
 		151902F41AD4624700644C50 /* tshirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 151902F31AD4624700644C50 /* tshirt.png */; };
 		151902F61AD4632200644C50 /* suit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151902F51AD4632200644C50 /* suit.jpg */; };
 		151902FA1AD46E2300644C50 /* TrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151902F91AD46E2300644C50 /* TrendsViewController.m */; };
+		1534DDE21ADE66EF009EFBF6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1534DDDB1ADE66EF009EFBF6 /* Images.xcassets */; };
+		1534DDE31ADE66EF009EFBF6 /* THDateDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 1534DDDD1ADE66EF009EFBF6 /* THDateDay.m */; };
+		1534DDE41ADE66EF009EFBF6 /* THDateDay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1534DDDE1ADE66EF009EFBF6 /* THDateDay.xib */; };
+		1534DDE51ADE66EF009EFBF6 /* THDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1534DDE01ADE66EF009EFBF6 /* THDatePickerViewController.m */; };
+		1534DDE61ADE66EF009EFBF6 /* THDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1534DDE11ADE66EF009EFBF6 /* THDatePickerViewController.xib */; };
+		1534DDE81ADE688B009EFBF6 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1534DDE71ADE688B009EFBF6 /* EventKit.framework */; };
+		1534DDEB1ADE6933009EFBF6 /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1534DDEA1ADE6933009EFBF6 /* UIViewController+KNSemiModal.m */; };
 		1536F2E41AD49DA200E41C57 /* Filter-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2E01AD49DA200E41C57 /* Filter-50.png */; };
 		1536F2E61AD49DA200E41C57 /* News-50-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2E21AD49DA200E41C57 /* News-50-2.png */; };
 		1536F2E91AD49E4B00E41C57 /* Location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536F2E81AD49E4B00E41C57 /* Location-50.png */; };
@@ -167,6 +174,16 @@
 		151902F51AD4632200644C50 /* suit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = suit.jpg; sourceTree = "<group>"; };
 		151902F81AD46E2300644C50 /* TrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendsViewController.h; sourceTree = "<group>"; };
 		151902F91AD46E2300644C50 /* TrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendsViewController.m; sourceTree = "<group>"; };
+		1534DDDB1ADE66EF009EFBF6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1534DDDC1ADE66EF009EFBF6 /* THDateDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDateDay.h; sourceTree = "<group>"; };
+		1534DDDD1ADE66EF009EFBF6 /* THDateDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDateDay.m; sourceTree = "<group>"; };
+		1534DDDE1ADE66EF009EFBF6 /* THDateDay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THDateDay.xib; sourceTree = "<group>"; };
+		1534DDDF1ADE66EF009EFBF6 /* THDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDatePickerViewController.h; sourceTree = "<group>"; };
+		1534DDE01ADE66EF009EFBF6 /* THDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDatePickerViewController.m; sourceTree = "<group>"; };
+		1534DDE11ADE66EF009EFBF6 /* THDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THDatePickerViewController.xib; sourceTree = "<group>"; };
+		1534DDE71ADE688B009EFBF6 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		1534DDE91ADE6933009EFBF6 /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
+		1534DDEA1ADE6933009EFBF6 /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
 		1536F2E01AD49DA200E41C57 /* Filter-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filter-50.png"; sourceTree = "<group>"; };
 		1536F2E21AD49DA200E41C57 /* News-50-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "News-50-2.png"; sourceTree = "<group>"; };
 		1536F2E81AD49E4B00E41C57 /* Location-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location-50.png"; sourceTree = "<group>"; };
@@ -364,6 +381,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1534DDE81ADE688B009EFBF6 /* EventKit.framework in Frameworks */,
 				15ECDE5B1ACF2B8A00F6107F /* SystemConfiguration.framework in Frameworks */,
 				15ECDE591ACF2B8100F6107F /* OpenGLES.framework in Frameworks */,
 				15ECDE571ACF2B7B00F6107F /* libicucore.dylib in Frameworks */,
@@ -395,6 +413,20 @@
 				151902F91AD46E2300644C50 /* TrendsViewController.m */,
 			);
 			name = TrendsViewController;
+			sourceTree = "<group>";
+		};
+		1534DDDA1ADE66EF009EFBF6 /* THCalendarDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				1534DDDB1ADE66EF009EFBF6 /* Images.xcassets */,
+				1534DDDC1ADE66EF009EFBF6 /* THDateDay.h */,
+				1534DDDD1ADE66EF009EFBF6 /* THDateDay.m */,
+				1534DDDE1ADE66EF009EFBF6 /* THDateDay.xib */,
+				1534DDDF1ADE66EF009EFBF6 /* THDatePickerViewController.h */,
+				1534DDE01ADE66EF009EFBF6 /* THDatePickerViewController.m */,
+				1534DDE11ADE66EF009EFBF6 /* THDatePickerViewController.xib */,
+			);
+			path = THCalendarDatePicker;
 			sourceTree = "<group>";
 		};
 		157562751ABAEFFC001FAE38 /* ProductDetailViewController */ = {
@@ -771,6 +803,7 @@
 		F4EECF10177C99F400778578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1534DDE71ADE688B009EFBF6 /* EventKit.framework */,
 				15ECDE601ACF36EA00F6107F /* GoogleMaps.bundle */,
 				15ECDE5E1ACF36C600F6107F /* GoogleMaps.framework */,
 				15ECDE5A1ACF2B8A00F6107F /* SystemConfiguration.framework */,
@@ -797,6 +830,9 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1534DDE91ADE6933009EFBF6 /* UIViewController+KNSemiModal.h */,
+				1534DDEA1ADE6933009EFBF6 /* UIViewController+KNSemiModal.m */,
+				1534DDDA1ADE66EF009EFBF6 /* THCalendarDatePicker */,
 				15C2DFC91ADD656E00EEE123 /* MapViewForItemViewController */,
 				151902F71AD46DAE00644C50 /* TrendsViewController */,
 				15B21DFB1AD2DF6800611559 /* ItemsInTheStoreTableViewCell */,
@@ -990,6 +1026,7 @@
 			files = (
 				151902E01AD34C8400644C50 /* ProductListViewController.h in Resources */,
 				15B60B7F1ACC858200DC8749 /* Map Marker-50.png in Resources */,
+				1534DDE61ADE66EF009EFBF6 /* THDatePickerViewController.xib in Resources */,
 				151902EA1AD405EE00644C50 /* shoesTrend.jpg in Resources */,
 				F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */,
 				151902F61AD4632200644C50 /* suit.jpg in Resources */,
@@ -1041,6 +1078,7 @@
 				15B60B7B1ACC825600DC8749 /* Tape Measure2-50.png in Resources */,
 				15E9687C1ACFF3D1003D20B8 /* bannerFailure@2x.png in Resources */,
 				F4EECF63177F3CAB00778578 /* tag.png in Resources */,
+				1534DDE21ADE66EF009EFBF6 /* Images.xcassets in Resources */,
 				15ADFFFA1AB99EBB00B8B1D1 /* Filled Filter-50.png in Resources */,
 				15AD00081AB9C46800B8B1D1 /* dress.png in Resources */,
 				F4EECF67177F4AB000778578 /* nav_bg.png in Resources */,
@@ -1054,6 +1092,7 @@
 				15E9687F1ACFF3D1003D20B8 /* bannerSuccess.png in Resources */,
 				15E968791ACFF3D1003D20B8 /* bannerAlert.png in Resources */,
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
+				1534DDE41ADE66EF009EFBF6 /* THDateDay.xib in Resources */,
 				15E753221AC2C82900F2D39D /* harrods.png in Resources */,
 				15C2DFC61ADD539200EEE123 /* Price Tag Pound-50.png in Resources */,
 				F4FE87FB1780081300CB3DA8 /* comments_photo.jpg in Resources */,
@@ -1084,8 +1123,10 @@
 				15B60B701ACC59EB00DC8749 /* WYPopoverController.m in Sources */,
 				15ED18381ACED7EB0091E84A /* MMDCart.m in Sources */,
 				15E753771AC5C63000F2D39D /* FMResultSet.m in Sources */,
+				1534DDE31ADE66EF009EFBF6 /* THDateDay.m in Sources */,
 				1A3F0F301AB4B00D00F85C01 /* SWRevealViewController.m in Sources */,
 				151902FA1AD46E2300644C50 /* TrendsViewController.m in Sources */,
+				1534DDE51ADE66EF009EFBF6 /* THDatePickerViewController.m in Sources */,
 				15E753751AC5C63000F2D39D /* FMDatabasePool.m in Sources */,
 				15B21DFA1AD2DBAE00611559 /* ListOfItemsInTheStoreViewController.m in Sources */,
 				15E7531A1AC2C47500F2D39D /* ItemsSimilarCollectionView.m in Sources */,
@@ -1095,6 +1136,7 @@
 				15C2DFCC1ADD658500EEE123 /* MapViewForItemViewController.m in Sources */,
 				15E968601ACFE8C1003D20B8 /* WishlistViewController.m in Sources */,
 				15ED18371ACED7EB0091E84A /* MMDBrand.m in Sources */,
+				1534DDEB1ADE6933009EFBF6 /* UIViewController+KNSemiModal.m in Sources */,
 				15E9685C1ACFDB5C003D20B8 /* SettingsViewController.m in Sources */,
 				15E9688B1AD2BAC6003D20B8 /* PurchaseItemViewController.m in Sources */,
 				15E968651ACFEB20003D20B8 /* WishlistTableViewCell.m in Sources */,
