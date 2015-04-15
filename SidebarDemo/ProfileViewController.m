@@ -28,6 +28,25 @@
     
     [self initialiseMenuItems];
     
+    self.summerItems =  [[NSMutableArray alloc] init];
+    self.summerItems = [[MMDDataBase database] getSummerCollectionItems];
+    
+    self.shoesItems =  [[NSMutableArray alloc] init];
+    self.shoesItems = [[MMDDataBase database] getShoesCollection];
+    
+    self.bagsItems =  [[NSMutableArray alloc] init];
+    self.bagsItems = [[MMDDataBase database] getBagsCollection];
+    
+    self.shirtsItems =  [[NSMutableArray alloc] init];
+    self.shirtsItems = [[MMDDataBase database] getShirtsCollection];
+    
+    self.formalItems =  [[NSMutableArray alloc] init];
+    self.formalItems = [[MMDDataBase database] getFormalCollection];
+    
+    self.favCollItems =  [[NSMutableArray alloc] init];
+    self.favCollItems = [[MMDDataBase database] getFavouriteCollection];
+
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -127,7 +146,7 @@
     if (collectionView == self.collsCollectionView) {
         return 5;
     } else if (collectionView == self.favsCollectionView) {
-        return 20;
+        return 15;
     }
     
     else return 0;
@@ -139,9 +158,50 @@
     if (collectionView == self.collsCollectionView) {
         CollectionsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"COLL_CELL" forIndexPath:indexPath];
         
+        if (indexPath.row == 0) {
+            
+            NSString *imagePath = ((MMDItem*)[self.summerItems objectAtIndex:3]).itemImagePath;
+            
+            UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+            
+            cell.detailImage.image = itemImage;
+        } else if (indexPath.row == 1) {
+            NSString *imagePath = ((MMDItem*)[self.shoesItems objectAtIndex:1]).itemImagePath;
+            
+            UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+            
+            cell.detailImage.image = itemImage;
+        }
+        else if (indexPath.row == 2) {
+            NSString *imagePath = ((MMDItem*)[self.bagsItems objectAtIndex:2]).itemImagePath;
+            
+            UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+            
+            cell.detailImage.image = itemImage;
+        } else if (indexPath.row == 3) {
+            NSString *imagePath = ((MMDItem*)[self.formalItems objectAtIndex:3]).itemImagePath;
+            
+            UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+            
+            cell.detailImage.image = itemImage;
+        } else if (indexPath.row == 4) {
+            NSString *imagePath = ((MMDItem*)[self.shirtsItems objectAtIndex:1]).itemImagePath;
+            
+            UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+            
+            cell.detailImage.image = itemImage;
+        }
+        
         return cell;
     } else {
         ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PROD_CELL" forIndexPath:indexPath];
+        
+        NSString *imagePath = ((MMDItem*)[self.favCollItems objectAtIndex:indexPath.row]).itemImagePath;
+        
+        UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+        
+        cell.productImage.image = itemImage;
+        
         
         return cell;
 
@@ -156,6 +216,8 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
         ProductDetailViewController *prodDetail = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
+        
+        [prodDetail initWithItem:(MMDItem*)[self.favCollItems objectAtIndex:indexPath.row]];
     
        // UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
     
@@ -165,6 +227,33 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
         CollectionListViewController *prod = [storyboard instantiateViewControllerWithIdentifier:@"collectionListView"];
+        
+        if (indexPath.row == 0) {
+        
+            [prod initWithItemsArray:self.summerItems];
+            
+            
+            
+        } else if (indexPath.row == 1) {
+            [prod initWithItemsArray:self.shoesItems];
+            
+            prod.collectionTitle.text =  @"Shoes Collection";
+            
+        } else if (indexPath.row == 2) {
+            [prod initWithItemsArray:self.bagsItems];
+            
+            prod.collectionTitle.text = @"Bags Collection";
+            
+        } else if (indexPath.row == 3) {
+            [prod initWithItemsArray:self.formalItems];
+            
+            prod.collectionTitle.text = @"Formal Items Collection";
+            
+        } else if (indexPath.row == 4) {
+            [prod initWithItemsArray:self.shirtsItems];
+            
+            prod.collectionTitle.text = @"Shirts Collections";
+        }
         
         [self showViewController:prod sender:self];
 

@@ -20,5 +20,10 @@
 - (void)saveDataBase;
 - (void)initDatabase;
 - (void)closeDataBase;
-
+- (NSMutableArray *)getSummerCollectionItems;
+- (NSMutableArray *)getShoesCollection;
+- (NSMutableArray *)getBagsCollection;
+- (NSMutableArray *)getShirtsCollection;
+- (NSMutableArray *)getFormalCollection;
+- (NSMutableArray *)getFavouriteCollection;
 @end

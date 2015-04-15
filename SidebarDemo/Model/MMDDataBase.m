@@ -352,6 +352,406 @@ static MMDDataBase *dataBase;
     return imagePath;
 }
 
+- (NSMutableArray *)getSummerCollectionItems {
+    NSMutableArray * retval = [[NSMutableArray alloc] init];
+    NSString *queryForItems = @"SELECT * FROM Product where id in (276, 266, 24, 47, 149, 175, 187, 272, 162)";
+    sqlite3_stmt *statementForItems;
+    if (sqlite3_prepare_v2(dataBase, [queryForItems UTF8String], -1, &statementForItems, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForItems) == SQLITE_ROW) {
+            
+            NSString *itemTitle = @"";
+            NSString *itemDescription = @"";
+            NSString *itemCategory = @"";
+            NSString *itemSKU = @"";
+            NSMutableArray *itemColors = [[NSMutableArray alloc] init];
+            NSMutableArray *itemSizes = [[NSMutableArray alloc] init];
+            MMDBrand * itemBrand;
+            MMDStore* itemStore;
+            
+            int itemId = (int) sqlite3_column_int(statementForItems, 0);
+            char *itemURLChar = (char*)sqlite3_column_text(statementForItems, 1);
+            
+            char *itemTitleChar = (char *)sqlite3_column_text(statementForItems, 2);
+            itemTitle = [[NSString alloc] initWithUTF8String:itemTitleChar];
+            
+            char *itemDescriptionChar = (char *) sqlite3_column_text(statementForItems, 3);
+            itemDescription = [[NSString alloc] initWithUTF8String:itemDescriptionChar];
+            
+            char *itemSKUChar = (char *) sqlite3_column_text(statementForItems, 4);
+            itemSKU = [[NSString alloc] initWithUTF8String:itemSKUChar];
+            
+            float itemPrice = (float) sqlite3_column_double(statementForItems, 5);
+            int itemGender = (int) sqlite3_column_int(statementForItems, 6);
+            int itemBrandId = (int) sqlite3_column_int(statementForItems, 7);
+            int itemStoreId = (int) sqlite3_column_int(statementForItems, 8);
+            int itemCategoryId = (int) sqlite3_column_int(statementForItems, 9);
+            
+            int itemLiked = (int)sqlite3_column_int(statementForItems, 10);
+            
+            int itemHasOffer = (int)sqlite3_column_int(statementForItems, 11);
+            
+            //if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
+            itemBrand = [self loadBrandDetails:itemBrandId];
+            
+            
+            itemCategory = [self loadCategoryDetails:itemCategoryId];
+            
+            itemStore = [self getStoreDetails:itemStoreId];
+            
+            [self getColourDetails:itemId itemColors:itemColors];
+            
+            [self loadSizeDetails:itemId itemSizes:itemSizes];
+            
+            NSString *imagePath = [self manipulateImage:itemId];
+            
+#warning add offers
+            
+            MMDItem * item = [[MMDItem alloc] initWithImagePath:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription imagePath:imagePath SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
+            
+            [retval addObject:item];
+            //}
+        }
+        sqlite3_finalize(statementForItems);
+    }
+    
+    return retval;
+}
+
+- (NSMutableArray *)getShoesCollection {
+    NSMutableArray * retval = [[NSMutableArray alloc] init];
+    NSString *queryForItems = @"SELECT * FROM Product where id in (179, 274, 273, 108, 106, 100)";
+    sqlite3_stmt *statementForItems;
+    if (sqlite3_prepare_v2(dataBase, [queryForItems UTF8String], -1, &statementForItems, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForItems) == SQLITE_ROW) {
+            
+            NSString *itemTitle = @"";
+            NSString *itemDescription = @"";
+            NSString *itemCategory = @"";
+            NSString *itemSKU = @"";
+            NSMutableArray *itemColors = [[NSMutableArray alloc] init];
+            NSMutableArray *itemSizes = [[NSMutableArray alloc] init];
+            MMDBrand * itemBrand;
+            MMDStore* itemStore;
+            
+            int itemId = (int) sqlite3_column_int(statementForItems, 0);
+            char *itemURLChar = (char*)sqlite3_column_text(statementForItems, 1);
+            
+            char *itemTitleChar = (char *)sqlite3_column_text(statementForItems, 2);
+            itemTitle = [[NSString alloc] initWithUTF8String:itemTitleChar];
+            
+            char *itemDescriptionChar = (char *) sqlite3_column_text(statementForItems, 3);
+            itemDescription = [[NSString alloc] initWithUTF8String:itemDescriptionChar];
+            
+            char *itemSKUChar = (char *) sqlite3_column_text(statementForItems, 4);
+            itemSKU = [[NSString alloc] initWithUTF8String:itemSKUChar];
+            
+            float itemPrice = (float) sqlite3_column_double(statementForItems, 5);
+            int itemGender = (int) sqlite3_column_int(statementForItems, 6);
+            int itemBrandId = (int) sqlite3_column_int(statementForItems, 7);
+            int itemStoreId = (int) sqlite3_column_int(statementForItems, 8);
+            int itemCategoryId = (int) sqlite3_column_int(statementForItems, 9);
+            
+            int itemLiked = (int)sqlite3_column_int(statementForItems, 10);
+            
+            int itemHasOffer = (int)sqlite3_column_int(statementForItems, 11);
+            
+            //if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
+            itemBrand = [self loadBrandDetails:itemBrandId];
+            
+            
+            itemCategory = [self loadCategoryDetails:itemCategoryId];
+            
+            itemStore = [self getStoreDetails:itemStoreId];
+            
+            [self getColourDetails:itemId itemColors:itemColors];
+            
+            [self loadSizeDetails:itemId itemSizes:itemSizes];
+            
+            NSString *imagePath = [self manipulateImage:itemId];
+            
+#warning add offers
+            
+            MMDItem * item = [[MMDItem alloc] initWithImagePath:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription imagePath:imagePath SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
+            
+            [retval addObject:item];
+            //}
+        }
+        sqlite3_finalize(statementForItems);
+    }
+    
+    return retval;
+}
+
+- (NSMutableArray *)getBagsCollection {
+    NSMutableArray * retval = [[NSMutableArray alloc] init];
+    NSString *queryForItems = @"SELECT * FROM Product where id in (11, 261, 264, 263, 3, 8)";
+    sqlite3_stmt *statementForItems;
+    if (sqlite3_prepare_v2(dataBase, [queryForItems UTF8String], -1, &statementForItems, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForItems) == SQLITE_ROW) {
+            
+            NSString *itemTitle = @"";
+            NSString *itemDescription = @"";
+            NSString *itemCategory = @"";
+            NSString *itemSKU = @"";
+            NSMutableArray *itemColors = [[NSMutableArray alloc] init];
+            NSMutableArray *itemSizes = [[NSMutableArray alloc] init];
+            MMDBrand * itemBrand;
+            MMDStore* itemStore;
+            
+            int itemId = (int) sqlite3_column_int(statementForItems, 0);
+            char *itemURLChar = (char*)sqlite3_column_text(statementForItems, 1);
+            
+            char *itemTitleChar = (char *)sqlite3_column_text(statementForItems, 2);
+            itemTitle = [[NSString alloc] initWithUTF8String:itemTitleChar];
+            
+            char *itemDescriptionChar = (char *) sqlite3_column_text(statementForItems, 3);
+            itemDescription = [[NSString alloc] initWithUTF8String:itemDescriptionChar];
+            
+            char *itemSKUChar = (char *) sqlite3_column_text(statementForItems, 4);
+            itemSKU = [[NSString alloc] initWithUTF8String:itemSKUChar];
+            
+            float itemPrice = (float) sqlite3_column_double(statementForItems, 5);
+            int itemGender = (int) sqlite3_column_int(statementForItems, 6);
+            int itemBrandId = (int) sqlite3_column_int(statementForItems, 7);
+            int itemStoreId = (int) sqlite3_column_int(statementForItems, 8);
+            int itemCategoryId = (int) sqlite3_column_int(statementForItems, 9);
+            
+            int itemLiked = (int)sqlite3_column_int(statementForItems, 10);
+            
+            int itemHasOffer = (int)sqlite3_column_int(statementForItems, 11);
+            
+            //if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
+            itemBrand = [self loadBrandDetails:itemBrandId];
+            
+            
+            itemCategory = [self loadCategoryDetails:itemCategoryId];
+            
+            itemStore = [self getStoreDetails:itemStoreId];
+            
+            [self getColourDetails:itemId itemColors:itemColors];
+            
+            [self loadSizeDetails:itemId itemSizes:itemSizes];
+            
+            NSString *imagePath = [self manipulateImage:itemId];
+            
+#warning add offers
+            
+            MMDItem * item = [[MMDItem alloc] initWithImagePath:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription imagePath:imagePath SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
+            
+            [retval addObject:item];
+            //}
+        }
+        sqlite3_finalize(statementForItems);
+    }
+    
+    return retval;
+}
+
+- (NSMutableArray *)getFormalCollection {
+    NSMutableArray * retval = [[NSMutableArray alloc] init];
+    NSString *queryForItems = @"SELECT * FROM Product where id in (13, 267, 21, 44, 59, 266)";
+    sqlite3_stmt *statementForItems;
+    if (sqlite3_prepare_v2(dataBase, [queryForItems UTF8String], -1, &statementForItems, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForItems) == SQLITE_ROW) {
+            
+            NSString *itemTitle = @"";
+            NSString *itemDescription = @"";
+            NSString *itemCategory = @"";
+            NSString *itemSKU = @"";
+            NSMutableArray *itemColors = [[NSMutableArray alloc] init];
+            NSMutableArray *itemSizes = [[NSMutableArray alloc] init];
+            MMDBrand * itemBrand;
+            MMDStore* itemStore;
+            
+            int itemId = (int) sqlite3_column_int(statementForItems, 0);
+            char *itemURLChar = (char*)sqlite3_column_text(statementForItems, 1);
+            
+            char *itemTitleChar = (char *)sqlite3_column_text(statementForItems, 2);
+            itemTitle = [[NSString alloc] initWithUTF8String:itemTitleChar];
+            
+            char *itemDescriptionChar = (char *) sqlite3_column_text(statementForItems, 3);
+            itemDescription = [[NSString alloc] initWithUTF8String:itemDescriptionChar];
+            
+            char *itemSKUChar = (char *) sqlite3_column_text(statementForItems, 4);
+            itemSKU = [[NSString alloc] initWithUTF8String:itemSKUChar];
+            
+            float itemPrice = (float) sqlite3_column_double(statementForItems, 5);
+            int itemGender = (int) sqlite3_column_int(statementForItems, 6);
+            int itemBrandId = (int) sqlite3_column_int(statementForItems, 7);
+            int itemStoreId = (int) sqlite3_column_int(statementForItems, 8);
+            int itemCategoryId = (int) sqlite3_column_int(statementForItems, 9);
+            
+            int itemLiked = (int)sqlite3_column_int(statementForItems, 10);
+            
+            int itemHasOffer = (int)sqlite3_column_int(statementForItems, 11);
+            
+            //if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
+            itemBrand = [self loadBrandDetails:itemBrandId];
+            
+            
+            itemCategory = [self loadCategoryDetails:itemCategoryId];
+            
+            itemStore = [self getStoreDetails:itemStoreId];
+            
+            [self getColourDetails:itemId itemColors:itemColors];
+            
+            [self loadSizeDetails:itemId itemSizes:itemSizes];
+            
+            NSString *imagePath = [self manipulateImage:itemId];
+            
+#warning add offers
+            
+            MMDItem * item = [[MMDItem alloc] initWithImagePath:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription imagePath:imagePath SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
+            
+            [retval addObject:item];
+            //}
+        }
+        sqlite3_finalize(statementForItems);
+    }
+    
+    return retval;
+}
+
+- (NSMutableArray *)getFavouriteCollection {
+    NSMutableArray * retval = [[NSMutableArray alloc] init];
+    NSString *queryForItems = @"SELECT * FROM Product where id in (13, 3, 8, 281, 272, 128, 267, 72, 81, 21, 44, 36, 59, 14, 266)";
+    sqlite3_stmt *statementForItems;
+    if (sqlite3_prepare_v2(dataBase, [queryForItems UTF8String], -1, &statementForItems, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForItems) == SQLITE_ROW) {
+            
+            NSString *itemTitle = @"";
+            NSString *itemDescription = @"";
+            NSString *itemCategory = @"";
+            NSString *itemSKU = @"";
+            NSMutableArray *itemColors = [[NSMutableArray alloc] init];
+            NSMutableArray *itemSizes = [[NSMutableArray alloc] init];
+            MMDBrand * itemBrand;
+            MMDStore* itemStore;
+            
+            int itemId = (int) sqlite3_column_int(statementForItems, 0);
+            char *itemURLChar = (char*)sqlite3_column_text(statementForItems, 1);
+            
+            char *itemTitleChar = (char *)sqlite3_column_text(statementForItems, 2);
+            itemTitle = [[NSString alloc] initWithUTF8String:itemTitleChar];
+            
+            char *itemDescriptionChar = (char *) sqlite3_column_text(statementForItems, 3);
+            itemDescription = [[NSString alloc] initWithUTF8String:itemDescriptionChar];
+            
+            char *itemSKUChar = (char *) sqlite3_column_text(statementForItems, 4);
+            itemSKU = [[NSString alloc] initWithUTF8String:itemSKUChar];
+            
+            float itemPrice = (float) sqlite3_column_double(statementForItems, 5);
+            int itemGender = (int) sqlite3_column_int(statementForItems, 6);
+            int itemBrandId = (int) sqlite3_column_int(statementForItems, 7);
+            int itemStoreId = (int) sqlite3_column_int(statementForItems, 8);
+            int itemCategoryId = (int) sqlite3_column_int(statementForItems, 9);
+            
+            int itemLiked = (int)sqlite3_column_int(statementForItems, 10);
+            
+            int itemHasOffer = (int)sqlite3_column_int(statementForItems, 11);
+            
+            //if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
+            itemBrand = [self loadBrandDetails:itemBrandId];
+            
+            
+            itemCategory = [self loadCategoryDetails:itemCategoryId];
+            
+            itemStore = [self getStoreDetails:itemStoreId];
+            
+            [self getColourDetails:itemId itemColors:itemColors];
+            
+            [self loadSizeDetails:itemId itemSizes:itemSizes];
+            
+            NSString *imagePath = [self manipulateImage:itemId];
+            
+#warning add offers
+            
+            MMDItem * item = [[MMDItem alloc] initWithImagePath:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription imagePath:imagePath SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
+            
+            [retval addObject:item];
+            //}
+        }
+        sqlite3_finalize(statementForItems);
+    }
+    
+    return retval;
+}
+
+- (NSMutableArray *)getShirtsCollection {
+    NSMutableArray * retval = [[NSMutableArray alloc] init];
+    NSString *queryForItems = @"SELECT * FROM Product where id in (228, 233, 230, 219, 221, 224)";
+    sqlite3_stmt *statementForItems;
+    if (sqlite3_prepare_v2(dataBase, [queryForItems UTF8String], -1, &statementForItems, nil)
+        == SQLITE_OK) {
+        while (sqlite3_step(statementForItems) == SQLITE_ROW) {
+            
+            NSString *itemTitle = @"";
+            NSString *itemDescription = @"";
+            NSString *itemCategory = @"";
+            NSString *itemSKU = @"";
+            NSMutableArray *itemColors = [[NSMutableArray alloc] init];
+            NSMutableArray *itemSizes = [[NSMutableArray alloc] init];
+            MMDBrand * itemBrand;
+            MMDStore* itemStore;
+            
+            int itemId = (int) sqlite3_column_int(statementForItems, 0);
+            char *itemURLChar = (char*)sqlite3_column_text(statementForItems, 1);
+            
+            char *itemTitleChar = (char *)sqlite3_column_text(statementForItems, 2);
+            itemTitle = [[NSString alloc] initWithUTF8String:itemTitleChar];
+            
+            char *itemDescriptionChar = (char *) sqlite3_column_text(statementForItems, 3);
+            itemDescription = [[NSString alloc] initWithUTF8String:itemDescriptionChar];
+            
+            char *itemSKUChar = (char *) sqlite3_column_text(statementForItems, 4);
+            itemSKU = [[NSString alloc] initWithUTF8String:itemSKUChar];
+            
+            float itemPrice = (float) sqlite3_column_double(statementForItems, 5);
+            int itemGender = (int) sqlite3_column_int(statementForItems, 6);
+            int itemBrandId = (int) sqlite3_column_int(statementForItems, 7);
+            int itemStoreId = (int) sqlite3_column_int(statementForItems, 8);
+            int itemCategoryId = (int) sqlite3_column_int(statementForItems, 9);
+            
+            int itemLiked = (int)sqlite3_column_int(statementForItems, 10);
+            
+            int itemHasOffer = (int)sqlite3_column_int(statementForItems, 11);
+            
+            //if (itemStoreId != 5 && itemStoreId != 6 && itemStoreId != 1) {
+            itemBrand = [self loadBrandDetails:itemBrandId];
+            
+            
+            itemCategory = [self loadCategoryDetails:itemCategoryId];
+            
+            itemStore = [self getStoreDetails:itemStoreId];
+            
+            [self getColourDetails:itemId itemColors:itemColors];
+            
+            [self loadSizeDetails:itemId itemSizes:itemSizes];
+            
+            NSString *imagePath = [self manipulateImage:itemId];
+            
+#warning add offers
+            
+            MMDItem * item = [[MMDItem alloc] initWithImagePath:[NSString stringWithFormat:@"%i", itemId] title:itemTitle description:itemDescription imagePath:imagePath SKU:itemSKU collection:@"" category:itemCategory price:itemPrice store:itemStore brand:itemBrand gender:itemGender color:itemColors size:itemSizes];
+            
+            [retval addObject:item];
+            //}
+        }
+        sqlite3_finalize(statementForItems);
+    }
+    
+    return retval;
+}
+
+
+
+
+
 - (NSMutableArray *)getItems {
     NSMutableArray * retval = [[NSMutableArray alloc] init];
     NSString *queryForItems = @"SELECT * FROM Product";

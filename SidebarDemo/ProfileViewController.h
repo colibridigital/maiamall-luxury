@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CollectionsCollectionView.h"
 #import "FavouritesListCollectionView.h"
+#import "MMDDataBase.h"
 
 @interface ProfileViewController : UIViewController<UISearchBarDelegate, UITabBarControllerDelegate, UITabBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -20,5 +21,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *folllowButton;
 
 @property (strong, nonatomic) NSMutableArray * arrayWithSearchResults;
-
+@property (strong, nonatomic) NSMutableArray * summerItems;
+@property (strong, nonatomic) NSMutableArray * shoesItems;
+@property (strong, nonatomic) NSMutableArray * bagsItems;
+@property (strong, nonatomic) NSMutableArray * formalItems;
+@property (strong, nonatomic) NSMutableArray * shirtsItems;
+@property (strong, nonatomic) NSMutableArray * favCollItems;
 @end

@@ -9,12 +9,17 @@
 #import "CollectionListViewController.h"
 #import "CollectionDetailCollectionViewCell.h"
 #import "ProductDetailViewController.h"
+#import "MMDItem.h"
 
 @interface CollectionListViewController ()
 
 @end
 
 @implementation CollectionListViewController
+
+-(void)initWithItemsArray:(NSMutableArray*)items {
+    self.currentItems = items;
+}
 
 - (void)initialiseMenuItems {
     
@@ -34,14 +39,15 @@
     
     [self.navigationItem.backBarButtonItem setTintColor:[UIColor colorWithRed:86.0/255.0 green:62.0/255.0 blue:51.0/255.0 alpha:1.0]];
     
-    [self.collectionDetailView registerNibAndCell];
-    [self.collectionDetailView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initialiseMenuItems];
+    
+    [self.collectionDetailView registerNibAndCell];
+    [self.collectionDetailView reloadData];
     
     // Do any additional setup after loading the view.
     
@@ -52,6 +58,10 @@
     // Do any additional setup after loading the view.
     
     [self initialiseMenuItems];
+    
+    [self.collectionDetailView reloadData];
+    
+     NSLog(@"current items: %lu", self.currentItems.count);
     
       
 }
@@ -99,12 +109,24 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    NSLog(@"in here: %lu", self.currentItems.count);
+    
+    return self.currentItems.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CollectionDetailCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"COLLDET_CELL" forIndexPath:indexPath];
+    
+    NSString *imagePath = ((MMDItem*)[self.currentItems objectAtIndex:indexPath.row]).itemImagePath;
+    
+    UIImage *itemImage = [UIImage imageWithContentsOfFile:imagePath];
+    
+   // NSLog(@"current items: %lu", sizeof(self.currentItems));
+    
+    NSLog(@"in the collection cell");
+    
+    cell.detailImage.image = itemImage;
     
     // UIImage *img = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"product2" ofType: @"png"]];
     
@@ -120,7 +142,9 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         
         ProductDetailViewController *prodDetail = [storyboard instantiateViewControllerWithIdentifier:@"prodDetailView"];
-        
+    
+        [prodDetail initWithItem:[self.currentItems objectAtIndex:indexPath.row]];
+    
         // UINavigationController *det = [storyboard instantiateViewControllerWithIdentifier:@"detNav"];
         
         [self showViewController:prodDetail sender:self];

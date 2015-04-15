@@ -1190,7 +1190,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="COLLDET_CELL" id="SuA-ls-vOH" customClass="CollectionDetailCollectionViewCell">
+                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="COLLDET_CELL" id="SuA-ls-vOH" customClass="CollectionDetailCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1213,6 +1213,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionDetailView" destination="BqR-aJ-ADx" id="PvO-dT-BSW"/>
+                        <outlet property="collectionTitle" destination="X1A-D7-joi" id="Jxn-r7-eWa"/>
                         <outlet property="tabBarController" destination="s74-sH-1o5" id="blg-fK-FJP"/>
                     </connections>
                 </viewController>
