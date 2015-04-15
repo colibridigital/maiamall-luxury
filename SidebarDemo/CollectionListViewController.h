@@ -14,8 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet CollectionDetailCollectionView *collectionDetailView;
 @property (strong, nonatomic) IBOutlet UILabel *collectionTitle;
+@property (strong, nonatomic) NSString *colText;
 @property (strong, nonatomic) IBOutlet NSMutableArray *currentItems;
 
 -(void)initWithItemsArray:(NSMutableArray*)items;
+-(void)initWithTitleText:(NSString*)text;
 
 @end

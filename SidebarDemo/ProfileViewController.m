@@ -232,27 +232,35 @@
         
             [prod initWithItemsArray:self.summerItems];
             
-            
+            prod.colText = @"Summer Collection";
             
         } else if (indexPath.row == 1) {
             [prod initWithItemsArray:self.shoesItems];
             
-            prod.collectionTitle.text =  @"Shoes Collection";
+            [prod initWithTitleText: @"Shoes Collection"];
+            
+            prod.colText = @"Shoes Collection";
             
         } else if (indexPath.row == 2) {
             [prod initWithItemsArray:self.bagsItems];
             
-            prod.collectionTitle.text = @"Bags Collection";
+          [prod initWithTitleText: @"Bags Collection"];
+            
+            prod.colText = @"Bags Collection";
             
         } else if (indexPath.row == 3) {
             [prod initWithItemsArray:self.formalItems];
             
-            prod.collectionTitle.text = @"Formal Items Collection";
+           [prod initWithTitleText: @"Formal Items Collection"];
+            
+            prod.colText = @"Formal Items Collection";
             
         } else if (indexPath.row == 4) {
             [prod initWithItemsArray:self.shirtsItems];
             
-            prod.collectionTitle.text = @"Shirts Collections";
+            [prod initWithTitleText: @"Shirts Collections"];
+            
+            prod.colText = @"Shirts Collection";
         }
         
         [self showViewController:prod sender:self];

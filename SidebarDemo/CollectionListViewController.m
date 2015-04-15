@@ -21,6 +21,11 @@
     self.currentItems = items;
 }
 
+-(void)initWithTitleText:(NSString *)text {
+    self.collectionTitle.text = @"";
+    [self.collectionTitle setText:text];
+}
+
 - (void)initialiseMenuItems {
     
     self.tabBarController.delegate = self;
@@ -62,8 +67,13 @@
     [self.collectionDetailView reloadData];
     
      NSLog(@"current items: %lu", self.currentItems.count);
-    
       
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    self.collectionTitle.text = self.colText;
 }
 
 - (void)didReceiveMemoryWarning {
